@@ -73,5 +73,6 @@ public class Atividade {
         for (Turma t : this.turmas) {
             inscritos += t.quantasPessoas();
         }
+        return inscritos;
     }
 }
