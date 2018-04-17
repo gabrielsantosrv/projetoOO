@@ -65,7 +65,7 @@ public class Usuario extends Pessoa{
 
     }
 
-    public void void relacionarTurmaCliente(){
+    public void relacionarTurmaCliente(){
 
     }
 }
