@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
+// just a test
+
 public class Academia {
     private static ArrayList<Cliente> clientes;
     private static ArrayList<Instrutor> instrutores;
     private static ArrayList<Atividade> atividades;
-
-    public static Atividade atividadeComMaisInscritos() {
         int inscritos = 0;
         Atividade comMaisInscritos = new Atividade("", 0, null);
         for (Atividade a : atividades) {
