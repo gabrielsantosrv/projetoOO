@@ -3,6 +3,8 @@ public class Usuario extends Pessoa{
     private String username;
     private String senha;
 
+    // just testing something
+
     public Usuario(String nome, String endereco, String telefone, String dataNascimento, boolean ativo, String username, String senha) {
         super(nome, endereco, telefone, dataNascimento, ativo);
         this.username = username;
@@ -69,3 +71,6 @@ public class Usuario extends Pessoa{
 
     }
 }
+
+
+// just testing
