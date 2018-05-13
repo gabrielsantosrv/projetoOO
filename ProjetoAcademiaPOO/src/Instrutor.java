@@ -10,6 +10,8 @@ public class Instrutor extends Pessoa{
         this.areas = areas;
     }
 
+    // testing git 13/05
+
     public float getSalario() {
         return this.salario;
     }
