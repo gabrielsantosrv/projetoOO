@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class GerenciadorClientesAtividades extends Pessoa{
 
     private String username;
@@ -31,33 +33,46 @@ public class GerenciadorClientesAtividades extends Pessoa{
         this.senha = senha;
     }
 
-    public void incluirCliente(){
+    public void incluirCliente(Academia academia){
+        String nome, endereco, telefone, dataNascimento;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome:");
+        nome = input.next();
+        System.out.println("Endereço:");
+        endereco = input.next();
+        System.out.println("Telefone:");
+        telefone = input.next();
+        System.out.println("Data de nascimento:");
+        dataNascimento = input.next();
+        Cliente cliente = new Cliente(nome, endereco, telefone, dataNascimento, true);
+        academia.inserirCliente(cliente);
+        System.out.println("Cliente incluído.");
     }
 
-    public void excluirCliente(){
+    public void excluirCliente(Academia academia){
     }
 
-    public void alterarCliente(){
+    public void alterarCliente(Academia academia){
     }
 
-    public void incluirAtividade(){
+    public void incluirAtividade(Academia academia){
     }
 
-    public void excluirAtividade(){
+    public void excluirAtividade(Academia academia){
     }
 
-    public void alterarAtividade(){
+    public void alterarAtividade(Academia academia){
     }
 
-    public void incluirTurma(){
-
-    }
-
-    public void excluirTurma(){
+    public void incluirTurma(Academia academia){
 
     }
 
-    public void alterarTurma(){
+    public void excluirTurma(Academia academia){
+
+    }
+
+    public void alterarTurma(Academia academia){
 
     }
 

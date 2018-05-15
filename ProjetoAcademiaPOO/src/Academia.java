@@ -1,9 +1,13 @@
 import java.util.ArrayList;
 
 public class Academia {
-    private static ArrayList<Cliente> clientes;
-    private static ArrayList<Instrutor> instrutores;
-    private static ArrayList<Atividade> atividades;
+    private static ArrayList<Cliente> clientes = new ArrayList<>();
+    private static ArrayList<Instrutor> instrutores = new ArrayList<>();
+    private static ArrayList<Atividade> atividades = new ArrayList<>();
+
+    public void inserirCliente(Cliente cliente) {
+        clientes.add(cliente);
+    }
 
     public static Atividade atividadeComMaisInscritos() {
         int inscritos = 0;
