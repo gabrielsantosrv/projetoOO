@@ -14,6 +14,7 @@ public class Pessoa {
         this.telefone = telefone;
         this.dataNascimento = dataNascimento;
         this.ativo = ativo;
+        this.turmas = new ArrayList<>();
     }
 
     public String getNome() {
@@ -74,5 +75,17 @@ public class Pessoa {
 
     public ArrayList<Turma> getTurmas() {
         return this.turmas;
+    }
+
+    public String toString() {
+        String ret = "Nome: ";
+        ret += this.nome;
+        ret += "\nData de nascimento:";
+        ret += this.dataNascimento;
+        ret += "\nEndereco:";
+        ret += this.endereco;
+        ret += "\nTelefone:";
+        ret += this.telefone;
+        return ret;
     }
 }

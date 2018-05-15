@@ -45,7 +45,10 @@ public class Academia {
     }
 
     public static void exibirClientes() {
-        //TODO
+        System.out.println("EXIBIÇÃO DE CLIENTES");
+        for (Cliente c : clientes) {
+            System.out.println(c.toString());
+        }
     }
 
     public static void exibirInstrutores() {

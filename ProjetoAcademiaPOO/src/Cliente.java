@@ -11,4 +11,10 @@ public class Cliente extends Pessoa {
         }
         return pagamento;
     }
+
+    public String toString() {
+        String ret = super.toString();
+        ret += "\nTotal a pagar: " + this.totalAPagar();
+        return ret;
+    }
 }
