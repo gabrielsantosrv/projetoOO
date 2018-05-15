@@ -5,10 +5,10 @@ public class Atividade {
     private float preco;
     private ArrayList<Turma> turmas;
 
-    public Atividade(String nome, float preco, ArrayList<Turma> turmas) {
+    public Atividade(String nome, float preco) {
         this.nome = nome;
         this.preco = preco;
-        this.turmas = turmas;
+        this.turmas = new ArrayList<>();
     }
 
     public String getNome() {

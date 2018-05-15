@@ -34,6 +34,7 @@ public class GerenciadorClientesAtividades extends Pessoa{
     }
 
     public void incluirCliente(Academia academia){
+        System.out.println("INCLUSÃO DE CLIENTE");
         String nome, endereco, telefone, dataNascimento;
         Scanner input = new Scanner(System.in);
         System.out.println("Nome:");
@@ -56,6 +57,17 @@ public class GerenciadorClientesAtividades extends Pessoa{
     }
 
     public void incluirAtividade(Academia academia){
+        System.out.println("INCLUSÃO DE ATIVIDADE");
+        String nome;
+        float preco;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome:");
+        nome = input.next();
+        System.out.println("Preco:");
+        preco = input.nextFloat();
+        Atividade atividade = new Atividade(nome, preco);
+        academia.inserirAtividade(atividade);
+        System.out.println("Atividade incluída.");
     }
 
     public void excluirAtividade(Academia academia){

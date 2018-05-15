@@ -9,9 +9,13 @@ public class Academia {
         clientes.add(cliente);
     }
 
+    public void inserirAtividade(Atividade atividade) {
+        atividades.add(atividade);
+    }
+
     public static Atividade atividadeComMaisInscritos() {
         int inscritos = 0;
-        Atividade comMaisInscritos = new Atividade("", 0, null);
+        Atividade comMaisInscritos = new Atividade("", 0);
         for (Atividade a : atividades) {
             if (a.quantosInscritos() > inscritos) {
                 inscritos = a.quantosInscritos();
@@ -23,17 +27,17 @@ public class Academia {
 
     public static Atividade atividadeComMenosInscritos() {
         //TODO
-        return new Atividade("", 0, null);
+        return new Atividade("", 0);
     }
 
     public static Atividade atividadeComMaiorPreco() {
         //TODO
-        return new Atividade("", 0, null);
+        return new Atividade("", 0);
     }
 
     public static Atividade atividadeComMenorPreco() {
         //TODO
-        return new Atividade("", 0, null);
+        return new Atividade("", 0);
     }
 
     public static void exibirAtividades() {

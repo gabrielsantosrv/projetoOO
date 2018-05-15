@@ -19,6 +19,7 @@ public class Principal {
     public static void menu() {
         if (gerenLogado != null) {
             gerenLogado.incluirCliente(academia);
+            gerenLogado.incluirAtividade(academia);
         }
         if (adminLogado != null) {
 
