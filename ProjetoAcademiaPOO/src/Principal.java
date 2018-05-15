@@ -22,6 +22,9 @@ public class Principal {
             gerenLogado.incluirCliente(academia);
             Academia.exibirClientes();
             gerenLogado.incluirAtividade(academia);
+            gerenLogado.incluirAtividade(academia);
+            Academia.exibirAtividades();
+
         }
         if (adminLogado != null) {
 

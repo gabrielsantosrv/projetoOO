@@ -75,4 +75,8 @@ public class Atividade {
         }
         return inscritos;
     }
+
+    public String toString() {
+        return "Nome: " + this.nome + "\nPreco: " + this.preco;
+    }
 }

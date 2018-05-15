@@ -41,7 +41,10 @@ public class Academia {
     }
 
     public static void exibirAtividades() {
-        //TODO
+        System.out.println("EXIBIÇÃO DE ATIVIDADES");
+        for (Atividade a : atividades) {
+            System.out.println(a.toString());
+        }
     }
 
     public static void exibirClientes() {
