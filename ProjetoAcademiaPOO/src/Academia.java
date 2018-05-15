@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 
-// just a test
-
 public class Academia {
     private static ArrayList<Cliente> clientes;
     private static ArrayList<Instrutor> instrutores;
