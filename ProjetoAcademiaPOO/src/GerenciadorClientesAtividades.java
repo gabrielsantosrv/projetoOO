@@ -1,9 +1,9 @@
-public class Usuario extends Pessoa{
+public class GerenciadorClientesAtividades extends Pessoa{
 
     private String username;
     private String senha;
 
-    public Usuario(String nome, String endereco, String telefone, String dataNascimento, boolean ativo, String username, String senha) {
+    public GerenciadorClientesAtividades(String nome, String endereco, String telefone, String dataNascimento, boolean ativo, String username, String senha) {
         super(nome, endereco, telefone, dataNascimento, ativo);
         this.username = username;
         this.senha = senha;
