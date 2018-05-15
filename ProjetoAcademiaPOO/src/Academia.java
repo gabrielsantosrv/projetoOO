@@ -9,6 +9,10 @@ public class Academia {
         clientes.add(cliente);
     }
 
+    public void inserirInstrutor(Instrutor instrutor) {
+        instrutores.add(instrutor);
+    }
+
     public void inserirAtividade(Atividade atividade) {
         atividades.add(atividade);
     }

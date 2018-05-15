@@ -27,7 +27,8 @@ public class Principal {
 
         }
         if (adminLogado != null) {
-
+            adminLogado.incluirInstrutor(academia);
+            adminLogado.incluirInstrutor(academia);
         }
     }
 
