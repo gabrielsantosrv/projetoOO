@@ -9,6 +9,12 @@ public class GerenciadorClientesAtividades extends Pessoa{
         this.senha = senha;
     }
 
+    public GerenciadorClientesAtividades(String username, String senha) {
+        super("", "", "", "", true);
+        this.username = username;
+        this.senha = senha;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -26,27 +32,21 @@ public class GerenciadorClientesAtividades extends Pessoa{
     }
 
     public void incluirCliente(){
-
     }
 
     public void excluirCliente(){
-
     }
 
     public void alterarCliente(){
-
     }
 
     public void incluirAtividade(){
-
     }
 
     public void excluirAtividade(){
-
     }
 
     public void alterarAtividade(){
-
     }
 
     public void incluirTurma(){

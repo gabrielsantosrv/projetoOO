@@ -4,6 +4,10 @@ public class GerenciadorInstrutores extends GerenciadorClientesAtividades {
         super(nome, endereco, telefone, dataNascimento, ativo, username, senha);
     }
 
+    public GerenciadorInstrutores(String username, String senha) {
+        super(username, senha);
+    }
+
     public void incluirInstrutor(){
 
     }
