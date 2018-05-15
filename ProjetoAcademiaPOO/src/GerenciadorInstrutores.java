@@ -1,6 +1,6 @@
-public class GerenciadorInstrutoresUsuarios extends GerenciadorClientesAtividades {
+public class GerenciadorInstrutores extends GerenciadorClientesAtividades {
 
-    public GerenciadorInstrutoresUsuarios(String nome, String endereco, String telefone, String dataNascimento, boolean ativo, String username, String senha) {
+    public GerenciadorInstrutores(String nome, String endereco, String telefone, String dataNascimento, boolean ativo, String username, String senha) {
         super(nome, endereco, telefone, dataNascimento, ativo, username, senha);
     }
 
