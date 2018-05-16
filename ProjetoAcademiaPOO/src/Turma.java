@@ -5,20 +5,30 @@ public class Turma {
     private ArrayList<Instrutor> instrutores;
     private String horario;
     private float precoAtividade;
-    private final int MAXIMO_PESSOAS;
-    private final String chave;
+    private int maximoPessoas;
+    private String id;
 
-    public Turma(String horario, float precoAtividade, int maximoPessoas, String chave) {
+    public Turma(String horario, float precoAtividade, int maximoPessoas, String id) {
         this.clientes = new ArrayList<>();
         this.instrutores = new ArrayList<>();
-        this.MAXIMO_PESSOAS = maximoPessoas;
-        this.horario = horario;
-        this.precoAtividade = precoAtividade;
-        this.chave = chave;
+        this.setMaximoPessoas(maximoPessoas);
+        this.setHorario(horario);
+        this.setPrecoAtividade(precoAtividade);
+        this.setId(id);
     }
 
-    public String getChave() {
-        return chave;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        if (!id.equals(""))
+            this.id = id;
+    }
+
+    public void setMaximoPessoas(int maximoPessoas) {
+        if (maximoPessoas > 0)
+            this.maximoPessoas = maximoPessoas;
     }
 
     public ArrayList<Cliente> getClientes() {
@@ -50,7 +60,8 @@ public class Turma {
     }
 
     public void setHorario(String horario) {
-        this.horario = horario;
+        if (!horario.equals(""))
+            this.horario = horario;
     }
 
     public float getPrecoAtividade() {
@@ -58,11 +69,12 @@ public class Turma {
     }
 
     public void setPrecoAtividade(float precoAtividade) {
-        this.precoAtividade = precoAtividade;
+        if (precoAtividade > 0)
+            this.precoAtividade = precoAtividade;
     }
 
     public int vagas() {
-        return this.MAXIMO_PESSOAS - this.clientes.size();
+        return this.maximoPessoas - this.clientes.size();
     }
 
     public int quantasPessoas() {
@@ -70,7 +82,7 @@ public class Turma {
     }
 
     public int getMaximoPessoas() {
-        return this.MAXIMO_PESSOAS;
+        return this.maximoPessoas;
     }
 
     public String toString() {

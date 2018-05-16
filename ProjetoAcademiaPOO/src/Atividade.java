@@ -6,8 +6,8 @@ public class Atividade {
     private ArrayList<Turma> turmas;
 
     public Atividade(String nome, float preco) {
-        this.nome = nome;
-        this.preco = preco;
+        this.setNome(nome);
+        this.setPreco(preco);
         this.turmas = new ArrayList<>();
     }
 
@@ -16,7 +16,8 @@ public class Atividade {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if (!nome.equals(""))
+            this.nome = nome;
     }
 
     public float getPreco() {
@@ -24,7 +25,8 @@ public class Atividade {
     }
 
     public void setPreco(float preco) {
-        this.preco = preco;
+        if (preco > 0)
+            this.preco = preco;
     }
 
     public ArrayList<Turma> getTurmas() {

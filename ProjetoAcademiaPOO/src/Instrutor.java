@@ -19,15 +19,10 @@ public class Instrutor extends Pessoa{
             this.salario = salario;
     }
 
-    public void adicionarArea(String area) {
-        this.areas.add(area);
+    public void setAreas(ArrayList<String> areas) {
+        if (!areas.isEmpty())
+            this.areas = areas;
     }
-
-    public void removerArea(String area) {
-        this.areas.remove(area);
-    }
-
-    public void setAreas(ArrayList<String> areas) { this.areas = areas; }
 
     public String toString() {
         String ret = super.toString();

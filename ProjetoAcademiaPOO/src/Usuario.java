@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Usuario extends Pessoa{
@@ -48,13 +47,16 @@ public class Usuario extends Pessoa{
         dataNascimento = input.next();
         System.out.println("RG:");
         String rg = input.next();
-        Cliente cliente = new Cliente(rg, nome, endereco, telefone, dataNascimento, true);
-        academia.inserirCliente(cliente);
-        System.out.println("Cliente incluído.");
+        if (!RGClienteRepetido(rg, academia)) {
+            Cliente cliente = new Cliente(rg, nome, endereco, telefone, dataNascimento, true);
+            academia.inserirCliente(cliente);
+            System.out.println("Cliente incluído.");
+        } else {
+            System.out.println("Já existe um cliente com este RG.");
+        }
     }
 
     public void excluirCliente(Academia academia){
-
     }
 
     public void alterarCliente(Academia academia){
@@ -167,7 +169,7 @@ public class Usuario extends Pessoa{
                             if (parar)
                                 break;
 
-                            if (t.getChave().equals(chave)) {
+                            if (t.getId().equals(chave)) {
                                 t.adicionarCliente(c);
                                 c.adicionarTurma(t);
                                 System.out.println("Cliente incluído na turma. Turma incluída na lista de turmas do cliente.");
@@ -206,7 +208,7 @@ public class Usuario extends Pessoa{
                             if (parar)
                                 break;
 
-                            if (t.getChave().equals(chave)) {
+                            if (t.getId().equals(chave)) {
                                 t.removerCliente(c);
                                 c.removerTurma(t);
                                 System.out.println("Cliente removido da turma. Turma removida da lista de turmas do cliente.");
@@ -245,7 +247,7 @@ public class Usuario extends Pessoa{
                             if (parar)
                                 break;
 
-                            if (t.getChave().equals(chave)) {
+                            if (t.getId().equals(chave)) {
                                 t.adicionarInstrutor(i);
                                 i.adicionarTurma(t);
                                 System.out.println("Instrutor associado à turma. Turma incluída na lista de turmas do instrutor.");
@@ -284,7 +286,7 @@ public class Usuario extends Pessoa{
                             if (parar)
                                 break;
 
-                            if (t.getChave().equals(chave)) {
+                            if (t.getId().equals(chave)) {
                                 t.removerInstrutor(i);
                                 i.removerTurma(t);
                                 System.out.println("Instrutor removido da turma. Turma removida da lista de turmas do instrutor.");
@@ -310,7 +312,7 @@ public class Usuario extends Pessoa{
         for (Atividade a : academia.getAtividades()) {
             if (a.getNome().equalsIgnoreCase(atividade)) {
                 for (Turma t : a.getTurmas()) {
-                    if (t.getChave().equals(chave)) {
+                    if (t.getId().equals(chave)) {
                         achou = true;
                         if (t.getClientes().size() == 0) {
                             System.out.println("A turma ainda não tem clientes.");
@@ -328,5 +330,32 @@ public class Usuario extends Pessoa{
         String ret = "Username: " + this.username + "\nSenha: " + this.senha + "\n";
         ret += super.toString();
         return ret;
+    }
+
+    public boolean RGClienteRepetido(String rg, Academia academia) {
+        for (Cliente c : academia.getClientes()) {
+            if (c.getRg().equals(rg)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean RGInstrutorRepetido(String rg, Academia academia) {
+        for (Instrutor i : academia.getInstrutores()) {
+            if (i.getRg().equals(rg)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean idTurmaRepetido(String id, Atividade atividade) {
+        for (Turma t : atividade.getTurmas()) {
+            if (t.getId().equals(id)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
