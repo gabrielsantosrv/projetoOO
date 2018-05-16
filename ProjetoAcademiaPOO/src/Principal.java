@@ -21,15 +21,8 @@ public class Principal {
             usuarioLogado.incluirCliente(academia);
             usuarioLogado.incluirCliente(academia);
             Academia.exibirClientes();
-            usuarioLogado.incluirAtividade(academia);
-            Academia.exibirAtividades();
-            usuarioLogado.incluirTurma(academia);
-            usuarioLogado.relacionarTurmaCliente(academia);
+            usuarioLogado.alterarCliente(academia);
             Academia.exibirClientes();
-            usuarioLogado.verificarClientesPorTurma(academia);
-            usuarioLogado.desrelacionarTurmaCliente(academia);
-            Academia.exibirClientes();
-            usuarioLogado.verificarClientesPorTurma(academia);
         }
         if (administradorLogado != null) {
             administradorLogado.incluirUsuario(usuarios);

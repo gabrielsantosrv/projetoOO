@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Usuario extends Pessoa{
@@ -57,6 +58,35 @@ public class Usuario extends Pessoa{
     }
 
     public void alterarCliente(Academia academia){
+        System.out.println("ALTERAÇÃO DOS DADOS DO CLIENTE");
+        System.out.println("RG do cliente:");
+        Scanner input = new Scanner(System.in);
+        String rg = input.next();
+        boolean achou = false;
+        for (Cliente c : academia.getClientes()) {
+            if (c.getRg().equals(rg)) {
+                achou = true;
+                System.out.println("Mudar nome?");
+                String nome = input.next();
+                c.setNome(nome);
+                System.out.println("Mudar endereço?");
+                String endereco = input.next();
+                c.setEndereco(endereco);
+                System.out.println("Mudar telefone?");
+                String telefone = input.next();
+                c.setTelefone(telefone);
+                System.out.println("Mudar data de nascimento?");
+                String dataNascimento = input.next();
+                c.setDataNascimento(dataNascimento);
+                System.out.println("Mudar RG?");
+                String novoRG = input.next();
+                c.setRG(novoRG);
+                System.out.println("Cliente alterado.");
+            }
+        }
+        if (!achou) {
+            System.out.println("RG não encontrado no sistema.");
+        }
     }
 
     public void incluirAtividade(Academia academia){
