@@ -66,7 +66,23 @@ public class Pessoa {
     }
 
     public void setTelefone(String telefone) {
-        this.telefone = telefone;
+        boolean ok = true;
+
+        if (telefone.equals("")) {
+            ok = false;
+        }
+
+        String validos = "0123456789";
+        for (int i = 0; i < telefone.length(); i++) {
+            if (!validos.contains(telefone.charAt(i)+"")) {
+                ok = false;
+                break;
+            }
+        }
+
+        if (ok) {
+            this.telefone = telefone;
+        }
     }
 
     public String getDataNascimento() {
