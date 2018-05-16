@@ -26,6 +26,8 @@ public class Instrutor extends Pessoa{
         this.areas.remove(area);
     }
 
+    public void setAreas(ArrayList<String> areas) { this.areas = areas; }
+
     public String toString() {
         String ret = super.toString();
         ret += "\nSalário: " + this.salario;

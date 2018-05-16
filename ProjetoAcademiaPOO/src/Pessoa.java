@@ -19,6 +19,8 @@ public class Pessoa {
         this.turmas = new ArrayList<>();
     }
 
+    public void setRG(String rg) { this.rg = rg; }
+
     public String getRg() {
         return this.rg;
     }

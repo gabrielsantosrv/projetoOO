@@ -44,8 +44,46 @@ public class Administrador extends Usuario {
 
     }
 
-    public void alterarInstrutor(){
-
+    public void alterarInstrutor(Academia academia){
+        System.out.println("ALTERAÇÃO DOS DADOS DO INSTRUTOR");
+        System.out.println("RG do instrutor:");
+        Scanner input = new Scanner(System.in);
+        String rg = input.next();
+        boolean achou = false;
+        for (Instrutor ii : academia.getInstrutores()) {
+            if (ii.getRg().equals(rg)) {
+                achou = true;
+                System.out.println("Mudar nome?");
+                String nome = input.next();
+                ii.setNome(nome);
+                System.out.println("Mudar endereço?");
+                String endereco = input.next();
+                ii.setEndereco(endereco);
+                System.out.println("Mudar telefone?");
+                String telefone = input.next();
+                ii.setTelefone(telefone);
+                System.out.println("Mudar data de nascimento?");
+                String dataNascimento = input.next();
+                ii.setDataNascimento(dataNascimento);
+                System.out.println("Mudar salário?");
+                float salario = input.nextFloat();
+                ii.setSalario(salario);
+                System.out.println("Mudar quantidade de áreas?");
+                int quantidade = input.nextInt();
+                System.out.println("Digite as áreas:");
+                ArrayList<String> areas = new ArrayList<>();
+                for (int i = 0; i < quantidade; i++) {
+                    areas.add(input.next());
+                }
+                ii.setAreas(areas);
+                System.out.println("Mudar RG?");
+                String novoRG = input.next();
+                ii.setRG(novoRG);
+            }
+        }
+        if (!achou) {
+            System.out.println("RG não encontrado no sistema.");
+        }
     }
 
     public void incluirUsuario(ArrayList<Usuario> usuarios){

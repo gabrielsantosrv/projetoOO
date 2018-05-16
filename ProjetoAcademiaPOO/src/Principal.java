@@ -32,7 +32,10 @@ public class Principal {
             usuarioLogado.verificarClientesPorTurma(academia);
         }
         if (administradorLogado != null) {
-
+            administradorLogado.incluirInstrutor(academia);
+            Academia.exibirInstrutores();
+            administradorLogado.alterarInstrutor(academia);
+            Academia.exibirInstrutores();
         }
     }
 
