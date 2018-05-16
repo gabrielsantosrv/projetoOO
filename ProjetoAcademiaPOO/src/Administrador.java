@@ -119,11 +119,53 @@ public class Administrador extends Usuario {
         }
     }
 
-    public void excluirUsuario(){
-
+    public void alterarUsuario(ArrayList<Usuario> usuarios){
+        System.out.println("ALTERAÇÃO DE USUÁRIOS");
+        String username, senha;
+        System.out.println("Username:");
+        Scanner input = new Scanner(System.in);
+        username = input.next();
+        boolean achou = false;
+        for (Usuario u : usuarios) {
+            if (u.getUsername().equals(username)) {
+                achou = true;
+                System.out.println("Novo username:");
+                String novoUsername = input.next();
+                u.setUsername(novoUsername);
+                System.out.println("Nova senha:");
+                senha = input.next();
+                u.setSenha(senha);
+                System.out.println("Deseja alterar detalhes do usuário? (S/N)");
+                String resposta = input.next();
+                if (resposta.equals("S")) {
+                    String nome, endereco, telefone, dataNascimento;
+                    System.out.println("Nome:");
+                    nome = input.next();
+                    u.setNome(nome);
+                    System.out.println("Endereço:");
+                    endereco = input.next();
+                    u.setEndereco(endereco);
+                    System.out.println("Telefone:");
+                    telefone = input.next();
+                    u.setTelefone(telefone);
+                    System.out.println("Data de nascimento:");
+                    dataNascimento = input.next();
+                    u.setDataNascimento(dataNascimento);
+                    System.out.println("RG:");
+                    String rg = input.next();
+                    u.setRG(rg);
+                    System.out.println("Usuário alterado.");
+                } else if (resposta.equals("N")) {
+                    System.out.println("Usuário alterado.");
+                }
+            }
+        }
+        if (!achou) {
+            System.out.println("Usuário não encontrado no sistema.");
+        }
     }
 
-    public void alterarUsuario(){
+    public void excluirUsuario(){
 
     }
 
