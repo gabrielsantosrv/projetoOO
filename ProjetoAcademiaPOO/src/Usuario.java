@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Usuario extends Pessoa{
@@ -167,7 +166,7 @@ public class Usuario extends Pessoa{
                             if (parar)
                                 break;
 
-                            if (t.getChave().equals(chave)) {
+                            if (t.getId().equals(chave)) {
                                 t.adicionarCliente(c);
                                 c.adicionarTurma(t);
                                 System.out.println("Cliente incluído na turma. Turma incluída na lista de turmas do cliente.");
@@ -206,7 +205,7 @@ public class Usuario extends Pessoa{
                             if (parar)
                                 break;
 
-                            if (t.getChave().equals(chave)) {
+                            if (t.getId().equals(chave)) {
                                 t.removerCliente(c);
                                 c.removerTurma(t);
                                 System.out.println("Cliente removido da turma. Turma removida da lista de turmas do cliente.");
@@ -245,7 +244,7 @@ public class Usuario extends Pessoa{
                             if (parar)
                                 break;
 
-                            if (t.getChave().equals(chave)) {
+                            if (t.getId().equals(chave)) {
                                 t.adicionarInstrutor(i);
                                 i.adicionarTurma(t);
                                 System.out.println("Instrutor associado à turma. Turma incluída na lista de turmas do instrutor.");
@@ -284,7 +283,7 @@ public class Usuario extends Pessoa{
                             if (parar)
                                 break;
 
-                            if (t.getChave().equals(chave)) {
+                            if (t.getId().equals(chave)) {
                                 t.removerInstrutor(i);
                                 i.removerTurma(t);
                                 System.out.println("Instrutor removido da turma. Turma removida da lista de turmas do instrutor.");
@@ -310,7 +309,7 @@ public class Usuario extends Pessoa{
         for (Atividade a : academia.getAtividades()) {
             if (a.getNome().equalsIgnoreCase(atividade)) {
                 for (Turma t : a.getTurmas()) {
-                    if (t.getChave().equals(chave)) {
+                    if (t.getId().equals(chave)) {
                         achou = true;
                         if (t.getClientes().size() == 0) {
                             System.out.println("A turma ainda não tem clientes.");
