@@ -11,7 +11,7 @@ public class Administrador extends Usuario {
         super(username, senha);
     }
 
-    public void incluirInstrutor(Academia academia){
+    public void incluirInstrutor(BaseDados academia){
         System.out.println("INCLUSÃO DE INSTRUTOR");
         String nome, endereco, telefone, dataNascimento;
         float salario;
@@ -44,7 +44,7 @@ public class Administrador extends Usuario {
 
     }
 
-    public void alterarInstrutor(Academia academia){
+    public void alterarInstrutor(BaseDados academia){
         System.out.println("ALTERAÇÃO DOS DADOS DO INSTRUTOR");
         System.out.println("RG do instrutor:");
         Scanner input = new Scanner(System.in);

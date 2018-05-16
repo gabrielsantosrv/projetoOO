@@ -1,4 +1,4 @@
-public class Cliente extends Pessoa {
+public class Cliente extends Pessoa{
 
     public Cliente(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo) {
         super(rg, nome, endereco, telefone, dataNascimento, ativo);

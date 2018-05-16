@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Atividade {
+public class Atividade{
     private String nome;
     private float preco;
     private ArrayList<Turma> turmas;
@@ -80,5 +80,9 @@ public class Atividade {
 
     public String toString() {
         return "Nome: " + this.nome + "\nPreco: " + this.preco;
+    }
+
+    public boolean equals(Atividade atividade) {
+        return atividade.nome.equalsIgnoreCase(nome);
     }
 }

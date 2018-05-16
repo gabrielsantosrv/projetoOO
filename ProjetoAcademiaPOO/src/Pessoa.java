@@ -131,4 +131,8 @@ public class Pessoa {
         ret += this.telefone;
         return ret;
     }
+
+    public boolean equals(Cliente c) {
+        return this.getRg().equalsIgnoreCase(c.getRg());
+    }
 }

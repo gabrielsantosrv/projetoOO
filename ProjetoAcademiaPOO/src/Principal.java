@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
-    private static Academia academia;
+    private static BaseDados academia;
     private static ArrayList<Usuario> usuarios;
     private static ArrayList<Administrador> administradores;
     private static Usuario usuarioLogado = null;
@@ -20,9 +20,9 @@ public class Principal {
         if (usuarioLogado != null) {
             usuarioLogado.incluirCliente(academia);
             usuarioLogado.incluirCliente(academia);
-            Academia.exibirClientes();
+            BaseDados.exibirClientes();
             usuarioLogado.alterarCliente(academia);
-            Academia.exibirClientes();
+            BaseDados.exibirClientes();
         }
         if (administradorLogado != null) {
             administradorLogado.incluirUsuario(usuarios);
@@ -33,7 +33,7 @@ public class Principal {
     }
 
     public static void carregarUsuariosPadrao() {
-        academia = new Academia();
+        academia = new BaseDados();
         usuarios = new ArrayList<>();
         administradores = new ArrayList<>();
 

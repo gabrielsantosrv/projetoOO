@@ -33,7 +33,7 @@ public class Usuario extends Pessoa{
         this.senha = senha;
     }
 
-    public void incluirCliente(Academia academia){
+    public void incluirCliente(BaseDados academia){
         System.out.println("INCLUSÃO DE CLIENTE");
         String nome, endereco, telefone, dataNascimento;
         Scanner input = new Scanner(System.in);
@@ -49,17 +49,17 @@ public class Usuario extends Pessoa{
         String rg = input.next();
         if (!RGClienteRepetido(rg, academia)) {
             Cliente cliente = new Cliente(rg, nome, endereco, telefone, dataNascimento, true);
-            academia.inserirCliente(cliente);
+           // academia.inserirCliente(cliente);
             System.out.println("Cliente incluído.");
         } else {
             System.out.println("Já existe um cliente com este RG.");
         }
     }
 
-    public void excluirCliente(Academia academia){
+    public void excluirCliente(BaseDados academia){
     }
 
-    public void alterarCliente(Academia academia){
+    public void alterarCliente(BaseDados academia){
         System.out.println("ALTERAÇÃO DOS DADOS DO CLIENTE");
         System.out.println("RG do cliente:");
         Scanner input = new Scanner(System.in);
@@ -91,7 +91,7 @@ public class Usuario extends Pessoa{
         }
     }
 
-    public void incluirAtividade(Academia academia){
+    /*public void incluirAtividade(BaseDados academia){
         System.out.println("INCLUSÃO DE ATIVIDADE");
         String nome;
         float preco;
@@ -103,15 +103,15 @@ public class Usuario extends Pessoa{
         Atividade atividade = new Atividade(nome, preco);
         academia.inserirAtividade(atividade);
         System.out.println("Atividade incluída.");
+    }*/
+
+    public void excluirAtividade(BaseDados academia){
     }
 
-    public void excluirAtividade(Academia academia){
+    public void alterarAtividade(BaseDados academia){
     }
 
-    public void alterarAtividade(Academia academia){
-    }
-
-    public void incluirTurma(Academia academia){
+    /*public void incluirTurma(BaseDados academia){
         System.out.println("CRIAÇÃO DE TURMA");
         System.out.println("Atividade:");
         Scanner input = new Scanner(System.in);
@@ -127,7 +127,7 @@ public class Usuario extends Pessoa{
                 System.out.println("Chave:");
                 String chave = input.next();
                 Turma turma = new Turma(horario, a.getPreco(), maximo, chave);
-                academia.inserirTurma(a, turma);
+               todo academia.inserirTurma(a, turma);
                 System.out.println("Turma criada.");
                 break;
             }
@@ -135,17 +135,17 @@ public class Usuario extends Pessoa{
         if (!encontrouAtividade) {
             System.out.println("Atividade não encontrada.");
         }
-    }
+    }*/
 
-    public void excluirTurma(Academia academia){
-
-    }
-
-    public void alterarTurma(Academia academia){
+    public void excluirTurma(BaseDados academia){
 
     }
 
-    public void relacionarTurmaCliente(Academia academia){
+    public void alterarTurma(BaseDados academia){
+
+    }
+
+    public void relacionarTurmaCliente(BaseDados academia){
         System.out.println("ASSOCIAÇÃO DE TURMA E CLIENTE");
         System.out.println("RG do cliente:");
         Scanner input = new Scanner(System.in);
@@ -184,7 +184,7 @@ public class Usuario extends Pessoa{
             System.out.println("Cliente, atividade ou chave da turma inválidos.");
     }
 
-    public void desrelacionarTurmaCliente(Academia academia) {
+    public void desrelacionarTurmaCliente(BaseDados academia) {
         System.out.println("REMOVER CLIENTE DE TURMA");
         System.out.println("RG do cliente:");
         Scanner input = new Scanner(System.in);
@@ -223,7 +223,7 @@ public class Usuario extends Pessoa{
             System.out.println("Cliente, atividade ou chave da turma inválidos.");
     }
 
-    public void relacionarTurmaInstrutor(Academia academia){
+    public void relacionarTurmaInstrutor(BaseDados academia){
         System.out.println("ASSOCIAR INSTRUTOR E TURMA");
         System.out.println("RG do instrutor:");
         Scanner input = new Scanner(System.in);
@@ -262,7 +262,7 @@ public class Usuario extends Pessoa{
             System.out.println("Instrutor, atividade ou chave da turma inválidos.");
     }
 
-    public void desrelacionarTurmaInstrutor(Academia academia){
+    public void desrelacionarTurmaInstrutor(BaseDados academia){
         System.out.println("REMOVER INSTRUTOR DA TURMA");
         System.out.println("RG do instrutor:");
         Scanner input = new Scanner(System.in);
@@ -301,7 +301,7 @@ public class Usuario extends Pessoa{
             System.out.println("Instrutor, atividade ou chave da turma inválidos.");
     }
 
-    public void verificarClientesPorTurma(Academia academia) {
+    public void verificarClientesPorTurma(BaseDados academia) {
         System.out.println("VERIFICAR CLIENTES DE UMA TURMA");
         System.out.println("Atividade:");
         Scanner input = new Scanner(System.in);
@@ -332,7 +332,7 @@ public class Usuario extends Pessoa{
         return ret;
     }
 
-    public boolean RGClienteRepetido(String rg, Academia academia) {
+    public boolean RGClienteRepetido(String rg, BaseDados academia) {
         for (Cliente c : academia.getClientes()) {
             if (c.getRg().equals(rg)) {
                 return true;
@@ -341,7 +341,7 @@ public class Usuario extends Pessoa{
         return false;
     }
 
-    public boolean RGInstrutorRepetido(String rg, Academia academia) {
+    public boolean RGInstrutorRepetido(String rg, BaseDados academia) {
         for (Instrutor i : academia.getInstrutores()) {
             if (i.getRg().equals(rg)) {
                 return true;
