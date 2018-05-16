@@ -7,3 +7,6 @@ out/
 # Intellij
 *.iml
 .idea/
+
+
+git rm --cached -r /.idea
