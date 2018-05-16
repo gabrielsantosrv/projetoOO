@@ -47,13 +47,16 @@ public class Usuario extends Pessoa{
         dataNascimento = input.next();
         System.out.println("RG:");
         String rg = input.next();
-        Cliente cliente = new Cliente(rg, nome, endereco, telefone, dataNascimento, true);
-        academia.inserirCliente(cliente);
-        System.out.println("Cliente incluído.");
+        if (!RGClienteRepetido(rg, academia)) {
+            Cliente cliente = new Cliente(rg, nome, endereco, telefone, dataNascimento, true);
+            academia.inserirCliente(cliente);
+            System.out.println("Cliente incluído.");
+        } else {
+            System.out.println("Já existe um cliente com este RG.");
+        }
     }
 
     public void excluirCliente(Academia academia){
-
     }
 
     public void alterarCliente(Academia academia){
