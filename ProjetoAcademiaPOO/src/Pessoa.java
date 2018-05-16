@@ -25,7 +25,7 @@ public class Pessoa {
         if (rg.equals("")) {
             ok = false;
         }
-        
+
         String validos = "0123456789";
         for (int i = 0; i < rg.length(); i++) {
             if (!validos.contains(rg.charAt(i)+"")) {
@@ -48,7 +48,8 @@ public class Pessoa {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if (!nome.equals(""))
+            this.nome = nome;
     }
 
     public String getEndereco() {
