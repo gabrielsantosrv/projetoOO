@@ -13,33 +13,23 @@ public class Principal {
         while (!login()) {
             System.out.println("Usuário ou senha incorretos.");
         }
-        menu();
+        test();
     }
 
-    public static void menu() {
+    public static void test() {
         if (usuarioLogado != null) {
             usuarioLogado.incluirCliente(academia);
             usuarioLogado.incluirCliente(academia);
             Academia.exibirClientes();
             usuarioLogado.incluirAtividade(academia);
-            usuarioLogado.incluirAtividade(academia);
             Academia.exibirAtividades();
             usuarioLogado.incluirTurma(academia);
-            usuarioLogado.incluirTurma(academia);
-            usuarioLogado.incluirTurma(academia);
-            Academia.exibirTurmasPorAtividade();
             usuarioLogado.relacionarTurmaCliente(academia);
-            usuarioLogado.relacionarTurmaInstrutor(academia);
+            Academia.exibirClientes();
+            usuarioLogado.verificarClientesPorTurma(academia);
         }
         if (administradorLogado != null) {
-            administradorLogado.incluirInstrutor(academia);
-            administradorLogado.incluirAtividade(academia);
-            Academia.exibirInstrutores();
-            administradorLogado.incluirUsuario(usuarios);
-            administradorLogado.incluirUsuario(usuarios);
-            administradorLogado.imprimirUsuarios(usuarios);
-            administradorLogado.incluirTurma(academia);
-            administradorLogado.relacionarTurmaInstrutor(academia);
+
         }
     }
 

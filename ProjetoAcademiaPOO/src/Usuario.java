@@ -53,6 +53,7 @@ public class Usuario extends Pessoa{
     }
 
     public void excluirCliente(Academia academia){
+
     }
 
     public void alterarCliente(Academia academia){
@@ -187,7 +188,32 @@ public class Usuario extends Pessoa{
             }
         }
         if (!parar)
-            System.out.println("Cliente, atividade ou chave da turma inválidos.");
+            System.out.println("Instrutor, atividade ou chave da turma inválidos.");
+    }
+
+    public void verificarClientesPorTurma(Academia academia) {
+        System.out.println("VERIFICAR CLIENTES DE UMA TURMA");
+        System.out.println("Atividade:");
+        Scanner input = new Scanner(System.in);
+        String atividade = input.next();
+        System.out.println("Chave da turma:");
+        String chave = input.next();
+        boolean achou = false;
+        for (Atividade a : academia.getAtividades()) {
+            if (a.getNome().equalsIgnoreCase(atividade)) {
+                for (Turma t : a.getTurmas()) {
+                    if (t.getChave().equals(chave)) {
+                        achou = true;
+                        if (t.getClientes().size() == 0) {
+                            System.out.println("A turma ainda não tem clientes.");
+                        } else t.imprimirClientes();
+                    }
+                }
+            }
+        }
+        if (!achou) {
+            System.out.println("Atividade ou turma inválidas.");
+        }
     }
 
     public String toString() {

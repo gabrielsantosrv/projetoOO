@@ -76,4 +76,12 @@ public class Turma {
     public String toString() {
         return "Horário: " + this.horario + "\nVagas: " + this.vagas();
     }
+
+    public void imprimirClientes() {
+        String s = "";
+        for (Cliente c : this.clientes) {
+            s += c.getNome() + "\n";
+        }
+        System.out.println(s);
+    }
 }
