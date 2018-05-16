@@ -151,8 +151,43 @@ public class Usuario extends Pessoa{
             System.out.println("Cliente, atividade ou chave da turma inválidos.");
     }
 
-    public void relacionarTurmaInstrutor(){
+    public void relacionarTurmaInstrutor(Academia academia){
+        System.out.println("ASSOCIAÇÃO DE TURMA E INSTRUTOR");
+        System.out.println("RG do instrutor:");
+        Scanner input = new Scanner(System.in);
+        String rg = input.next();
+        System.out.println("Atividade:");
+        String atividade = input.next();
+        System.out.println("Chave da turma:");
+        String chave = input.next();
+        boolean parar = false;
+        for (Instrutor i : academia.getInstrutores()) {
+            if (parar)
+                break;
 
+            if (rg.equals(i.getRg())) {
+                for (Atividade a : academia.getAtividades()) {
+                    if (parar)
+                        break;
+
+                    if (atividade.equals(a.getNome())) {
+                        for (Turma t : a.getTurmas()) {
+                            if (parar)
+                                break;
+
+                            if (t.getChave().equals(chave)) {
+                                t.adicionarInstrutor(i);
+                                i.adicionarTurma(t);
+                                System.out.println("Instrutor associado à turma. Turma incluída na lista de turmas do instrutor.");
+                                parar = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (!parar)
+            System.out.println("Cliente, atividade ou chave da turma inválidos.");
     }
 
     public String toString() {

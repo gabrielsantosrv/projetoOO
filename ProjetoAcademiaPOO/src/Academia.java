@@ -27,6 +27,8 @@ public class Academia {
 
     public ArrayList<Cliente> getClientes() { return clientes; }
 
+    public ArrayList<Instrutor> getInstrutores() { return instrutores; }
+
     public static Atividade atividadeComMaisInscritos() {
         int inscritos = 0;
         Atividade comMaisInscritos = new Atividade("", 0);

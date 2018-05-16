@@ -29,14 +29,17 @@ public class Principal {
             usuarioLogado.incluirTurma(academia);
             Academia.exibirTurmasPorAtividade();
             usuarioLogado.relacionarTurmaCliente(academia);
+            usuarioLogado.relacionarTurmaInstrutor(academia);
         }
         if (administradorLogado != null) {
             administradorLogado.incluirInstrutor(academia);
-            administradorLogado.incluirInstrutor(academia);
+            administradorLogado.incluirAtividade(academia);
             Academia.exibirInstrutores();
             administradorLogado.incluirUsuario(usuarios);
             administradorLogado.incluirUsuario(usuarios);
             administradorLogado.imprimirUsuarios(usuarios);
+            administradorLogado.incluirTurma(academia);
+            administradorLogado.relacionarTurmaInstrutor(academia);
         }
     }
 
