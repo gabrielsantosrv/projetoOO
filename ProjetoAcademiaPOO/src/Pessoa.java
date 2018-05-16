@@ -80,11 +80,11 @@ public class Pessoa {
     public String toString() {
         String ret = "Nome: ";
         ret += this.nome;
-        ret += "\nData de nascimento:";
+        ret += "\nData de nascimento: ";
         ret += this.dataNascimento;
-        ret += "\nEndereco:";
+        ret += "\nEndereco: ";
         ret += this.endereco;
-        ret += "\nTelefone:";
+        ret += "\nTelefone: ";
         ret += this.telefone;
         return ret;
     }

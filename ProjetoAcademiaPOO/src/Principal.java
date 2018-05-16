@@ -29,6 +29,7 @@ public class Principal {
         if (administradorLogado != null) {
             administradorLogado.incluirInstrutor(academia);
             administradorLogado.incluirInstrutor(academia);
+            Academia.exibirInstrutores();
         }
     }
 

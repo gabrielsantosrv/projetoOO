@@ -59,7 +59,10 @@ public class Academia {
     }
 
     public static void exibirInstrutores() {
-        //TODO
+        System.out.println("EXIBIÇÃO DE INSTRUTORES");
+        for (Instrutor i : instrutores) {
+            System.out.println(i.toString());
+        }
     }
 
     public static void exibirTurmasPorAtividade() {

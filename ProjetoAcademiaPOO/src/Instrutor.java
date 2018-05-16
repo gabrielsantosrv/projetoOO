@@ -25,4 +25,19 @@ public class Instrutor extends Pessoa{
     public void removerArea(String area) {
         this.areas.remove(area);
     }
+
+    public String toString() {
+        String ret = super.toString();
+        ret += "\nSalário: " + this.salario;
+        String strAreas = "";
+        int count = 0;
+        for (String a : areas) {
+            strAreas += a;
+            if (count != areas.size() - 1)
+                strAreas += ", ";
+            count++;
+        }
+        ret += "\nÁreas: " + strAreas;
+        return ret;
+    }
 }
