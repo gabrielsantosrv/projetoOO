@@ -19,7 +19,25 @@ public class Pessoa {
         this.turmas = new ArrayList<>();
     }
 
-    public void setRG(String rg) { this.rg = rg; }
+    public void setRG(String rg) {
+        boolean ok = true;
+
+        if (rg.equals("")) {
+            ok = false;
+        }
+        
+        String validos = "0123456789";
+        for (int i = 0; i < rg.length(); i++) {
+            if (!validos.contains(rg.charAt(i)+"")) {
+                ok = false;
+                break;
+            }
+        }
+
+        if (ok) {
+            this.rg = rg;
+        }
+    }
 
     public String getRg() {
         return this.rg;
