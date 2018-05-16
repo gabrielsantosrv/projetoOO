@@ -1,0 +1,9 @@
+# Java class files
+*.class
+
+# Generated files
+out/
+
+# Intellij
+*.iml
+.idea/
