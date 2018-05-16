@@ -15,6 +15,14 @@ public class Turma {
         this.precoAtividade = precoAtividade;
     }
 
+    public Turma(String horario, float precoAtividade, int maximoPessoas) {
+        this.clientes = new ArrayList<>();
+        this.instrutores = new ArrayList<>();
+        this.MAXIMO_PESSOAS = maximoPessoas;
+        this.horario = horario;
+        this.precoAtividade = precoAtividade;
+    }
+
     public ArrayList<Cliente> getClientes() {
         return this.clientes;
     }
@@ -65,5 +73,9 @@ public class Turma {
 
     public int getMaximoPessoas() {
         return this.MAXIMO_PESSOAS;
+    }
+
+    public String toString() {
+        return "Horário: " + this.horario + "\nVagas: " + this.vagas();
     }
 }

@@ -77,7 +77,27 @@ public class Usuario extends Pessoa{
     }
 
     public void incluirTurma(Academia academia){
-
+        System.out.println("INCLUSÃO DE TURMA");
+        System.out.println("Atividade:");
+        Scanner input = new Scanner(System.in);
+        String atividade = input.next();
+        boolean encontrouAtividade = false;
+        for (Atividade a : academia.getAtividades()) {
+            if (a.getNome().equalsIgnoreCase(atividade)) {
+                encontrouAtividade = true;
+                System.out.println("Horário:");
+                String horario = input.next();
+                System.out.println("Máximo de pessoas:");
+                int maximo = input.nextInt();
+                Turma turma = new Turma(horario, a.getPreco(), maximo);
+                academia.inserirTurma(a, turma);
+                System.out.println("Turma criada.");
+                break;
+            }
+        }
+        if (!encontrouAtividade) {
+            System.out.println("Atividade não encontrada.");
+        }
     }
 
     public void excluirTurma(Academia academia){

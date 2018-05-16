@@ -17,6 +17,14 @@ public class Academia {
         atividades.add(atividade);
     }
 
+    public void inserirTurma(Atividade atividade, Turma turma) {
+        atividade.adicionarTurma(turma);
+    }
+
+    public ArrayList<Atividade> getAtividades() {
+        return atividades;
+    }
+
     public static Atividade atividadeComMaisInscritos() {
         int inscritos = 0;
         Atividade comMaisInscritos = new Atividade("", 0);
@@ -66,6 +74,13 @@ public class Academia {
     }
 
     public static void exibirTurmasPorAtividade() {
-        //TODO
+        System.out.println("EXIBIÇÃO DE TURMAS POR ATIVIDADE");
+        for (Atividade a : atividades) {
+            System.out.println(a.toString());
+            System.out.println("Turmas:");
+            for (Turma t : a.getTurmas()) {
+                System.out.println(t.toString());
+            }
+        }
     }
 }

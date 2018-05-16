@@ -24,6 +24,10 @@ public class Principal {
             usuarioLogado.incluirAtividade(academia);
             usuarioLogado.incluirAtividade(academia);
             Academia.exibirAtividades();
+            usuarioLogado.incluirTurma(academia);
+            usuarioLogado.incluirTurma(academia);
+            usuarioLogado.incluirTurma(academia);
+            Academia.exibirTurmasPorAtividade();
 
         }
         if (administradorLogado != null) {
