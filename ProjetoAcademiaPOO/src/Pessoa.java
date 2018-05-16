@@ -101,7 +101,7 @@ public class Pessoa {
     public boolean isAtivo() {
         return this.ativo;
     }
-    
+
     public void adicionarTurma(Turma turma) {
         this.turmas.add(turma);
     }

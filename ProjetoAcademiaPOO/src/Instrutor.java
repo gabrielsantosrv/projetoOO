@@ -6,8 +6,8 @@ public class Instrutor extends Pessoa{
 
     public Instrutor(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo, float salario, ArrayList<String> areas) {
         super(rg, nome, endereco, telefone, dataNascimento, ativo);
-        this.salario = salario;
-        this.areas = areas;
+        this.setSalario(salario);
+        this.setAreas(areas);
     }
 
     public float getSalario() {
@@ -15,7 +15,8 @@ public class Instrutor extends Pessoa{
     }
 
     public void setSalario(float salario) {
-        this.salario = salario;
+        if (salario > 0)
+            this.salario = salario;
     }
 
     public void adicionarArea(String area) {
