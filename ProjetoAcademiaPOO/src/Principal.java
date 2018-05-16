@@ -27,6 +27,9 @@ public class Principal {
             usuarioLogado.relacionarTurmaCliente(academia);
             Academia.exibirClientes();
             usuarioLogado.verificarClientesPorTurma(academia);
+            usuarioLogado.desrelacionarTurmaCliente(academia);
+            Academia.exibirClientes();
+            usuarioLogado.verificarClientesPorTurma(academia);
         }
         if (administradorLogado != null) {
 

@@ -132,7 +132,7 @@ public class Usuario extends Pessoa{
                     if (parar)
                         break;
 
-                    if (atividade.equals(a.getNome())) {
+                    if (atividade.equalsIgnoreCase(a.getNome())) {
                         for (Turma t : a.getTurmas()) {
                             if (parar)
                                 break;
@@ -141,6 +141,45 @@ public class Usuario extends Pessoa{
                                 t.adicionarCliente(c);
                                 c.adicionarTurma(t);
                                 System.out.println("Cliente incluído na turma. Turma incluída na lista de turmas do cliente.");
+                                parar = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (!parar)
+            System.out.println("Cliente, atividade ou chave da turma inválidos.");
+    }
+
+    public void desrelacionarTurmaCliente(Academia academia) {
+        System.out.println("REMOVER CLIENTE DE TURMA");
+        System.out.println("RG do cliente:");
+        Scanner input = new Scanner(System.in);
+        String rg = input.next();
+        System.out.println("Atividade:");
+        String atividade = input.next();
+        System.out.println("Chave da turma:");
+        String chave = input.next();
+        boolean parar = false;
+        for (Cliente c : academia.getClientes()) {
+            if (parar)
+                break;
+
+            if (rg.equals(c.getRg())) {
+                for (Atividade a : academia.getAtividades()) {
+                    if (parar)
+                        break;
+
+                    if (atividade.equalsIgnoreCase(a.getNome())) {
+                        for (Turma t : a.getTurmas()) {
+                            if (parar)
+                                break;
+
+                            if (t.getChave().equals(chave)) {
+                                t.removerCliente(c);
+                                c.removerTurma(t);
+                                System.out.println("Cliente removido da turma. Turma removida da lista de turmas do cliente.");
                                 parar = true;
                             }
                         }
@@ -171,7 +210,7 @@ public class Usuario extends Pessoa{
                     if (parar)
                         break;
 
-                    if (atividade.equals(a.getNome())) {
+                    if (atividade.equalsIgnoreCase(a.getNome())) {
                         for (Turma t : a.getTurmas()) {
                             if (parar)
                                 break;
