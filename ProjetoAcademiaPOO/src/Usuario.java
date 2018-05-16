@@ -328,4 +328,31 @@ public class Usuario extends Pessoa{
         ret += super.toString();
         return ret;
     }
+
+    public boolean RGClienteRepetido(String rg, Academia academia) {
+        for (Cliente c : academia.getClientes()) {
+            if (c.getRg().equals(rg)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean RGInstrutorRepetido(String rg, Academia academia) {
+        for (Instrutor i : academia.getInstrutores()) {
+            if (i.getRg().equals(rg)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean idTurmaRepetido(String id, Atividade atividade) {
+        for (Turma t : atividade.getTurmas()) {
+            if (t.getId().equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
