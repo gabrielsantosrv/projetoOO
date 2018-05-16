@@ -57,7 +57,8 @@ public class Pessoa {
     }
 
     public void setEndereco(String endereco) {
-        this.endereco = endereco;
+        if (!endereco.equals(""))
+            this.endereco = endereco;
     }
 
     public String getTelefone() {
