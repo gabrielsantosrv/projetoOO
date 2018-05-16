@@ -10,13 +10,17 @@ public class Pessoa {
     private ArrayList<Turma> turmas;
 
     public Pessoa(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo) {
-        this.rg = rg;
-        this.nome = nome;
-        this.endereco = endereco;
-        this.telefone = telefone;
-        this.dataNascimento = dataNascimento;
-        this.ativo = ativo;
+        this.setRG(rg);
+        this.setNome(nome);
+        this.setEndereco(endereco);
+        this.setTelefone(telefone);
+        this.setDataNascimento(dataNascimento);
+        this.setAtivo(ativo);
         this.turmas = new ArrayList<>();
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
     }
 
     public void setRG(String rg) {
@@ -97,15 +101,7 @@ public class Pessoa {
     public boolean isAtivo() {
         return this.ativo;
     }
-
-    public void ativar() {
-        this.ativo = true;
-    }
-
-    public void desativar() {
-        this.ativo = false;
-    }
-
+    
     public void adicionarTurma(Turma turma) {
         this.turmas.add(turma);
     }
