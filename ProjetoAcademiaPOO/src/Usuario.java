@@ -95,4 +95,10 @@ public class Usuario extends Pessoa{
     public void relacionarTurmaCliente(){
 
     }
+
+    public String toString() {
+        String ret = "Username: " + this.username + "\nSenha: " + this.senha + "\n";
+        ret += super.toString();
+        return ret;
+    }
 }

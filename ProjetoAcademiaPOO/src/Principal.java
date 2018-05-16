@@ -30,6 +30,9 @@ public class Principal {
             administradorLogado.incluirInstrutor(academia);
             administradorLogado.incluirInstrutor(academia);
             Academia.exibirInstrutores();
+            administradorLogado.incluirUsuario(usuarios);
+            administradorLogado.incluirUsuario(usuarios);
+            administradorLogado.imprimirUsuarios(usuarios);
         }
     }
 
