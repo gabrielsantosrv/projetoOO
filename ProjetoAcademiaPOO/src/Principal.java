@@ -28,7 +28,7 @@ public class Principal {
             usuarioLogado.incluirTurma(academia);
             usuarioLogado.incluirTurma(academia);
             Academia.exibirTurmasPorAtividade();
-
+            usuarioLogado.relacionarTurmaCliente(academia);
         }
         if (administradorLogado != null) {
             administradorLogado.incluirInstrutor(academia);

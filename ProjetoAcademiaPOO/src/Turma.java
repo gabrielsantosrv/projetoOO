@@ -6,21 +6,19 @@ public class Turma {
     private String horario;
     private float precoAtividade;
     private final int MAXIMO_PESSOAS;
+    private final String chave;
 
-    public Turma(ArrayList<Cliente> clientes, ArrayList<Instrutor> instrutores, String horario, float precoAtividade, int maximoPessoas) {
-        this.clientes = clientes;
-        this.instrutores = instrutores;
-        this.MAXIMO_PESSOAS = maximoPessoas;
-        this.horario = horario;
-        this.precoAtividade = precoAtividade;
-    }
-
-    public Turma(String horario, float precoAtividade, int maximoPessoas) {
+    public Turma(String horario, float precoAtividade, int maximoPessoas, String chave) {
         this.clientes = new ArrayList<>();
         this.instrutores = new ArrayList<>();
         this.MAXIMO_PESSOAS = maximoPessoas;
         this.horario = horario;
         this.precoAtividade = precoAtividade;
+        this.chave = chave;
+    }
+
+    public String getChave() {
+        return chave;
     }
 
     public ArrayList<Cliente> getClientes() {

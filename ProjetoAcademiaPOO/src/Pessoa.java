@@ -5,16 +5,22 @@ public class Pessoa {
     private String endereco;
     private String telefone;
     private String dataNascimento;
+    private String rg;
     private boolean ativo;
     private ArrayList<Turma> turmas;
 
-    public Pessoa(String nome, String endereco, String telefone, String dataNascimento, boolean ativo) {
+    public Pessoa(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo) {
+        this.rg = rg;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.dataNascimento = dataNascimento;
         this.ativo = ativo;
         this.turmas = new ArrayList<>();
+    }
+
+    public String getRg() {
+        return this.rg;
     }
 
     public String getNome() {
@@ -80,6 +86,8 @@ public class Pessoa {
     public String toString() {
         String ret = "Nome: ";
         ret += this.nome;
+        ret += "\nRG: ";
+        ret += this.rg;
         ret += "\nData de nascimento: ";
         ret += this.dataNascimento;
         ret += "\nEndereco: ";

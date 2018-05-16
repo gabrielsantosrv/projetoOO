@@ -5,14 +5,14 @@ public class Usuario extends Pessoa{
     private String username;
     private String senha;
 
-    public Usuario(String nome, String endereco, String telefone, String dataNascimento, boolean ativo, String username, String senha) {
-        super(nome, endereco, telefone, dataNascimento, ativo);
+    public Usuario(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo, String username, String senha) {
+        super(rg, nome, endereco, telefone, dataNascimento, ativo);
         this.username = username;
         this.senha = senha;
     }
 
     public Usuario(String username, String senha) {
-        super("", "", "", "", true);
+        super("", "", "", "", "", true);
         this.username = username;
         this.senha = senha;
     }
@@ -45,7 +45,9 @@ public class Usuario extends Pessoa{
         telefone = input.next();
         System.out.println("Data de nascimento:");
         dataNascimento = input.next();
-        Cliente cliente = new Cliente(nome, endereco, telefone, dataNascimento, true);
+        System.out.println("RG:");
+        String rg = input.next();
+        Cliente cliente = new Cliente(rg, nome, endereco, telefone, dataNascimento, true);
         academia.inserirCliente(cliente);
         System.out.println("Cliente incluído.");
     }
@@ -77,7 +79,7 @@ public class Usuario extends Pessoa{
     }
 
     public void incluirTurma(Academia academia){
-        System.out.println("INCLUSÃO DE TURMA");
+        System.out.println("CRIAÇÃO DE TURMA");
         System.out.println("Atividade:");
         Scanner input = new Scanner(System.in);
         String atividade = input.next();
@@ -89,7 +91,9 @@ public class Usuario extends Pessoa{
                 String horario = input.next();
                 System.out.println("Máximo de pessoas:");
                 int maximo = input.nextInt();
-                Turma turma = new Turma(horario, a.getPreco(), maximo);
+                System.out.println("Chave:");
+                String chave = input.next();
+                Turma turma = new Turma(horario, a.getPreco(), maximo, chave);
                 academia.inserirTurma(a, turma);
                 System.out.println("Turma criada.");
                 break;
@@ -108,11 +112,46 @@ public class Usuario extends Pessoa{
 
     }
 
-    public void relacionarTurmaAtividade(){
+    public void relacionarTurmaCliente(Academia academia){
+        System.out.println("ASSOCIAÇÃO DE TURMA E CLIENTE");
+        System.out.println("RG do cliente:");
+        Scanner input = new Scanner(System.in);
+        String rg = input.next();
+        System.out.println("Atividade:");
+        String atividade = input.next();
+        System.out.println("Chave da turma:");
+        String chave = input.next();
+        boolean parar = false;
+        for (Cliente c : academia.getClientes()) {
+            if (parar)
+                break;
 
+            if (rg.equals(c.getRg())) {
+                for (Atividade a : academia.getAtividades()) {
+                    if (parar)
+                        break;
+
+                    if (atividade.equals(a.getNome())) {
+                        for (Turma t : a.getTurmas()) {
+                            if (parar)
+                                break;
+
+                            if (t.getChave().equals(chave)) {
+                                t.adicionarCliente(c);
+                                c.adicionarTurma(t);
+                                System.out.println("Cliente incluído na turma. Turma incluída na lista de turmas do cliente.");
+                                parar = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (!parar)
+            System.out.println("Cliente, atividade ou chave da turma inválidos.");
     }
 
-    public void relacionarTurmaCliente(){
+    public void relacionarTurmaInstrutor(){
 
     }
 

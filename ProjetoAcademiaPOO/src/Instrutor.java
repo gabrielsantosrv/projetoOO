@@ -4,8 +4,8 @@ public class Instrutor extends Pessoa{
     private float salario;
     private ArrayList<String> areas;
 
-    public Instrutor(String nome, String endereco, String telefone, String dataNascimento, boolean ativo, float salario, ArrayList<String> areas) {
-        super(nome, endereco, telefone, dataNascimento, ativo);
+    public Instrutor(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo, float salario, ArrayList<String> areas) {
+        super(rg, nome, endereco, telefone, dataNascimento, ativo);
         this.salario = salario;
         this.areas = areas;
     }

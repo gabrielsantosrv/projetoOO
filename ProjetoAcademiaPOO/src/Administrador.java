@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class Administrador extends Usuario {
 
-    public Administrador(String nome, String endereco, String telefone, String dataNascimento, boolean ativo, String username, String senha) {
-        super(nome, endereco, telefone, dataNascimento, ativo, username, senha);
+    public Administrador(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo, String username, String senha) {
+        super(rg, nome, endereco, telefone, dataNascimento, ativo, username, senha);
     }
 
     public Administrador(String username, String senha) {
@@ -33,7 +33,9 @@ public class Administrador extends Usuario {
         for (int i = 0; i < quantidade; i++) {
             areas.add(input.next());
         }
-        Instrutor instrutor = new Instrutor(nome, endereco, telefone, dataNascimento, true, salario, areas);
+        System.out.println("RG:");
+        String rg = input.next();
+        Instrutor instrutor = new Instrutor(rg, nome, endereco, telefone, dataNascimento, true, salario, areas);
         academia.inserirInstrutor(instrutor);
         System.out.println("Instrutor incluído.");
     }
@@ -67,7 +69,9 @@ public class Administrador extends Usuario {
             telefone = input2.next();
             System.out.println("Data de nascimento:");
             dataNascimento = input2.next();
-            Usuario usuario = new Usuario(nome, endereco, telefone, dataNascimento, true, username, senha);
+            System.out.println("RG:");
+            String rg = input2.next();
+            Usuario usuario = new Usuario(rg, nome, endereco, telefone, dataNascimento, true, username, senha);
             usuarios.add(usuario);
             System.out.println("Usuário incluído.");
         } else if (resposta.equals("N")) {
