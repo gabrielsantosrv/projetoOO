@@ -90,7 +90,8 @@ public class Pessoa {
     }
 
     public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
+        if (!dataNascimento.equals(""))
+            this.dataNascimento = dataNascimento;
     }
 
     public boolean isAtivo() {
