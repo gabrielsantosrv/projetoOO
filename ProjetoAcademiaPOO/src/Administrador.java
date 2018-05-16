@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class GerenciadorInstrutores extends GerenciadorClientesAtividades {
+public class Administrador extends Usuario {
 
-    public GerenciadorInstrutores(String nome, String endereco, String telefone, String dataNascimento, boolean ativo, String username, String senha) {
+    public Administrador(String nome, String endereco, String telefone, String dataNascimento, boolean ativo, String username, String senha) {
         super(nome, endereco, telefone, dataNascimento, ativo, username, senha);
     }
 
-    public GerenciadorInstrutores(String username, String senha) {
+    public Administrador(String username, String senha) {
         super(username, senha);
     }
 

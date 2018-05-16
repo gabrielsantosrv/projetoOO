@@ -1,17 +1,17 @@
 import java.util.Scanner;
 
-public class GerenciadorClientesAtividades extends Pessoa{
+public class Usuario extends Pessoa{
 
     private String username;
     private String senha;
 
-    public GerenciadorClientesAtividades(String nome, String endereco, String telefone, String dataNascimento, boolean ativo, String username, String senha) {
+    public Usuario(String nome, String endereco, String telefone, String dataNascimento, boolean ativo, String username, String senha) {
         super(nome, endereco, telefone, dataNascimento, ativo);
         this.username = username;
         this.senha = senha;
     }
 
-    public GerenciadorClientesAtividades(String username, String senha) {
+    public Usuario(String username, String senha) {
         super("", "", "", "", true);
         this.username = username;
         this.senha = senha;

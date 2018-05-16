@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class Principal {
     private static Academia academia;
-    private static ArrayList<GerenciadorClientesAtividades> gerenciadores;
-    private static ArrayList<GerenciadorInstrutores> administradores;
-    private static GerenciadorClientesAtividades gerenLogado = null;
-    private static GerenciadorInstrutores adminLogado = null;
+    private static ArrayList<Usuario> usuarios;
+    private static ArrayList<Administrador> administradores;
+    private static Usuario usuarioLogado = null;
+    private static Administrador administradorLogado = null;
 
     public static void main(String[] args) {
         carregarUsuariosPadrao();
@@ -17,30 +17,30 @@ public class Principal {
     }
 
     public static void menu() {
-        if (gerenLogado != null) {
-            gerenLogado.incluirCliente(academia);
-            gerenLogado.incluirCliente(academia);
+        if (usuarioLogado != null) {
+            usuarioLogado.incluirCliente(academia);
+            usuarioLogado.incluirCliente(academia);
             Academia.exibirClientes();
-            gerenLogado.incluirAtividade(academia);
-            gerenLogado.incluirAtividade(academia);
+            usuarioLogado.incluirAtividade(academia);
+            usuarioLogado.incluirAtividade(academia);
             Academia.exibirAtividades();
 
         }
-        if (adminLogado != null) {
-            adminLogado.incluirInstrutor(academia);
-            adminLogado.incluirInstrutor(academia);
+        if (administradorLogado != null) {
+            administradorLogado.incluirInstrutor(academia);
+            administradorLogado.incluirInstrutor(academia);
         }
     }
 
     public static void carregarUsuariosPadrao() {
         academia = new Academia();
-        gerenciadores = new ArrayList<>();
+        usuarios = new ArrayList<>();
         administradores = new ArrayList<>();
 
-        GerenciadorInstrutores admin = new GerenciadorInstrutores("admin", "admin");
-        GerenciadorClientesAtividades geren = new GerenciadorInstrutores("geren", "geren");
+        Administrador admin = new Administrador("admin", "admin");
+        Usuario usuario = new Administrador("geren", "geren");
 
-        gerenciadores.add(geren);
+        usuarios.add(usuario);
         administradores.add(admin);
     }
 
@@ -51,16 +51,16 @@ public class Principal {
         System.out.println("Senha: ");
         String senha = input.next();
 
-        for (GerenciadorInstrutores admin : administradores) {
+        for (Administrador admin : administradores) {
             if (admin.getUsername().equals(username) && admin.getSenha().equals(senha)) {
-                adminLogado = admin;
+                administradorLogado = admin;
                 return true;
             }
         }
 
-        for (GerenciadorClientesAtividades geren : gerenciadores) {
-            if (geren.getUsername().equals(username) && geren.getSenha().equals(senha)) {
-                gerenLogado = geren;
+        for (Usuario usuario : usuarios) {
+            if (usuario.getUsername().equals(username) && usuario.getSenha().equals(senha)) {
+                usuarioLogado = usuario;
                 return true;
             }
         }
