@@ -19,6 +19,16 @@ public class Pessoa {
         this.turmas = new ArrayList<>();
     }
 
+    public Pessoa() {
+        this.rg = "";
+        this.nome = "";
+        this.endereco = "";
+        this.telefone = "";
+        this.dataNascimento = "";
+        this.ativo = true;
+        this.turmas = new ArrayList<>();
+    }
+
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }

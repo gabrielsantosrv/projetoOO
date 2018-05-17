@@ -10,6 +10,10 @@ public class Instrutor extends Pessoa{
         this.setAreas(areas);
     }
 
+    public Instrutor() {
+        super();
+    }
+
     public float getSalario() {
         return this.salario;
     }

@@ -78,67 +78,107 @@ public class BaseDados {
         }
     }
 
-    public void incluirCliente(Cliente cliente){
-        boolean clienteExistente = false;
-
+    public boolean clienteExistente(Cliente cliente) {
         for(Cliente c: this.clientes){
             if(c.equals(cliente)){
-                clienteExistente = true;
-                break;
+                return true;
             }
         }
+        return false;
+    }
 
-        if (!clienteExistente) {
-            this.clientes.add(cliente);
+    public Cliente encontrarCliente(String rg) {
+        for(Cliente c: this.clientes){
+            if(c.getRg().equals(rg)){
+                return c;
+            }
         }
+        return null;
     }
 
-    public void excluirCliente(Cliente cliente){
-        cliente.setAtivo(false);
+    public boolean incluirCliente(Cliente cliente){
+        if (!clienteExistente(cliente)) {
+            this.clientes.add(cliente);
+            return true;
+        }
+        return false;
     }
 
-    public void alterarCliente(Cliente clienteAnt, Cliente clienteNovo){
+    public boolean desativarCliente(Cliente cliente){
+        if (cliente != null) {
+            cliente.setAtivo(false);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean alterarCliente(Cliente clienteAnt, Cliente clienteNovo){
+        if (clienteAnt == null || clienteNovo == null)
+            return false;
+
         for(int i=0; i< this.clientes.size(); i++){
             Cliente c = this.clientes.get(i);
 
             //troca quando achar o cliente antigo
             if(clienteAnt.equals(c) && clienteAnt.isAtivo()){
               clientes.set(i, clienteNovo);
+              return true;
             }
         }
+        return false;
     }
 
-    public void incluirInstrutor(Instrutor instrutor){
-        boolean instrutorExistente = false;
-
+    public boolean instrutorExistente(Instrutor instrutor) {
         for(Instrutor i: this.instrutores){
             if(i.equals(instrutor)){
-                instrutorExistente = true;
-                break;
+                return true;
             }
         }
+        return false;
+    }
 
-        if (!instrutorExistente) {
-            this.instrutores.add(instrutor);
+    public Instrutor encontrarInstrutor(String rg) {
+        for(Instrutor i: this.instrutores){
+            if(i.getRg().equals(rg)){
+                return i;
+            }
         }
+        return null;
     }
 
-    public void excluirInstrutor(Instrutor instrutor){
-        instrutor.setAtivo(false);
+    public boolean incluirInstrutor(Instrutor instrutor){
+        if (!instrutorExistente(instrutor)) {
+            this.instrutores.add(instrutor);
+            return true;
+        }
+        return false;
     }
 
-    public void alterarInstutor(Instrutor instrutorAnt, Instrutor instrutorNovo){
+    public boolean desativarInstrutor(Instrutor instrutor){
+        if (instrutor!=null) {
+            instrutor.setAtivo(false);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean alterarInstutor(Instrutor instrutorAnt, Instrutor instrutorNovo){
+        if (instrutorAnt == null || instrutorNovo == null)
+            return false;
+
         for(int i=0; i< this.instrutores.size(); i++){
             Instrutor inst = this.instrutores.get(i);
 
             //troca quando achar o cliente antigo
             if(instrutorAnt.equals(inst) && instrutorAnt.isAtivo()){
                 this.instrutores.set(i, instrutorNovo);
+                return true;
             }
         }
+        return false;
     }
 
-    public void incluirAtividade(Atividade atividade){
+    public boolean incluirAtividade(Atividade atividade){
         boolean atividadeExistente = false;
 
         for(Atividade a: this.atividades){
@@ -150,7 +190,9 @@ public class BaseDados {
 
         if (!atividadeExistente) {
             this.atividades.add(atividade);
+            return true;
         }
+        return false;
     }
 
     public void excluirAtividade(Atividade atividade){

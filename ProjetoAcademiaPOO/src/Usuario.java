@@ -47,16 +47,25 @@ public class Usuario extends Pessoa{
         dataNascimento = input.next();
         System.out.println("RG:");
         String rg = input.next();
-        if (!RGClienteRepetido(rg, academia)) {
-            Cliente cliente = new Cliente(rg, nome, endereco, telefone, dataNascimento, true);
-           // academia.inserirCliente(cliente);
+        Cliente cliente = new Cliente(rg, nome, endereco, telefone, dataNascimento, true);
+        if (academia.incluirCliente(cliente)) {
             System.out.println("Cliente incluído.");
         } else {
-            System.out.println("Já existe um cliente com este RG.");
+            System.out.println("Já existe um cliente com esse RG.");
         }
     }
 
-    public void excluirCliente(BaseDados academia){
+    public void desativarCliente(BaseDados academia){
+        System.out.println("DESATIVAR CLIENTE");
+        System.out.println("RG do cliente:");
+        Scanner input = new Scanner(System.in);
+        String rg = input.next();
+        Cliente c = academia.encontrarCliente(rg);
+        if (academia.desativarCliente(c)) {
+            System.out.println("Cliente desativado.");
+        } else {
+            System.out.println("Cliente não encontrado no sistema.");
+        }
     }
 
     public void alterarCliente(BaseDados academia){
@@ -64,31 +73,25 @@ public class Usuario extends Pessoa{
         System.out.println("RG do cliente:");
         Scanner input = new Scanner(System.in);
         String rg = input.next();
-        boolean achou = false;
-        for (Cliente c : academia.getClientes()) {
-            if (c.getRg().equals(rg)) {
-                achou = true;
-                System.out.println("Mudar nome?");
-                String nome = input.next();
-                c.setNome(nome);
-                System.out.println("Mudar endereço?");
-                String endereco = input.next();
-                c.setEndereco(endereco);
-                System.out.println("Mudar telefone?");
-                String telefone = input.next();
-                c.setTelefone(telefone);
-                System.out.println("Mudar data de nascimento?");
-                String dataNascimento = input.next();
-                c.setDataNascimento(dataNascimento);
-                System.out.println("Mudar RG?");
-                String novoRG = input.next();
-                c.setRG(novoRG);
-                System.out.println("Cliente alterado.");
-            }
-        }
-        if (!achou) {
-            System.out.println("RG não encontrado no sistema.");
-        }
+        Cliente antigo = academia.encontrarCliente(rg);
+        Cliente novo = new Cliente();
+        System.out.println("Mudar nome?");
+        String nome = input.next();
+        novo.setNome(nome);
+        System.out.println("Mudar endereço?");
+        String endereco = input.next();
+        novo.setEndereco(endereco);
+        System.out.println("Mudar telefone?");
+        String telefone = input.next();
+        novo.setTelefone(telefone);
+        System.out.println("Mudar data de nascimento?");
+        String dataNascimento = input.next();
+        novo.setDataNascimento(dataNascimento);
+        novo.setRG(rg);
+        if (academia.alterarCliente(antigo, novo))
+            System.out.println("Cliente alterado.");
+        else
+            System.out.println("Cliente não encontrado no sistema.");
     }
 
     public void incluirAtividade(BaseDados academia){
@@ -101,14 +104,18 @@ public class Usuario extends Pessoa{
         System.out.println("Preco:");
         preco = input.nextFloat();
         Atividade atividade = new Atividade(nome, preco);
-        //academia.inserirAtividade(atividade);
-        System.out.println("Atividade incluída.");
+        if (academia.incluirAtividade(atividade))
+            System.out.println("Atividade incluída.");
+        else
+            System.out.println("Essa atividade já existe.");
     }
 
     public void excluirAtividade(BaseDados academia){
+        //TODO
     }
 
     public void alterarAtividade(BaseDados academia){
+        //TODO
     }
 
     public void incluirTurma(BaseDados academia){

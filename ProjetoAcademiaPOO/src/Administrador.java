@@ -17,6 +17,8 @@ public class Administrador extends Usuario {
         float salario;
         ArrayList<String> areas = new ArrayList<>();
         Scanner input = new Scanner(System.in);
+        System.out.println("RG:");
+        String rg = input.next();
         System.out.println("Nome:");
         nome = input.next();
         System.out.println("Endereço:");
@@ -33,15 +35,24 @@ public class Administrador extends Usuario {
         for (int i = 0; i < quantidade; i++) {
             areas.add(input.next());
         }
-        System.out.println("RG:");
-        String rg = input.next();
         Instrutor instrutor = new Instrutor(rg, nome, endereco, telefone, dataNascimento, true, salario, areas);
-        academia.incluirInstrutor(instrutor);
-        System.out.println("Instrutor incluído.");
+        if (academia.incluirInstrutor(instrutor))
+            System.out.println("Instrutor incluído.");
+        else
+            System.out.println("Já existe um instrutor com esse RG no sistema.");
     }
 
-    public void excluirInstrutor(BaseDados academia){
-        //TODO
+    public void desativarInstrutor(BaseDados academia) {
+        System.out.println("DESATIVAR INSTRUTOR");
+        System.out.println("RG do instrutor:");
+        Scanner input = new Scanner(System.in);
+        String rg = input.next();
+        Instrutor i = academia.encontrarInstrutor(rg);
+        if (academia.desativarInstrutor(i)) {
+            System.out.println("Instrutor desativado.");
+        } else {
+            System.out.println("Instrutor não encontrado no sistema.");
+        }
     }
 
     public void alterarInstrutor(BaseDados academia){
@@ -49,41 +60,36 @@ public class Administrador extends Usuario {
         System.out.println("RG do instrutor:");
         Scanner input = new Scanner(System.in);
         String rg = input.next();
-        boolean achou = false;
-        for (Instrutor ii : academia.getInstrutores()) {
-            if (ii.getRg().equals(rg)) {
-                achou = true;
-                System.out.println("Mudar nome?");
-                String nome = input.next();
-                ii.setNome(nome);
-                System.out.println("Mudar endereço?");
-                String endereco = input.next();
-                ii.setEndereco(endereco);
-                System.out.println("Mudar telefone?");
-                String telefone = input.next();
-                ii.setTelefone(telefone);
-                System.out.println("Mudar data de nascimento?");
-                String dataNascimento = input.next();
-                ii.setDataNascimento(dataNascimento);
-                System.out.println("Mudar salário?");
-                float salario = input.nextFloat();
-                ii.setSalario(salario);
-                System.out.println("Mudar quantidade de áreas?");
-                int quantidade = input.nextInt();
-                System.out.println("Digite as áreas:");
-                ArrayList<String> areas = new ArrayList<>();
-                for (int i = 0; i < quantidade; i++) {
-                    areas.add(input.next());
-                }
-                ii.setAreas(areas);
-                System.out.println("Mudar RG?");
-                String novoRG = input.next();
-                ii.setRG(novoRG);
-            }
+        Instrutor antigo = academia.encontrarInstrutor(rg);
+        Instrutor novo = new Instrutor();
+        novo.setRG(rg);
+        System.out.println("Mudar nome?");
+        String nome = input.next();
+        novo.setNome(nome);
+        System.out.println("Mudar endereço?");
+        String endereco = input.next();
+        novo.setEndereco(endereco);
+        System.out.println("Mudar telefone?");
+        String telefone = input.next();
+        novo.setTelefone(telefone);
+        System.out.println("Mudar data de nascimento?");
+        String dataNascimento = input.next();
+        novo.setDataNascimento(dataNascimento);
+        System.out.println("Mudar salário?");
+        float salario = input.nextFloat();
+        novo.setSalario(salario);
+        System.out.println("Mudar quantidade de áreas?");
+        int quantidade = input.nextInt();
+        System.out.println("Digite as áreas:");
+        ArrayList<String> areas = new ArrayList<>();
+        for (int i = 0; i < quantidade; i++) {
+            areas.add(input.next());
         }
-        if (!achou) {
-            System.out.println("RG não encontrado no sistema.");
-        }
+        novo.setAreas(areas);
+        if (academia.alterarInstutor(antigo, novo))
+            System.out.println("Instrutor alterado.");
+        else
+            System.out.println("Instrutor não encontrado no sistema.");
     }
 
     public void incluirUsuario(ArrayList<Usuario> usuarios){

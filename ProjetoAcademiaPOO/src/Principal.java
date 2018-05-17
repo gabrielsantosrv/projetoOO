@@ -26,53 +26,65 @@ public class Principal {
                 case 1: {
                     //Incluir cliente
                     usuarioLogado.incluirCliente(academia);
+                    break;
                 }
                 case 2: {
                     //Alterar cliente
                     usuarioLogado.alterarCliente(academia);
+                    break;
                 }
                 case 3: {
                     //Desativar cliente
-                    usuarioLogado.excluirCliente(academia);
+                    usuarioLogado.desativarCliente(academia);
+                    break;
                 }
                 case 4: {
                     //Incluir instrutor
                     if (administradorLogado != null)
                         administradorLogado.incluirInstrutor(academia);
+                    break;
                 }
                 case 5: {
                     //Alterar instrutor
                     if (administradorLogado != null)
                         administradorLogado.alterarInstrutor(academia);
+                    break;
                 }
                 case 6: {
                     //Desativar instrutor
                     if (administradorLogado != null)
-                        administradorLogado.excluirInstrutor(academia);
+                        administradorLogado.desativarInstrutor(academia);
+                    break;
                 }
                 case 7: {
                     //Incluir atividade
                     usuarioLogado.incluirAtividade(academia);
+                    break;
                 }
                 case 8: {
                     //Alterar atividade
                     usuarioLogado.alterarAtividade(academia);
+                    break;
                 }
                 case 9: {
                     //Excluir atividade
                     usuarioLogado.excluirAtividade(academia);
+                    break;
                 }
                 case 10: {
                     //Incluir turma
                     usuarioLogado.incluirTurma(academia);
+                    break;
                 }
                 case 11: {
                     //Alterar turma
                     usuarioLogado.alterarAtividade(academia);
+                    break;
                 }
                 case 12: {
                     //Excluir turma
                     usuarioLogado.excluirTurma(academia);
+                    break;
                 }
                 //Relacionamentos
                 case 13: {
