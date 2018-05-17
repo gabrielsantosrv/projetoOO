@@ -123,8 +123,24 @@ public class Administrador extends Usuario {
         }
     }
 
-    public void excluirUsuario(){
+    public void excluirUsuario(ArrayList<Usuario> usuarios){
+        System.out.println("EXCLUSÃO DE USUÁRIOS");
+        String username, senha;
+        System.out.println("Username:");
 
+        username = this.input.next();
+        boolean achou = false;
+        for (Usuario u : usuarios) {
+            if (u.getUsername().equals(username)) {
+                achou = true;
+                usuarios.remove(u);
+                System.out.println("Usuário excluído.");
+                break;
+            }
+        }
+        if (!achou) {
+            System.out.println("Usuário não encontrado no sistema.");
+        }
     }
 
     public void imprimirUsuarios(ArrayList<Usuario> usuarios) {
