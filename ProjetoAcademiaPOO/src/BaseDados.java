@@ -232,4 +232,36 @@ public class BaseDados {
         }
         return false;
     }
+
+    public boolean relacionarTurmaInstrutor(Turma t, Instrutor i) {
+        if (t == null || i == null)
+            return false;
+        t.adicionarInstrutor(i);
+        i.adicionarTurma(t);
+        return true;
+    }
+
+    public boolean desrelacionarTurmaInstrutor(Turma t, Instrutor i) {
+        if (t == null || i == null)
+            return false;
+        t.removerInstrutor(i);
+        i.removerTurma(t);
+        return true;
+    }
+
+    public boolean relacionarTurmaCliente(Turma t, Cliente c) {
+        if (t == null || c == null)
+            return false;
+        t.adicionarCliente(c);
+        c.adicionarTurma(t);
+        return true;
+    }
+
+    public boolean desrelacionarTurmaCliente(Turma t, Cliente c) {
+        if (t == null || c == null)
+            return false;
+        t.removerCliente(c);
+        c.removerTurma(t);
+        return true;
+    }
 }

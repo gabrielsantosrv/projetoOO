@@ -199,19 +199,63 @@ public class Usuario extends Pessoa{
     }
 
     public void relacionarTurmaCliente(BaseDados academia){
-        //TODO
+        System.out.println("RELACIONAMENTO DE TURMA E CLIENTE");
+        System.out.println("RG do cliente:");
+        Scanner input = new Scanner(System.in);
+        String rg = input.next();
+        Cliente c = academia.encontrarCliente(rg);
+        System.out.println("Atividade:");
+        String nomeAtividade = input.next();
+        Atividade a = academia.encontrarAtividade(nomeAtividade);
+        System.out.println("ID da turma:");
+        String id = input.next();
+        Turma t = academia.encontrarTurma(id, a);
+        academia.relacionarTurmaCliente(t, c);
     }
 
     public void desrelacionarTurmaCliente(BaseDados academia) {
-        //TODO
+        System.out.println("DESFAZER RELACIONAMENTO DE TURMA E CLIENTE");
+        System.out.println("RG do cliente:");
+        Scanner input = new Scanner(System.in);
+        String rg = input.next();
+        Cliente c = academia.encontrarCliente(rg);
+        System.out.println("Atividade:");
+        String nomeAtividade = input.next();
+        Atividade a = academia.encontrarAtividade(nomeAtividade);
+        System.out.println("ID da turma:");
+        String id = input.next();
+        Turma t = academia.encontrarTurma(id, a);
+        academia.desrelacionarTurmaCliente(t, c);
     }
 
     public void relacionarTurmaInstrutor(BaseDados academia){
-        //TODO
+        System.out.println("RELACIONAMENTO DE TURMA E INSTRUTOR");
+        System.out.println("RG do instrutor:");
+        Scanner input = new Scanner(System.in);
+        String rg = input.next();
+        Instrutor i = academia.encontrarInstrutor(rg);
+        System.out.println("Atividade:");
+        String nomeAtividade = input.next();
+        Atividade a = academia.encontrarAtividade(nomeAtividade);
+        System.out.println("ID da turma:");
+        String id = input.next();
+        Turma t = academia.encontrarTurma(id, a);
+        academia.relacionarTurmaInstrutor(t, i);
     }
 
     public void desrelacionarTurmaInstrutor(BaseDados academia){
-        //TODO
+        System.out.println("DESFAZER RELACIONAMENTO DE TURMA E INSTRUTOR");
+        System.out.println("RG do instrutor:");
+        Scanner input = new Scanner(System.in);
+        String rg = input.next();
+        Instrutor i = academia.encontrarInstrutor(rg);
+        System.out.println("Atividade:");
+        String nomeAtividade = input.next();
+        Atividade a = academia.encontrarAtividade(nomeAtividade);
+        System.out.println("ID da turma:");
+        String id = input.next();
+        Turma t = academia.encontrarTurma(id, a);
+        academia.desrelacionarTurmaInstrutor(t, i);
     }
 
     public void verificarClientesPorTurma(BaseDados academia) {

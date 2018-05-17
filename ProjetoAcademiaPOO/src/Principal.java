@@ -90,39 +90,48 @@ public class Principal {
                 case 13: {
                     //Associar instrutor à turma
                     usuarioLogado.relacionarTurmaInstrutor(academia);
+                    break;
                 }
                 case 14: {
                     //Associar cliente à turma
                     usuarioLogado.relacionarTurmaCliente(academia);
+                    break;
                 }
                 case 15: {
                     //Desassociar instrutor e turma
                     usuarioLogado.desrelacionarTurmaInstrutor(academia);
+                    break;
                 }
                 case 16: {
                     //Desassociar cliente e turma
                     usuarioLogado.desrelacionarTurmaCliente(academia);
+                    break;
                 }
                 //Consultas - passar da base para a classe de interação
                 case 17: {
                     //Todos os clientes
                     usuarioLogado.exibirClientes(academia);
+                    break;
                 }
                 case 18: {
                     //Todos os instrutores
                     usuarioLogado.exibirInstrutores(academia);
+                    break;
                 }
                 case 19: {
                     //Todas as atividades
                     usuarioLogado.exibirAtividades(academia);
+                    break;
                 }
                 case 20: {
                     //Turmas por atividade específica
                     usuarioLogado.exibirTurmasPorAtividade(academia);
+                    break;
                 }
                 case 21: {
                     //Clientes que fazem uma atividade específica
-                    //TODO
+                    usuarioLogado.verificarClientesPorTurma(academia);
+                    break;
                 }
                 case 22: {
                     //Instrutores que cuidam de uma atividade específica
