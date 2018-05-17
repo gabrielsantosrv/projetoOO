@@ -332,4 +332,155 @@ public class Usuario extends Pessoa{
         ret += super.toString();
         return ret;
     }
+
+    public void clientesDeUmaAtividade(BaseDados academia){
+        System.out.println("CLIENTES DE UMA ATIVIDADE");
+        System.out.println("Atividade:");
+        Scanner input = new Scanner(System.in);
+        String atividade = input.next();
+        boolean achou = false;
+
+        for(Atividade a : academia.getAtividades()) {
+            if (a.getNome().equalsIgnoreCase(atividade)) {
+                achou = true;
+                if(a.quantidadeTurmas() == 0) {
+                    System.out.println("A atividade ainda não tem turmas.");
+                } else {
+                    for (Turma t : a.getTurmas()) {
+                        t.imprimirClientes();
+                    }
+                }
+            }
+        }
+
+        if(!achou){
+            System.out.println("Atividade inválida.");
+        }
+    }
+
+    public void instrutoresDeUmaAtividade(BaseDados academia){
+        System.out.println("INSTRUTORES DE UMA ATIVIDADE");
+        System.out.println("Atividade:");
+        Scanner input = new Scanner(System.in);
+        String atividade = input.next();
+        boolean achou = false;
+
+        for(Atividade a : academia.getAtividades()){
+            if(a.getNome().equalsIgnoreCase(atividade)){
+                achou = true;
+                //TODO: avisar caso nao tenha instrutor
+                for(Turma t : a.getTurmas()){
+                    t.imprimirInstrutores();
+                }
+            }
+        }
+
+        if(!achou){
+            System.out.println("Atividade inválida.");
+        }
+    }
+
+    public void qtdClientesDeUmaAtividade(BaseDados academia){
+        System.out.println("QUANTIDADE DE CLIENTES QUE FAZEM UMA ATIVIDADE");
+        System.out.println("Atividade:");
+        Scanner input = new Scanner(System.in);
+        String atividade = input.next();
+        boolean achou = false;
+
+        for(Atividade a : academia.getAtividades()){
+            if(a.getNome().equalsIgnoreCase(atividade)){
+                achou = true;
+                System.out.println("Quantidade de clientes inscritos: " + a.quantosInscritos());
+                break;
+            }
+        }
+
+        if(!achou){
+            System.out.println("Atividade inválida.");
+        }
+    }
+
+    public void atividadeComMaisClientes(BaseDados academia){
+        System.out.println("ATIVIDADE COM MAIS CLIENTES");
+        Atividade ativ = academia.atividadeComMaisInscritos();
+        if(ativ != null) {
+            System.out.println("Atividade: " + ativ.getNome());
+            System.out.println("Número de clientes: " + ativ.quantosInscritos());
+        }else{
+            System.out.println("Nenhuma atividade registrada.");
+        }
+    }
+
+    public void atividadeComMenosClientes(BaseDados academia){
+        System.out.println("ATIVIDADE COM MENOS CLIENTES");
+        Atividade ativ = academia.atividadeComMenosInscritos();
+        if(ativ != null) {
+            System.out.println("Atividade: " + ativ.getNome());
+            System.out.println("Número de clientes: " + ativ.quantosInscritos());
+        }else{
+            System.out.println("Nenhuma atividade registrada.");
+        }
+    }
+
+    public void atividadeComMaiorPreco(BaseDados academia){
+        System.out.println("ATIVIDADE COM MAIOR PREÇO");
+        Atividade ativ = academia.atividadeComMaiorPreco();
+        if(ativ != null) {
+            System.out.println("Atividade: " + ativ.getNome());
+            System.out.println("Preco: " + ativ.getPreco());
+        }else{
+            System.out.println("Nenhuma atividade registrada.");
+        }
+    }
+
+    public void atividadeComMenorPreco(BaseDados academia){
+        System.out.println("ATIVIDADE COM MENOR PRECO");
+        Atividade ativ = academia.atividadeComMenorPreco();
+        if(ativ != null) {
+            System.out.println("Atividade: " + ativ.getNome());
+            System.out.println("Preço: " + ativ.getPreco());
+        }else{
+            System.out.println("Nenhuma atividade registrada.");
+        }
+    }
+
+    public void turmasDeUmCliente(BaseDados academia){
+        System.out.println("TURMAS DE UM CLIENTE");
+        System.out.println("RG do cliente:");
+        Scanner input = new Scanner(System.in);
+        String rg = input.next();
+        Cliente c = academia.encontrarCliente(rg);
+        if(c != null) {
+            if(c.quantidadeTurmas() > 0) {
+                for (Turma t : c.getTurmas()) {
+                    System.out.println("TURMA DE ID = " + t.getId());
+                    System.out.println(t.toString());
+                }
+            }else{
+                System.out.println("Cliente não está relacionado com nenhuma turma.");
+            }
+        }else{
+            System.out.println("Cliente não registrado.");
+        }
+    }
+
+    public void turmasDeUmInstrutor(BaseDados academia){
+        System.out.println("TURMAS DE UM INSTRUTOR");
+        System.out.println("RG do instrutor:");
+        Scanner input = new Scanner(System.in);
+        String rg = input.next();
+        Instrutor i = academia.encontrarInstrutor(rg);
+        if(i != null){
+            if(i.quantidadeTurmas() > 0) {
+                for (Turma t : i.getTurmas()) {
+                    System.out.println("TURMA DE ID = " + t.getId());
+                    System.out.println(t.toString());
+                }
+            }else{
+                System.out.println("Instrutor não está relacionado com nenhuma turma.");
+            }
+        }else{
+            System.out.println("Instrutor nao registrado.");
+        }
+    }
 }

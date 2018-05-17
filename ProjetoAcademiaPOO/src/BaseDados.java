@@ -31,6 +31,59 @@ public class BaseDados {
         return comMaisInscritos;
     }
 
+    public  Atividade atividadeComMenosInscritos() {
+        if(this.atividades.size() == 0) //nenhuma atividade registrada
+            return null;
+
+        int inscritos = 0;
+        Atividade comMenosInscritos = new Atividade("", 0);
+        inscritos = this.atividades.get(0).quantosInscritos();
+        comMenosInscritos = this.atividades.get(0);
+
+        for (Atividade a : atividades) {
+            if (a.quantosInscritos() < inscritos) {
+                inscritos = a.quantosInscritos();
+                comMenosInscritos = a;
+            }
+        }
+
+        return comMenosInscritos;
+    }
+
+    public Atividade atividadeComMaiorPreco(){
+        if(this.atividades.size() == 0) //nenhuma atividade registrada
+            return null;
+
+        float preco = 0;
+        Atividade maiorPreco = new Atividade("", 0);
+        for (Atividade a : atividades) {
+            if (a.getPreco() > preco) {
+                preco = a.getPreco();
+                maiorPreco = a;
+            }
+        }
+
+        return maiorPreco;
+    }
+
+    public Atividade atividadeComMenorPreco(){
+        if(this.atividades.size() == 0) //nenhuma atividade registrada
+            return null;
+
+        float preco = 0;
+        Atividade menorPreco = new Atividade("", 0);
+        preco = this.atividades.get(0).getPreco();
+        menorPreco = this.atividades.get(0);
+        for (Atividade a : atividades) {
+            if (a.getPreco() < preco) {
+                preco = a.getPreco();
+                menorPreco = a;
+            }
+        }
+
+        return menorPreco;
+    }
+
     public boolean clienteExistente(Cliente cliente) {
         for(Cliente c: this.clientes){
             if(c.equals(cliente)){

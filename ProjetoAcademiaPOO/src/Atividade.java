@@ -84,7 +84,7 @@ public class Atividade{
     public int quantosInscritos() {
         int inscritos = 0;
         for (Turma t : this.turmas) {
-            inscritos += t.quantasPessoas();
+            inscritos += t.quantosClientes();
         }
         return inscritos;
     }

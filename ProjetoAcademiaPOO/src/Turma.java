@@ -86,9 +86,11 @@ public class Turma {
         return this.maximoPessoas - this.clientes.size();
     }
 
-    public int quantasPessoas() {
+    public int quantosClientes() {
         return this.clientes.size();
     }
+
+    public int quantosInstrutores() { return this.instrutores.size(); }
 
     public int getMaximoPessoas() {
         return this.maximoPessoas;
@@ -104,5 +106,13 @@ public class Turma {
             s += c.getNome() + "\n";
         }
         System.out.println(s);
+    }
+
+    public void imprimirInstrutores() {
+        String s = "";
+        for (Instrutor i : this.instrutores){
+            s += i.getNome() + "\n";
+        }
+        System.out.printf(s);
     }
 }

@@ -130,44 +130,53 @@ public class Principal {
                 }
                 case 21: {
                     //Clientes que fazem uma atividade específica
-                    usuarioLogado.verificarClientesPorTurma(academia);
+                    usuarioLogado.clientesDeUmaAtividade(academia);
                     break;
                 }
                 case 22: {
                     //Instrutores que cuidam de uma atividade específica
-                    //TODO
+                    usuarioLogado.instrutoresDeUmaAtividade(academia);
+                    break;
                 }
                 case 23: {
                     //Quantidade de clientes que fazem uma atividade específica
-                    //TODO
+                    usuarioLogado.qtdClientesDeUmaAtividade(academia);
+                    break;
                 }
                 case 24: {
                     //Clientes que estão em uma turma específica
-                    //TODO
+                    usuarioLogado.verificarClientesPorTurma(academia);
+                    break;
                 }
                 case 25: {
                     //Atividade com maior número de clientes
-                    //TODO
+                    usuarioLogado.atividadeComMaisClientes(academia);
+                    break;
                 }
                 case 26: {
                     //Atividade com menor número de clientes
-                    //TODO
+                    usuarioLogado.atividadeComMenosClientes(academia);
+                    break;
                 }
                 case 27: {
                     //Atividade com maior preço
-                    //TODO
+                    usuarioLogado.atividadeComMaiorPreco(academia);
+                    break;
                 }
                 case 28: {
                     //Atividade com menor preço
-                    //TODO
+                    usuarioLogado.atividadeComMenorPreco(academia);
+                    break;
                 }
                 case 29: {
                     //Turmas por cliente específico
-                    //TODO
+                    usuarioLogado.turmasDeUmCliente(academia);
+                    break;
                 }
                 case 30: {
                     //Turmas por instrutor específico
-                    //TODO
+                    usuarioLogado.turmasDeUmInstrutor(academia);
+                    break;
                 }
             }
         }
