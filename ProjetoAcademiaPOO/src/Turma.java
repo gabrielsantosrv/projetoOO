@@ -97,7 +97,7 @@ public class Turma {
     }
 
     public String toString() {
-        return "Horário: " + this.horario + "\nVagas: " + this.vagas();
+        return "ID: " + this.id + "\nHorário: " + this.horario + "\nVagas: " + this.vagas();
     }
 
     public void imprimirClientes() {

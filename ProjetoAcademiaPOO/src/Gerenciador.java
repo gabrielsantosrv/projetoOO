@@ -132,12 +132,10 @@ public class Gerenciador {
         String atividade = this.input.next();
         Atividade antiga = this.academia.encontrarAtividade(atividade);
         Atividade nova = new Atividade();
-        System.out.println("Mudar nome?");
-        String nome = this.input.next();
-        nova.setNome(nome);
         System.out.println("Mudar preço?");
         float preco = this.input.nextFloat();
         nova.setPreco(preco);
+        nova.setNome(atividade);
         if (this.academia.alterarAtividade(antiga, nova))
             System.out.println("Atividade alterada.");
         else
@@ -300,14 +298,16 @@ public class Gerenciador {
     public void exibirClientes() {
         System.out.println("EXIBIÇÃO DE CLIENTES");
         for (Cliente c : this.academia.getClientes()) {
-            System.out.println(c.toString());
+            if (c.isAtivo())
+                System.out.println(c.toString());
         }
     }
 
     public void exibirInstrutores() {
         System.out.println("EXIBIÇÃO DE INSTRUTORES");
         for (Instrutor i : this.academia.getInstrutores()) {
-            System.out.println(i.toString());
+            if (i.isAtivo())
+                System.out.println(i.toString());
         }
     }
 
@@ -315,7 +315,7 @@ public class Gerenciador {
         System.out.println("EXIBIÇÃO DE TURMAS POR ATIVIDADE");
         for (Atividade a : this.academia.getAtividades()) {
             System.out.println(a.toString());
-            System.out.println("Turmas:");
+            System.out.println("TURMAS:");
             for (Turma t : a.getTurmas()) {
                 System.out.println(t.toString());
             }

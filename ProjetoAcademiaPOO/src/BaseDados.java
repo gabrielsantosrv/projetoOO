@@ -225,7 +225,7 @@ public class BaseDados {
         if (atividadeAnt == null || atividadeNova == null)
             return false;
 
-        for(int i=0; i< this.clientes.size(); i++){
+        for(int i=0; i< this.atividades.size(); i++){
             Atividade a = this.atividades.get(i);
 
             //troca quando achar o cliente antigo
