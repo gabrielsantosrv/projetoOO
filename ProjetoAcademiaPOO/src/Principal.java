@@ -86,7 +86,7 @@ public class Principal {
                     usuarioLogado.excluirTurma(academia);
                     break;
                 }
-                //Relacionamentos
+                //Relacionamentos //TODO refatorar
                 case 13: {
                     //Associar instrutor à turma
                     usuarioLogado.relacionarTurmaInstrutor(academia);
@@ -147,22 +147,6 @@ public class Principal {
                     //Turmas por instrutor específico
                 }
             }
-        }
-    }
-
-    public static void test() {
-        if (usuarioLogado != null) {
-            usuarioLogado.incluirCliente(academia);
-            usuarioLogado.incluirCliente(academia);
-            academia.exibirClientes();
-            usuarioLogado.alterarCliente(academia);
-            academia.exibirClientes();
-        }
-        if (administradorLogado != null) {
-            administradorLogado.incluirUsuario(usuarios);
-            administradorLogado.imprimirUsuarios(usuarios);
-            administradorLogado.alterarUsuario(usuarios);
-            administradorLogado.imprimirUsuarios(usuarios);
         }
     }
 

@@ -17,6 +17,15 @@ public class Turma {
         this.setId(id);
     }
 
+    public Turma() {
+        this.clientes = new ArrayList<>();
+        this.instrutores = new ArrayList<>();
+        this.maximoPessoas = 0;
+        this.horario = "";
+        this.precoAtividade = 0;
+        this.id = "";
+    }
+
     public String getId() {
         return id;
     }

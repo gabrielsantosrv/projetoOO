@@ -111,11 +111,34 @@ public class Usuario extends Pessoa{
     }
 
     public void excluirAtividade(BaseDados academia){
-        //TODO
+        System.out.println("EXCLUSÃO DE ATIVIDADES");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da atividade:");
+        String nome = input.next();
+        Atividade a = academia.encontrarAtividade(nome);
+        if (academia.excluirAtividade(a))
+            System.out.println("Atividade excluída.");
+        else
+            System.out.println("Atividade não existe no sistema.");
     }
 
     public void alterarAtividade(BaseDados academia){
-        //TODO
+        System.out.println("ALTERAÇÃO DE ATIVIDADE");
+        System.out.println("Nome da atividade:");
+        Scanner input = new Scanner(System.in);
+        String atividade = input.next();
+        Atividade antiga = academia.encontrarAtividade(atividade);
+        Atividade nova = new Atividade();
+        System.out.println("Mudar nome?");
+        String nome = input.next();
+        nova.setNome(nome);
+        System.out.println("Mudar preço?");
+        float preco = input.nextFloat();
+        nova.setPreco(preco);
+        if (academia.alterarAtividade(antiga, nova))
+            System.out.println("Atividade alterada.");
+        else
+            System.out.println("Atividade não encontrada no sistema.");
     }
 
     public void incluirTurma(BaseDados academia){
@@ -123,33 +146,56 @@ public class Usuario extends Pessoa{
         System.out.println("Atividade:");
         Scanner input = new Scanner(System.in);
         String atividade = input.next();
-        boolean encontrouAtividade = false;
-        for (Atividade a : academia.getAtividades()) {
-            if (a.getNome().equalsIgnoreCase(atividade)) {
-                encontrouAtividade = true;
-                System.out.println("Horário:");
-                String horario = input.next();
-                System.out.println("Máximo de pessoas:");
-                int maximo = input.nextInt();
-                System.out.println("Chave:");
-                String chave = input.next();
-                Turma turma = new Turma(horario, a.getPreco(), maximo, chave);
-    //           todo academia.inserirTurma(a, turma);
-                System.out.println("Turma criada.");
-                break;
-            }
-        }
-        if (!encontrouAtividade) {
-            System.out.println("Atividade não encontrada.");
-        }
+        Atividade a = academia.encontrarAtividade(atividade);
+        System.out.println("Horário:");
+        String horario = input.next();
+        System.out.println("Máximo de pessoas:");
+        int maximo = input.nextInt();
+        System.out.println("Chave:");
+        String id = input.next();
+        Turma turma = new Turma(horario, a.getPreco(), maximo, id);
+        if (academia.incluirTurma(turma, a))
+            System.out.println("Turma incluída.");
+        else
+            System.out.println("Turma já existe ou atividade não existe.");
     }
 
     public void excluirTurma(BaseDados academia){
-
+        System.out.println("EXCLUSÃO DE TURMAS");
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nome da atividade:");
+        String nome = input.next();
+        Atividade a = academia.encontrarAtividade(nome);
+        System.out.println("ID da turma:");
+        String id = input.next();
+        Turma t = academia.encontrarTurma(id, a);
+        if (academia.excluirTurma(t, a))
+            System.out.println("Turma excluída.");
+        else
+            System.out.println("Turma ou atividade não existe no sistema.");
     }
 
     public void alterarTurma(BaseDados academia){
-
+        System.out.println("ALTERAÇÃO DE TURMA");
+        System.out.println("Atividade:");
+        Scanner input = new Scanner(System.in);
+        String atividade = input.next();
+        Atividade atividade1 = academia.encontrarAtividade(atividade);
+        System.out.println("ID da turma:");
+        String id = input.next();
+        Turma antiga = academia.encontrarTurma(id, atividade1);
+        Turma nova = new Turma();
+        System.out.println("Mudar horário?");
+        String horario = input.next();
+        System.out.println("Mudar máximo de pessoas?");
+        int max = input.nextInt();
+        nova.setMaximoPessoas(max);
+        nova.setHorario(horario);
+        nova.setId(id);
+        if (academia.alterarTurma(antiga, nova, atividade1))
+            System.out.println("Turma alterada.");
+        else
+            System.out.println("Turma ou atividade não encontrada no sistema.");
     }
 
     public void relacionarTurmaCliente(BaseDados academia){
@@ -237,7 +283,7 @@ public class Usuario extends Pessoa{
         String rg = input.next();
         System.out.println("Atividade:");
         String atividade = input.next();
-        System.out.println("Chave da turma:");
+        System.out.println("ID da turma:");
         String chave = input.next();
         boolean parar = false;
         for (Instrutor i : academia.getInstrutores()) {
@@ -276,7 +322,7 @@ public class Usuario extends Pessoa{
         String rg = input.next();
         System.out.println("Atividade:");
         String atividade = input.next();
-        System.out.println("Chave da turma:");
+        System.out.println("ID da turma:");
         String chave = input.next();
         boolean parar = false;
         for (Instrutor i : academia.getInstrutores()) {

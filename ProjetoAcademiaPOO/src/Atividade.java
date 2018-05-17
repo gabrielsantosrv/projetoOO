@@ -11,6 +11,12 @@ public class Atividade{
         this.turmas = new ArrayList<>();
     }
 
+    public Atividade() {
+        this.nome = "";
+        this.preco = 0;
+        this.turmas = new ArrayList<>();
+    }
+
     public String getNome() {
         return this.nome;
     }
@@ -33,8 +39,13 @@ public class Atividade{
         return this.turmas;
     }
 
-    public void adicionarTurma(Turma turma) {
+    public boolean adicionarTurma(Turma turma) {
+        for (Turma t : this.turmas)
+            if (t.getId().equalsIgnoreCase(turma.getId()))
+                return false;
+
         this.turmas.add(turma);
+        return true;
     }
 
     public void removerTurma(Turma turma) {

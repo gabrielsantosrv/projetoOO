@@ -178,6 +178,14 @@ public class BaseDados {
         return false;
     }
 
+    public Atividade encontrarAtividade(String nome) {
+        for(Atividade a : this.atividades) {
+            if (a.getNome().equalsIgnoreCase(nome))
+                return a;
+        }
+        return null;
+    }
+
     public boolean incluirAtividade(Atividade atividade){
         boolean atividadeExistente = false;
 
@@ -195,31 +203,54 @@ public class BaseDados {
         return false;
     }
 
-    public void excluirAtividade(Atividade atividade){
+    public boolean excluirAtividade(Atividade atividade){
+        if (atividade == null)
+            return false;
         //exclui todas as turmas da atividade antes de excluí-la
         for(Turma t : atividade.getTurmas()){
             excluirTurma(t, atividade);
         }
 
         this.atividades.remove(atividade);
+        return true;
     }
 
-    public void alterarAtividade(Atividade atividadeAnt, Atividade atividadeNova){
+    public boolean alterarAtividade(Atividade atividadeAnt, Atividade atividadeNova){
+        if (atividadeAnt == null || atividadeNova == null)
+            return false;
+
         for(int i=0; i< this.clientes.size(); i++){
             Atividade a = this.atividades.get(i);
 
             //troca quando achar o cliente antigo
             if(atividadeAnt.equals(a)){
                 this.atividades.set(i, atividadeNova);
+                return true;
             }
         }
+        return false;
     }
 
-    public void incluirTurma(Turma turma, Atividade atividade){
-        atividade.adicionarTurma(turma);
+    public Turma encontrarTurma(String id, Atividade atividade) {
+        if (atividade == null)
+            return null;
+        for (Turma t : atividade.getTurmas())
+            if (t.getId().equalsIgnoreCase(id))
+                return t;
+        return null;
     }
 
-    public void excluirTurma(Turma turma, Atividade atividade){
+    public boolean incluirTurma(Turma turma, Atividade atividade){
+        if (atividade == null || turma == null)
+            return false;
+
+        return atividade.adicionarTurma(turma);
+    }
+
+    public boolean excluirTurma(Turma turma, Atividade atividade){
+        if (turma == null || atividade == null)
+            return false;
+
         for(Cliente c: turma.getClientes()){
             c.removerTurma(turma);
         }
@@ -229,16 +260,23 @@ public class BaseDados {
         }
 
         atividade.removerTurma(turma);
+        return true;
     }
 
-    public void alterarTurma(Turma turmaAnt, Turma turmaNova, Atividade atividade){
+    public boolean alterarTurma(Turma turmaAnt, Turma turmaNova, Atividade atividade){
+        if (turmaAnt == null || turmaNova == null || atividade == null)
+            return false;
+
         for(int i=0; i< atividade.getTurmas().size(); i++){
             Turma t = atividade.getTurmas().get(i);
 
             //troca quando achar o cliente antigo
             if(turmaAnt.equals(t)){
+                turmaNova.setPrecoAtividade(atividade.getPreco());
                 atividade.getTurmas().set(i, turmaNova);
+                return true;
             }
         }
+        return false;
     }
 }
