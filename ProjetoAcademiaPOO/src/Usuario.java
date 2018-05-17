@@ -210,7 +210,10 @@ public class Usuario extends Pessoa{
         System.out.println("ID da turma:");
         String id = input.next();
         Turma t = academia.encontrarTurma(id, a);
-        academia.relacionarTurmaCliente(t, c);
+        if (academia.relacionarTurmaCliente(t, c))
+            System.out.println("Cliente incluído na turma.");
+        else
+            System.out.println("Erro.");
     }
 
     public void desrelacionarTurmaCliente(BaseDados academia) {
@@ -225,7 +228,10 @@ public class Usuario extends Pessoa{
         System.out.println("ID da turma:");
         String id = input.next();
         Turma t = academia.encontrarTurma(id, a);
-        academia.desrelacionarTurmaCliente(t, c);
+        if (academia.desrelacionarTurmaCliente(t, c))
+            System.out.println("Cliente removido da turma.");
+        else
+            System.out.println("Erro.");
     }
 
     public void relacionarTurmaInstrutor(BaseDados academia){
@@ -240,7 +246,10 @@ public class Usuario extends Pessoa{
         System.out.println("ID da turma:");
         String id = input.next();
         Turma t = academia.encontrarTurma(id, a);
-        academia.relacionarTurmaInstrutor(t, i);
+        if (academia.relacionarTurmaInstrutor(t, i))
+            System.out.println("Instrutor associado à turma.");
+        else
+            System.out.println("Erro.");
     }
 
     public void desrelacionarTurmaInstrutor(BaseDados academia){
@@ -255,7 +264,10 @@ public class Usuario extends Pessoa{
         System.out.println("ID da turma:");
         String id = input.next();
         Turma t = academia.encontrarTurma(id, a);
-        academia.desrelacionarTurmaInstrutor(t, i);
+        if (academia.desrelacionarTurmaInstrutor(t, i))
+            System.out.println("Instrutor desassociado da turma.");
+        else
+            System.out.println("Erro.");
     }
 
     public void verificarClientesPorTurma(BaseDados academia) {
