@@ -199,159 +199,19 @@ public class Usuario extends Pessoa{
     }
 
     public void relacionarTurmaCliente(BaseDados academia){
-        System.out.println("ASSOCIAÇÃO DE TURMA E CLIENTE");
-        System.out.println("RG do cliente:");
-        Scanner input = new Scanner(System.in);
-        String rg = input.next();
-        System.out.println("Atividade:");
-        String atividade = input.next();
-        System.out.println("ID da turma:");
-        String chave = input.next();
-        boolean parar = false;
-        for (Cliente c : academia.getClientes()) {
-            if (parar)
-                break;
-
-            if (rg.equals(c.getRg())) {
-                for (Atividade a : academia.getAtividades()) {
-                    if (parar)
-                        break;
-
-                    if (atividade.equalsIgnoreCase(a.getNome())) {
-                        for (Turma t : a.getTurmas()) {
-                            if (parar)
-                                break;
-
-                            if (t.getId().equals(chave)) {
-                                t.adicionarCliente(c);
-                                c.adicionarTurma(t);
-                                System.out.println("Cliente incluído na turma. Turma incluída na lista de turmas do cliente.");
-                                parar = true;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        if (!parar)
-            System.out.println("Cliente, atividade ou chave da turma inválidos.");
+        //TODO
     }
 
     public void desrelacionarTurmaCliente(BaseDados academia) {
-        System.out.println("REMOVER CLIENTE DE TURMA");
-        System.out.println("RG do cliente:");
-        Scanner input = new Scanner(System.in);
-        String rg = input.next();
-        System.out.println("Atividade:");
-        String atividade = input.next();
-        System.out.println("ID da turma:");
-        String chave = input.next();
-        boolean parar = false;
-        for (Cliente c : academia.getClientes()) {
-            if (parar)
-                break;
-
-            if (rg.equals(c.getRg())) {
-                for (Atividade a : academia.getAtividades()) {
-                    if (parar)
-                        break;
-
-                    if (atividade.equalsIgnoreCase(a.getNome())) {
-                        for (Turma t : a.getTurmas()) {
-                            if (parar)
-                                break;
-
-                            if (t.getId().equals(chave)) {
-                                t.removerCliente(c);
-                                c.removerTurma(t);
-                                System.out.println("Cliente removido da turma. Turma removida da lista de turmas do cliente.");
-                                parar = true;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        if (!parar)
-            System.out.println("Cliente, atividade ou ID da turma inválidos.");
+        //TODO
     }
 
     public void relacionarTurmaInstrutor(BaseDados academia){
-        System.out.println("ASSOCIAR INSTRUTOR E TURMA");
-        System.out.println("RG do instrutor:");
-        Scanner input = new Scanner(System.in);
-        String rg = input.next();
-        System.out.println("Atividade:");
-        String atividade = input.next();
-        System.out.println("ID da turma:");
-        String chave = input.next();
-        boolean parar = false;
-        for (Instrutor i : academia.getInstrutores()) {
-            if (parar)
-                break;
-
-            if (rg.equals(i.getRg())) {
-                for (Atividade a : academia.getAtividades()) {
-                    if (parar)
-                        break;
-
-                    if (atividade.equalsIgnoreCase(a.getNome())) {
-                        for (Turma t : a.getTurmas()) {
-                            if (parar)
-                                break;
-
-                            if (t.getId().equals(chave)) {
-                                t.adicionarInstrutor(i);
-                                i.adicionarTurma(t);
-                                System.out.println("Instrutor associado à turma. Turma incluída na lista de turmas do instrutor.");
-                                parar = true;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        if (!parar)
-            System.out.println("Instrutor, atividade ou chave da turma inválidos.");
+        //TODO
     }
 
     public void desrelacionarTurmaInstrutor(BaseDados academia){
-        System.out.println("REMOVER INSTRUTOR DA TURMA");
-        System.out.println("RG do instrutor:");
-        Scanner input = new Scanner(System.in);
-        String rg = input.next();
-        System.out.println("Atividade:");
-        String atividade = input.next();
-        System.out.println("ID da turma:");
-        String chave = input.next();
-        boolean parar = false;
-        for (Instrutor i : academia.getInstrutores()) {
-            if (parar)
-                break;
-
-            if (rg.equals(i.getRg())) {
-                for (Atividade a : academia.getAtividades()) {
-                    if (parar)
-                        break;
-
-                    if (atividade.equalsIgnoreCase(a.getNome())) {
-                        for (Turma t : a.getTurmas()) {
-                            if (parar)
-                                break;
-
-                            if (t.getId().equals(chave)) {
-                                t.removerInstrutor(i);
-                                i.removerTurma(t);
-                                System.out.println("Instrutor removido da turma. Turma removida da lista de turmas do instrutor.");
-                                parar = true;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        if (!parar)
-            System.out.println("Instrutor, atividade ou chave da turma inválidos.");
+        //TODO
     }
 
     public void verificarClientesPorTurma(BaseDados academia) {
@@ -383,32 +243,5 @@ public class Usuario extends Pessoa{
         String ret = "Username: " + this.username + "\nSenha: " + this.senha + "\n";
         ret += super.toString();
         return ret;
-    }
-
-    public boolean RGClienteRepetido(String rg, BaseDados academia) {
-        for (Cliente c : academia.getClientes()) {
-            if (c.getRg().equals(rg)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean RGInstrutorRepetido(String rg, BaseDados academia) {
-        for (Instrutor i : academia.getInstrutores()) {
-            if (i.getRg().equals(rg)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean idTurmaRepetido(String id, Atividade atividade) {
-        for (Turma t : atividade.getTurmas()) {
-            if (t.getId().equals(id)) {
-                return true;
-            }
-        }
-        return false;
     }
 }
