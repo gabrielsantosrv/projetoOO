@@ -4,8 +4,8 @@ public class Usuario {
 
     private String username;
     private String senha;
-    private BaseDados academia;
-    private Scanner input;
+    protected BaseDados academia;
+    protected Scanner input;
 
     public Usuario(String username, String senha) {
         this.setUsername(username);
