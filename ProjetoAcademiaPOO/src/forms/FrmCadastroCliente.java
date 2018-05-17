@@ -13,10 +13,12 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JFormattedTextField txtDataNascimento;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtNome;
     private javax.swing.JFormattedTextField txtTelefone;
+    private javax.swing.JFormattedTextField txtRg;
     // End of variables declaration
 
     public FrmCadastroCliente() {
@@ -40,22 +42,25 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel("Data de nascimento");
         jLabel4 = new javax.swing.JLabel("Telefone");
         jLabel5 = new javax.swing.JLabel("Endereço");
+        jLabel6 = new javax.swing.JLabel("RG");
 
         txtNome = new javax.swing.JTextField();
         txtEndereco = new javax.swing.JTextField();
 
         MaskFormatter telefoneMask = null;
         MaskFormatter dataMask = null;
+        MaskFormatter rgMask = null;
 
         try {
             telefoneMask = new MaskFormatter("(##) ####-####");
             dataMask = new MaskFormatter("##/##/####");
+            rgMask = new MaskFormatter("##.###.###-#");
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
         txtDataNascimento = new javax.swing.JFormattedTextField(dataMask);
-        
+        txtRg = new javax.swing.JFormattedTextField(rgMask);
         txtTelefone = new javax.swing.JFormattedTextField(telefoneMask);
 
 
@@ -84,13 +89,15 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
                                                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                 .addComponent(txtEndereco, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
+                                                .addComponent(jLabel6)
                                                 .addComponent(jLabel5)
                                                 .addComponent(jLabel4)
                                                 .addComponent(jLabel3)
                                                 .addComponent(txtNome)
                                                 .addComponent(jLabel2)
                                                 .addComponent(txtDataNascimento)
-                                                .addComponent(txtTelefone)))
+                                                .addComponent(txtTelefone)
+                                                .addComponent(txtRg)))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -110,6 +117,10 @@ public class FrmCadastroCliente extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
