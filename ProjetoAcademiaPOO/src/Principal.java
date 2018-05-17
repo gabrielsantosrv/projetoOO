@@ -2,11 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
-    private static BaseDados academia;
-    private static ArrayList<Usuario> usuarios;
-    private static ArrayList<Administrador> administradores;
-    private static Usuario usuarioLogado = null;
-    private static Administrador administradorLogado = null;
+    private static ArrayList<Gerenciador> gerenciadores;
+    private static Gerenciador gerenciadorLogado = null;
 
     public static void main(String[] args) {
         carregarUsuariosPadrao();
@@ -25,157 +22,154 @@ public class Principal {
                 //Inclusões, exclusões e alterações
                 case 1: {
                     //Incluir cliente
-                    usuarioLogado.incluirCliente(academia);
+                    gerenciadorLogado.incluirCliente();
                     break;
                 }
                 case 2: {
                     //Alterar cliente
-                    usuarioLogado.alterarCliente(academia);
+                    gerenciadorLogado.alterarCliente();
                     break;
                 }
                 case 3: {
                     //Desativar cliente
-                    usuarioLogado.desativarCliente(academia);
+                    gerenciadorLogado.desativarCliente();
                     break;
                 }
                 case 4: {
                     //Incluir instrutor
-                    if (administradorLogado != null)
-                        administradorLogado.incluirInstrutor(academia);
+                    gerenciadorLogado.incluirInstrutor();
                     break;
                 }
                 case 5: {
                     //Alterar instrutor
-                    if (administradorLogado != null)
-                        administradorLogado.alterarInstrutor(academia);
+                    gerenciadorLogado.alterarInstrutor();
                     break;
                 }
                 case 6: {
                     //Desativar instrutor
-                    if (administradorLogado != null)
-                        administradorLogado.desativarInstrutor(academia);
+                    gerenciadorLogado.desativarInstrutor();
                     break;
                 }
                 case 7: {
                     //Incluir atividade
-                    usuarioLogado.incluirAtividade(academia);
+                    gerenciadorLogado.incluirAtividade();
                     break;
                 }
                 case 8: {
                     //Alterar atividade
-                    usuarioLogado.alterarAtividade(academia);
+                    gerenciadorLogado.alterarAtividade();
                     break;
                 }
                 case 9: {
                     //Excluir atividade
-                    usuarioLogado.excluirAtividade(academia);
+                    gerenciadorLogado.excluirAtividade();
                     break;
                 }
                 case 10: {
                     //Incluir turma
-                    usuarioLogado.incluirTurma(academia);
+                    gerenciadorLogado.incluirTurma();
                     break;
                 }
                 case 11: {
                     //Alterar turma
-                    usuarioLogado.alterarTurma(academia);
+                    gerenciadorLogado.alterarTurma();
                     break;
                 }
                 case 12: {
                     //Excluir turma
-                    usuarioLogado.excluirTurma(academia);
+                    gerenciadorLogado.excluirTurma();
                     break;
                 }
                 //Relacionamentos
                 case 13: {
                     //Associar instrutor à turma
-                    usuarioLogado.relacionarTurmaInstrutor(academia);
+                    gerenciadorLogado.relacionarTurmaInstrutor();
                     break;
                 }
                 case 14: {
                     //Associar cliente à turma
-                    usuarioLogado.relacionarTurmaCliente(academia);
+                    gerenciadorLogado.relacionarTurmaCliente();
                     break;
                 }
                 case 15: {
                     //Desassociar instrutor e turma
-                    usuarioLogado.desrelacionarTurmaInstrutor(academia);
+                    gerenciadorLogado.desrelacionarTurmaInstrutor();
                     break;
                 }
                 case 16: {
                     //Desassociar cliente e turma
-                    usuarioLogado.desrelacionarTurmaCliente(academia);
+                    gerenciadorLogado.desrelacionarTurmaCliente();
                     break;
                 }
                 //Consultas - passar da base para a classe de interação
                 case 17: {
                     //Todos os clientes
-                    usuarioLogado.exibirClientes(academia);
+                    gerenciadorLogado.exibirClientes();
                     break;
                 }
                 case 18: {
                     //Todos os instrutores
-                    usuarioLogado.exibirInstrutores(academia);
+                    gerenciadorLogado.exibirInstrutores();
                     break;
                 }
                 case 19: {
                     //Todas as atividades
-                    usuarioLogado.exibirAtividades(academia);
+                    gerenciadorLogado.exibirAtividades();
                     break;
                 }
                 case 20: {
                     //Turmas por atividade específica
-                    usuarioLogado.exibirTurmasPorAtividade(academia);
+                    gerenciadorLogado.exibirTurmasPorAtividade();
                     break;
                 }
                 case 21: {
                     //Clientes que fazem uma atividade específica
-                    usuarioLogado.clientesDeUmaAtividade(academia);
+                    gerenciadorLogado.clientesDeUmaAtividade();
                     break;
                 }
                 case 22: {
                     //Instrutores que cuidam de uma atividade específica
-                    usuarioLogado.instrutoresDeUmaAtividade(academia);
+                    gerenciadorLogado.instrutoresDeUmaAtividade();
                     break;
                 }
                 case 23: {
                     //Quantidade de clientes que fazem uma atividade específica
-                    usuarioLogado.qtdClientesDeUmaAtividade(academia);
+                    gerenciadorLogado.qtdClientesDeUmaAtividade();
                     break;
                 }
                 case 24: {
                     //Clientes que estão em uma turma específica
-                    usuarioLogado.verificarClientesPorTurma(academia);
+                    gerenciadorLogado.verificarClientesPorTurma();
                     break;
                 }
                 case 25: {
                     //Atividade com maior número de clientes
-                    usuarioLogado.atividadeComMaisClientes(academia);
+                    gerenciadorLogado.atividadeComMaisClientes();
                     break;
                 }
                 case 26: {
                     //Atividade com menor número de clientes
-                    usuarioLogado.atividadeComMenosClientes(academia);
+                    gerenciadorLogado.atividadeComMenosClientes();
                     break;
                 }
                 case 27: {
                     //Atividade com maior preço
-                    usuarioLogado.atividadeComMaiorPreco(academia);
+                    gerenciadorLogado.atividadeComMaiorPreco();
                     break;
                 }
                 case 28: {
                     //Atividade com menor preço
-                    usuarioLogado.atividadeComMenorPreco(academia);
+                    gerenciadorLogado.atividadeComMenorPreco();
                     break;
                 }
                 case 29: {
                     //Turmas por cliente específico
-                    usuarioLogado.turmasDeUmCliente(academia);
+                    gerenciadorLogado.turmasDeUmCliente();
                     break;
                 }
                 case 30: {
                     //Turmas por instrutor específico
-                    usuarioLogado.turmasDeUmInstrutor(academia);
+                    gerenciadorLogado.turmasDeUmInstrutor();
                     break;
                 }
             }
@@ -183,15 +177,12 @@ public class Principal {
     }
 
     public static void carregarUsuariosPadrao() {
-        academia = new BaseDados();
-        usuarios = new ArrayList<>();
-        administradores = new ArrayList<>();
+        gerenciadores = new ArrayList<>();
 
-        Administrador admin = new Administrador("admin", "admin");
-        Usuario usuario = new Administrador("geren", "geren");
+        Gerenciador gerenciador = new Gerenciador("admin", "admin");
+        gerenciador.setPermissoes(Permissoes.ADMIN);
 
-        usuarios.add(usuario);
-        administradores.add(admin);
+        gerenciadores.add(gerenciador);
     }
 
     public static boolean login() {
@@ -201,17 +192,9 @@ public class Principal {
         System.out.println("Senha: ");
         String senha = input.next();
 
-        for (Administrador admin : administradores) {
-            if (admin.getUsername().equals(username) && admin.getSenha().equals(senha)) {
-                administradorLogado = admin;
-                usuarioLogado = admin;
-                return true;
-            }
-        }
-
-        for (Usuario usuario : usuarios) {
-            if (usuario.getUsername().equals(username) && usuario.getSenha().equals(senha)) {
-                usuarioLogado = usuario;
+        for (Gerenciador gerenciador : gerenciadores) {
+            if (gerenciador.getUsername().equals(username) && gerenciador.getSenha().equals(senha)) {
+                gerenciadorLogado = gerenciador;
                 return true;
             }
         }
