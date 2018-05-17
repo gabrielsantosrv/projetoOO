@@ -36,12 +36,12 @@ public class Administrador extends Usuario {
         System.out.println("RG:");
         String rg = input.next();
         Instrutor instrutor = new Instrutor(rg, nome, endereco, telefone, dataNascimento, true, salario, areas);
-        academia.inserirInstrutor(instrutor);
+        academia.incluirInstrutor(instrutor);
         System.out.println("Instrutor incluído.");
     }
 
-    public void excluirInstrutor(){
-
+    public void excluirInstrutor(BaseDados academia){
+        //TODO
     }
 
     public void alterarInstrutor(BaseDados academia){

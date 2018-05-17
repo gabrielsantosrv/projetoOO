@@ -91,7 +91,7 @@ public class Usuario extends Pessoa{
         }
     }
 
-    /*public void incluirAtividade(BaseDados academia){
+    public void incluirAtividade(BaseDados academia){
         System.out.println("INCLUSÃO DE ATIVIDADE");
         String nome;
         float preco;
@@ -101,9 +101,9 @@ public class Usuario extends Pessoa{
         System.out.println("Preco:");
         preco = input.nextFloat();
         Atividade atividade = new Atividade(nome, preco);
-        academia.inserirAtividade(atividade);
+        //academia.inserirAtividade(atividade);
         System.out.println("Atividade incluída.");
-    }*/
+    }
 
     public void excluirAtividade(BaseDados academia){
     }
@@ -111,7 +111,7 @@ public class Usuario extends Pessoa{
     public void alterarAtividade(BaseDados academia){
     }
 
-    /*public void incluirTurma(BaseDados academia){
+    public void incluirTurma(BaseDados academia){
         System.out.println("CRIAÇÃO DE TURMA");
         System.out.println("Atividade:");
         Scanner input = new Scanner(System.in);
@@ -127,7 +127,7 @@ public class Usuario extends Pessoa{
                 System.out.println("Chave:");
                 String chave = input.next();
                 Turma turma = new Turma(horario, a.getPreco(), maximo, chave);
-               todo academia.inserirTurma(a, turma);
+    //           todo academia.inserirTurma(a, turma);
                 System.out.println("Turma criada.");
                 break;
             }
@@ -135,7 +135,7 @@ public class Usuario extends Pessoa{
         if (!encontrouAtividade) {
             System.out.println("Atividade não encontrada.");
         }
-    }*/
+    }
 
     public void excluirTurma(BaseDados academia){
 

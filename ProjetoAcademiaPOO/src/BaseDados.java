@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class BaseDados {
-    private  ArrayList<Cliente> clientes;
-    private  ArrayList<Instrutor> instrutores;
-    private  ArrayList<Atividade> atividades;
+    private ArrayList<Cliente> clientes;
+    private ArrayList<Instrutor> instrutores;
+    private ArrayList<Atividade> atividades;
 
     public BaseDados(){
         clientes = new ArrayList<>();
@@ -46,21 +46,21 @@ public class BaseDados {
         return new Atividade("", 0);
     }
 
-    public  void exibirAtividades() {
+    public void exibirAtividades() {
         System.out.println("EXIBIÇÃO DE ATIVIDADES");
         for (Atividade a : atividades) {
             System.out.println(a.toString());
         }
     }
 
-    public  void exibirClientes() {
+    public void exibirClientes() {
         System.out.println("EXIBIÇÃO DE CLIENTES");
         for (Cliente c : clientes) {
             System.out.println(c.toString());
         }
     }
 
-    public  void exibirInstrutores() {
+    public void exibirInstrutores() {
         System.out.println("EXIBIÇÃO DE INSTRUTORES");
         for (Instrutor i : instrutores) {
             System.out.println(i.toString());
