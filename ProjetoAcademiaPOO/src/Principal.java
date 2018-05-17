@@ -78,7 +78,7 @@ public class Principal {
                 }
                 case 11: {
                     //Alterar turma
-                    usuarioLogado.alterarAtividade(academia);
+                    usuarioLogado.alterarTurma(academia);
                     break;
                 }
                 case 12: {

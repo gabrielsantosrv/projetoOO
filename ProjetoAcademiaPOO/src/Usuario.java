@@ -151,7 +151,7 @@ public class Usuario extends Pessoa{
         String horario = input.next();
         System.out.println("Máximo de pessoas:");
         int maximo = input.nextInt();
-        System.out.println("Chave:");
+        System.out.println("ID:");
         String id = input.next();
         Turma turma = new Turma(horario, a.getPreco(), maximo, id);
         if (academia.incluirTurma(turma, a))
@@ -205,7 +205,7 @@ public class Usuario extends Pessoa{
         String rg = input.next();
         System.out.println("Atividade:");
         String atividade = input.next();
-        System.out.println("Chave da turma:");
+        System.out.println("ID da turma:");
         String chave = input.next();
         boolean parar = false;
         for (Cliente c : academia.getClientes()) {
@@ -244,7 +244,7 @@ public class Usuario extends Pessoa{
         String rg = input.next();
         System.out.println("Atividade:");
         String atividade = input.next();
-        System.out.println("Chave da turma:");
+        System.out.println("ID da turma:");
         String chave = input.next();
         boolean parar = false;
         for (Cliente c : academia.getClientes()) {
@@ -273,7 +273,7 @@ public class Usuario extends Pessoa{
             }
         }
         if (!parar)
-            System.out.println("Cliente, atividade ou chave da turma inválidos.");
+            System.out.println("Cliente, atividade ou ID da turma inválidos.");
     }
 
     public void relacionarTurmaInstrutor(BaseDados academia){
