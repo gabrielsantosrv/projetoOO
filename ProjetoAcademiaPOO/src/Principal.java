@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Principal {
     private static ArrayList<Gerenciador> gerenciadores;
-    private static Gerenciador gerenciadorLogado = null;
+    private static Gerenciador gerenciadorLogado;
 
     public static void main(String[] args) {
         carregarUsuariosPadrao();
