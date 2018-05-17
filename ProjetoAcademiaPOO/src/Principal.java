@@ -86,7 +86,7 @@ public class Principal {
                     usuarioLogado.excluirTurma(academia);
                     break;
                 }
-                //Relacionamentos //TODO refatorar
+                //Relacionamentos
                 case 13: {
                     //Associar instrutor à turma
                     usuarioLogado.relacionarTurmaInstrutor(academia);
@@ -106,45 +106,59 @@ public class Principal {
                 //Consultas - passar da base para a classe de interação
                 case 17: {
                     //Todos os clientes
+                    usuarioLogado.exibirClientes(academia);
                 }
                 case 18: {
                     //Todos os instrutores
+                    usuarioLogado.exibirInstrutores(academia);
                 }
                 case 19: {
                     //Todas as atividades
+                    usuarioLogado.exibirAtividades(academia);
                 }
                 case 20: {
                     //Turmas por atividade específica
+                    usuarioLogado.exibirTurmasPorAtividade(academia);
                 }
                 case 21: {
                     //Clientes que fazem uma atividade específica
+                    //TODO
                 }
                 case 22: {
                     //Instrutores que cuidam de uma atividade específica
+                    //TODO
                 }
                 case 23: {
                     //Quantidade de clientes que fazem uma atividade específica
+                    //TODO
                 }
                 case 24: {
                     //Clientes que estão em uma turma específica
+                    //TODO
                 }
                 case 25: {
                     //Atividade com maior número de clientes
+                    //TODO
                 }
                 case 26: {
                     //Atividade com menor número de clientes
+                    //TODO
                 }
                 case 27: {
                     //Atividade com maior preço
+                    //TODO
                 }
                 case 28: {
                     //Atividade com menor preço
+                    //TODO
                 }
                 case 29: {
                     //Turmas por cliente específico
+                    //TODO
                 }
                 case 30: {
                     //Turmas por instrutor específico
+                    //TODO
                 }
             }
         }

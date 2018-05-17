@@ -31,53 +31,6 @@ public class BaseDados {
         return comMaisInscritos;
     }
 
-    public  Atividade atividadeComMenosInscritos() {
-        //TODO
-        return new Atividade("", 0);
-    }
-
-    public  Atividade atividadeComMaiorPreco() {
-        //TODO
-        return new Atividade("", 0);
-    }
-
-    public  Atividade atividadeComMenorPreco() {
-        //TODO
-        return new Atividade("", 0);
-    }
-
-    public void exibirAtividades() {
-        System.out.println("EXIBIÇÃO DE ATIVIDADES");
-        for (Atividade a : atividades) {
-            System.out.println(a.toString());
-        }
-    }
-
-    public void exibirClientes() {
-        System.out.println("EXIBIÇÃO DE CLIENTES");
-        for (Cliente c : clientes) {
-            System.out.println(c.toString());
-        }
-    }
-
-    public void exibirInstrutores() {
-        System.out.println("EXIBIÇÃO DE INSTRUTORES");
-        for (Instrutor i : instrutores) {
-            System.out.println(i.toString());
-        }
-    }
-
-    public void exibirTurmasPorAtividade() {
-        System.out.println("EXIBIÇÃO DE TURMAS POR ATIVIDADE");
-        for (Atividade a : atividades) {
-            System.out.println(a.toString());
-            System.out.println("Turmas:");
-            for (Turma t : a.getTurmas()) {
-                System.out.println(t.toString());
-            }
-        }
-    }
-
     public boolean clienteExistente(Cliente cliente) {
         for(Cliente c: this.clientes){
             if(c.equals(cliente)){

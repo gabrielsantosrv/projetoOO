@@ -239,6 +239,38 @@ public class Usuario extends Pessoa{
         }
     }
 
+    public void exibirAtividades(BaseDados academia) {
+        System.out.println("EXIBIÇÃO DE ATIVIDADES");
+        for (Atividade a : academia.getAtividades()) {
+            System.out.println(a.toString());
+        }
+    }
+
+    public void exibirClientes(BaseDados academia) {
+        System.out.println("EXIBIÇÃO DE CLIENTES");
+        for (Cliente c : academia.getClientes()) {
+            System.out.println(c.toString());
+        }
+    }
+
+    public void exibirInstrutores(BaseDados academia) {
+        System.out.println("EXIBIÇÃO DE INSTRUTORES");
+        for (Instrutor i : academia.getInstrutores()) {
+            System.out.println(i.toString());
+        }
+    }
+
+    public void exibirTurmasPorAtividade(BaseDados academia) {
+        System.out.println("EXIBIÇÃO DE TURMAS POR ATIVIDADE");
+        for (Atividade a : academia.getAtividades()) {
+            System.out.println(a.toString());
+            System.out.println("Turmas:");
+            for (Turma t : a.getTurmas()) {
+                System.out.println(t.toString());
+            }
+        }
+    }
+
     public String toString() {
         String ret = "Username: " + this.username + "\nSenha: " + this.senha + "\n";
         ret += super.toString();
