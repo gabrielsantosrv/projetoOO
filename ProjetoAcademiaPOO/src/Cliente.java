@@ -4,6 +4,10 @@ public class Cliente extends Pessoa{
         super(rg, nome, endereco, telefone, dataNascimento, ativo);
     }
 
+    public Cliente() {
+        super();
+    }
+
     public float totalAPagar() {
         float pagamento = 0;
         for (Turma t : this.getTurmas()) {

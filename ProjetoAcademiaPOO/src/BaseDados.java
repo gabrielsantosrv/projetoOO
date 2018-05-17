@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class BaseDados {
-    private  ArrayList<Cliente> clientes;
-    private  ArrayList<Instrutor> instrutores;
-    private  ArrayList<Atividade> atividades;
+    private ArrayList<Cliente> clientes;
+    private ArrayList<Instrutor> instrutores;
+    private ArrayList<Atividade> atividades;
 
     public BaseDados(){
         clientes = new ArrayList<>();
@@ -32,113 +32,167 @@ public class BaseDados {
     }
 
     public  Atividade atividadeComMenosInscritos() {
-        //TODO
-        return new Atividade("", 0);
-    }
+        if(this.atividades.size() == 0) //nenhuma atividade registrada
+            return null;
 
-    public  Atividade atividadeComMaiorPreco() {
-        //TODO
-        return new Atividade("", 0);
-    }
+        int inscritos = 0;
+        Atividade comMenosInscritos = new Atividade("", 0);
+        inscritos = this.atividades.get(0).quantosInscritos();
+        comMenosInscritos = this.atividades.get(0);
 
-    public  Atividade atividadeComMenorPreco() {
-        //TODO
-        return new Atividade("", 0);
-    }
-
-    public  void exibirAtividades() {
-        System.out.println("EXIBIÇÃO DE ATIVIDADES");
         for (Atividade a : atividades) {
-            System.out.println(a.toString());
-        }
-    }
-
-    public  void exibirClientes() {
-        System.out.println("EXIBIÇÃO DE CLIENTES");
-        for (Cliente c : clientes) {
-            System.out.println(c.toString());
-        }
-    }
-
-    public  void exibirInstrutores() {
-        System.out.println("EXIBIÇÃO DE INSTRUTORES");
-        for (Instrutor i : instrutores) {
-            System.out.println(i.toString());
-        }
-    }
-
-    public void exibirTurmasPorAtividade() {
-        System.out.println("EXIBIÇÃO DE TURMAS POR ATIVIDADE");
-        for (Atividade a : atividades) {
-            System.out.println(a.toString());
-            System.out.println("Turmas:");
-            for (Turma t : a.getTurmas()) {
-                System.out.println(t.toString());
+            if (a.quantosInscritos() < inscritos) {
+                inscritos = a.quantosInscritos();
+                comMenosInscritos = a;
             }
         }
+
+        return comMenosInscritos;
     }
 
-    public void incluirCliente(Cliente cliente){
-        boolean clienteExistente = false;
+    public Atividade atividadeComMaiorPreco(){
+        if(this.atividades.size() == 0) //nenhuma atividade registrada
+            return null;
 
+        float preco = 0;
+        Atividade maiorPreco = new Atividade("", 0);
+        for (Atividade a : atividades) {
+            if (a.getPreco() > preco) {
+                preco = a.getPreco();
+                maiorPreco = a;
+            }
+        }
+
+        return maiorPreco;
+    }
+
+    public Atividade atividadeComMenorPreco(){
+        if(this.atividades.size() == 0) //nenhuma atividade registrada
+            return null;
+
+        float preco = 0;
+        Atividade menorPreco = new Atividade("", 0);
+        preco = this.atividades.get(0).getPreco();
+        menorPreco = this.atividades.get(0);
+        for (Atividade a : atividades) {
+            if (a.getPreco() < preco) {
+                preco = a.getPreco();
+                menorPreco = a;
+            }
+        }
+
+        return menorPreco;
+    }
+
+    public boolean clienteExistente(Cliente cliente) {
         for(Cliente c: this.clientes){
             if(c.equals(cliente)){
-                clienteExistente = true;
-                break;
+                return true;
             }
         }
+        return false;
+    }
 
-        if (!clienteExistente) {
-            this.clientes.add(cliente);
+    public Cliente encontrarCliente(String rg) {
+        for(Cliente c: this.clientes){
+            if(c.getRg().equals(rg)){
+                return c;
+            }
         }
+        return null;
     }
 
-    public void excluirCliente(Cliente cliente){
-        cliente.setAtivo(false);
+    public boolean incluirCliente(Cliente cliente){
+        if (!clienteExistente(cliente)) {
+            this.clientes.add(cliente);
+            return true;
+        }
+        return false;
     }
 
-    public void alterarCliente(Cliente clienteAnt, Cliente clienteNovo){
+    public boolean desativarCliente(Cliente cliente){
+        if (cliente != null) {
+            cliente.setAtivo(false);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean alterarCliente(Cliente clienteAnt, Cliente clienteNovo){
+        if (clienteAnt == null || clienteNovo == null)
+            return false;
+
         for(int i=0; i< this.clientes.size(); i++){
             Cliente c = this.clientes.get(i);
 
             //troca quando achar o cliente antigo
             if(clienteAnt.equals(c) && clienteAnt.isAtivo()){
               clientes.set(i, clienteNovo);
+              return true;
             }
         }
+        return false;
     }
 
-    public void incluirInstrutor(Instrutor instrutor){
-        boolean instrutorExistente = false;
-
+    public boolean instrutorExistente(Instrutor instrutor) {
         for(Instrutor i: this.instrutores){
             if(i.equals(instrutor)){
-                instrutorExistente = true;
-                break;
+                return true;
             }
         }
+        return false;
+    }
 
-        if (!instrutorExistente) {
-            this.instrutores.add(instrutor);
+    public Instrutor encontrarInstrutor(String rg) {
+        for(Instrutor i: this.instrutores){
+            if(i.getRg().equals(rg)){
+                return i;
+            }
         }
+        return null;
     }
 
-    public void excluirInstrutor(Instrutor instrutor){
-        instrutor.setAtivo(false);
+    public boolean incluirInstrutor(Instrutor instrutor){
+        if (!instrutorExistente(instrutor)) {
+            this.instrutores.add(instrutor);
+            return true;
+        }
+        return false;
     }
 
-    public void alterarInstutor(Instrutor instrutorAnt, Instrutor instrutorNovo){
+    public boolean desativarInstrutor(Instrutor instrutor){
+        if (instrutor!=null) {
+            instrutor.setAtivo(false);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean alterarInstutor(Instrutor instrutorAnt, Instrutor instrutorNovo){
+        if (instrutorAnt == null || instrutorNovo == null)
+            return false;
+
         for(int i=0; i< this.instrutores.size(); i++){
             Instrutor inst = this.instrutores.get(i);
 
             //troca quando achar o cliente antigo
             if(instrutorAnt.equals(inst) && instrutorAnt.isAtivo()){
                 this.instrutores.set(i, instrutorNovo);
+                return true;
             }
         }
+        return false;
     }
 
-    public void incluirAtividade(Atividade atividade){
+    public Atividade encontrarAtividade(String nome) {
+        for(Atividade a : this.atividades) {
+            if (a.getNome().equalsIgnoreCase(nome))
+                return a;
+        }
+        return null;
+    }
+
+    public boolean incluirAtividade(Atividade atividade){
         boolean atividadeExistente = false;
 
         for(Atividade a: this.atividades){
@@ -150,34 +204,59 @@ public class BaseDados {
 
         if (!atividadeExistente) {
             this.atividades.add(atividade);
+            return true;
         }
+        return false;
     }
 
-    public void excluirAtividade(Atividade atividade){
+    public boolean excluirAtividade(Atividade atividade){
+        if (atividade == null)
+            return false;
         //exclui todas as turmas da atividade antes de excluí-la
         for(Turma t : atividade.getTurmas()){
             excluirTurma(t, atividade);
         }
 
         this.atividades.remove(atividade);
+        return true;
     }
 
-    public void alterarAtividade(Atividade atividadeAnt, Atividade atividadeNova){
-        for(int i=0; i< this.clientes.size(); i++){
+    public boolean alterarAtividade(Atividade atividadeAnt, Atividade atividadeNova){
+        if (atividadeAnt == null || atividadeNova == null)
+            return false;
+
+        for(int i=0; i< this.atividades.size(); i++){
             Atividade a = this.atividades.get(i);
 
             //troca quando achar o cliente antigo
             if(atividadeAnt.equals(a)){
                 this.atividades.set(i, atividadeNova);
+                return true;
             }
         }
+        return false;
     }
 
-    public void incluirTurma(Turma turma, Atividade atividade){
-        atividade.adicionarTurma(turma);
+    public Turma encontrarTurma(String id, Atividade atividade) {
+        if (atividade == null)
+            return null;
+        for (Turma t : atividade.getTurmas())
+            if (t.getId().equalsIgnoreCase(id))
+                return t;
+        return null;
     }
 
-    public void excluirTurma(Turma turma, Atividade atividade){
+    public boolean incluirTurma(Turma turma, Atividade atividade){
+        if (atividade == null || turma == null)
+            return false;
+
+        return atividade.adicionarTurma(turma);
+    }
+
+    public boolean excluirTurma(Turma turma, Atividade atividade){
+        if (turma == null || atividade == null)
+            return false;
+
         for(Cliente c: turma.getClientes()){
             c.removerTurma(turma);
         }
@@ -187,16 +266,55 @@ public class BaseDados {
         }
 
         atividade.removerTurma(turma);
+        return true;
     }
 
-    public void alterarTurma(Turma turmaAnt, Turma turmaNova, Atividade atividade){
+    public boolean alterarTurma(Turma turmaAnt, Turma turmaNova, Atividade atividade){
+        if (turmaAnt == null || turmaNova == null || atividade == null)
+            return false;
+
         for(int i=0; i< atividade.getTurmas().size(); i++){
             Turma t = atividade.getTurmas().get(i);
 
             //troca quando achar o cliente antigo
             if(turmaAnt.equals(t)){
+                turmaNova.setPrecoAtividade(atividade.getPreco());
                 atividade.getTurmas().set(i, turmaNova);
+                return true;
             }
         }
+        return false;
+    }
+
+    public boolean relacionarTurmaInstrutor(Turma t, Instrutor i) {
+        if (t == null || i == null)
+            return false;
+        t.adicionarInstrutor(i);
+        i.adicionarTurma(t);
+        return true;
+    }
+
+    public boolean desrelacionarTurmaInstrutor(Turma t, Instrutor i) {
+        if (t == null || i == null)
+            return false;
+        t.removerInstrutor(i);
+        i.removerTurma(t);
+        return true;
+    }
+
+    public boolean relacionarTurmaCliente(Turma t, Cliente c) {
+        if (t == null || c == null)
+            return false;
+        t.adicionarCliente(c);
+        c.adicionarTurma(t);
+        return true;
+    }
+
+    public boolean desrelacionarTurmaCliente(Turma t, Cliente c) {
+        if (t == null || c == null)
+            return false;
+        t.removerCliente(c);
+        c.removerTurma(t);
+        return true;
     }
 }
