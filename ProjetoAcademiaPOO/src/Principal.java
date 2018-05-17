@@ -12,8 +12,48 @@ public class Principal {
         }
         menu();
     }
+    
+    public static void mensagem() {
+        String opcoes = "Bem vindo! Digite o número da operação correspondente.\n" +
+                "0. Sair\n" +
+                "1. Incluir cliente\n" +
+                "2. Alterar cliente\n" +
+                "3. Desativar cliente\n" +
+                "4. Incluir instrutor\n" +
+                "5. Alterar instrutor\n" +
+                "6. Desativar instrutor\n" +
+                "7. Incluir atividade\n" +
+                "8. Alterar atividade\n" +
+                "9. Excluir atividade\n" +
+                "10. Incluir turma\n" +
+                "11. Alterar turma\n" +
+                "12. Excluir turma\n" +
+                "13. Associar instrutor à turma\n" +
+                "14. Associar cliente à turma\n" +
+                "15. Desassociar instrutor e turma\n" +
+                "16. Desassociar cliente e turma\n" +
+                "\n" +
+                "Consultas\n" +
+                "---------\n" +
+                "17. Todos os clientes\n" +
+                "18. Todos os instrutores\n" +
+                "19. Todas as atividades\n" +
+                "20. Turmas por atividade específica\n" +
+                "21. Clientes que fazem uma atividade específica\n" +
+                "22. Instrutores que cuidam de uma atividade específica\n" +
+                "23. Quantidade de clientes que fazem uma atividade específica\n" +
+                "24. Clientes que estão em uma turma específica\n" +
+                "25. Atividade com maior número de clientes\n" +
+                "26. Atividade com menor número de clientes\n" +
+                "27. Atividade com maior preço\n" +
+                "28. Atividade com menor preço\n" +
+                "29. Turmas por cliente específico\n" +
+                "30. Turmas por instrutor específico";
+        System.out.println(opcoes);
+    }
 
     public static void menu() {
+        mensagem();
         Scanner input = new Scanner(System.in);
         int operacao = -1;
         while (operacao != 0) {
