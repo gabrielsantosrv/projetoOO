@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 public class Gerenciador {
     private String username;
@@ -43,11 +45,11 @@ public class Gerenciador {
     }
 
     public void incluirCliente(){
-        System.out.println("INCLUSÃO DE CLIENTE");
+        System.out.println("INCLUSAO DE CLIENTE");
         String nome, endereco, telefone, dataNascimento;
         System.out.println("Nome:");
         nome = this.input.next();
-        System.out.println("Endereço:");
+        System.out.println("Endereco:");
         endereco = this.input.next();
         System.out.println("Telefone:");
         telefone = this.input.next();
@@ -57,9 +59,9 @@ public class Gerenciador {
         String rg = this.input.next();
         Cliente cliente = new Cliente(rg, nome, endereco, telefone, dataNascimento, true);
         if (this.academia.incluirCliente(cliente)) {
-            System.out.println("Cliente incluído.");
+            System.out.println("Cliente incluido.");
         } else {
-            System.out.println("Já existe um cliente com esse RG.");
+            System.out.println("Ja existe um cliente com esse RG.");
         }
     }
 
@@ -71,12 +73,12 @@ public class Gerenciador {
         if (this.academia.desativarCliente(c)) {
             System.out.println("Cliente desativado.");
         } else {
-            System.out.println("Cliente não encontrado no sistema.");
+            System.out.println("Cliente nao encontrado no sistema.");
         }
     }
 
     public void alterarCliente(){
-        System.out.println("ALTERAÇÃO DOS DADOS DO CLIENTE");
+        System.out.println("ALTERACAO DOS DADOS DO CLIENTE");
         System.out.println("RG do cliente:");
         String rg = this.input.next();
         Cliente antigo = this.academia.encontrarCliente(rg);
@@ -84,7 +86,7 @@ public class Gerenciador {
         System.out.println("Mudar nome?");
         String nome = this.input.next();
         novo.setNome(nome);
-        System.out.println("Mudar endereço?");
+        System.out.println("Mudar endereco?");
         String endereco = this.input.next();
         novo.setEndereco(endereco);
         System.out.println("Mudar telefone?");
@@ -97,11 +99,11 @@ public class Gerenciador {
         if (this.academia.alterarCliente(antigo, novo))
             System.out.println("Cliente alterado.");
         else
-            System.out.println("Cliente não encontrado no sistema.");
+            System.out.println("Cliente nao encontrado no sistema.");
     }
 
     public void incluirAtividade(){
-        System.out.println("INCLUSÃO DE ATIVIDADE");
+        System.out.println("INCLUSÃƒO DE ATIVIDADE");
         String nome;
         float preco;
         System.out.println("Nome:");
@@ -110,58 +112,58 @@ public class Gerenciador {
         preco = this.input.nextFloat();
         Atividade atividade = new Atividade(nome, preco);
         if (this.academia.incluirAtividade(atividade))
-            System.out.println("Atividade incluída.");
+            System.out.println("Atividade incluÃ­da.");
         else
-            System.out.println("Essa atividade já existe.");
+            System.out.println("Essa atividade jÃ¡ existe.");
     }
 
     public void excluirAtividade(){
-        System.out.println("EXCLUSÃO DE ATIVIDADES");
+        System.out.println("EXCLUSÃƒO DE ATIVIDADES");
         System.out.println("Nome da atividade:");
         String nome = this.input.next();
         Atividade a = this.academia.encontrarAtividade(nome);
         if (this.academia.excluirAtividade(a))
-            System.out.println("Atividade excluída.");
+            System.out.println("Atividade excluÃ­da.");
         else
-            System.out.println("Atividade não existe no sistema.");
+            System.out.println("Atividade nÃ£o existe no sistema.");
     }
 
     public void alterarAtividade(){
-        System.out.println("ALTERAÇÃO DE ATIVIDADE");
+        System.out.println("ALTERAÃ‡ÃƒO DE ATIVIDADE");
         System.out.println("Nome da atividade:");
         String atividade = this.input.next();
         Atividade antiga = this.academia.encontrarAtividade(atividade);
         Atividade nova = new Atividade();
-        System.out.println("Mudar preço?");
+        System.out.println("Mudar preÃ§o?");
         float preco = this.input.nextFloat();
         nova.setPreco(preco);
         nova.setNome(atividade);
         if (this.academia.alterarAtividade(antiga, nova))
             System.out.println("Atividade alterada.");
         else
-            System.out.println("Atividade não encontrada no sistema.");
+            System.out.println("Atividade nÃ£o encontrada no sistema.");
     }
 
     public void incluirTurma(){
-        System.out.println("CRIAÇÃO DE TURMA");
+        System.out.println("CRIAÃ‡ÃƒO DE TURMA");
         System.out.println("Atividade:");
         String atividade = this.input.next();
         Atividade a = this.academia.encontrarAtividade(atividade);
-        System.out.println("Horário:");
+        System.out.println("HorÃ¡rio:");
         String horario = this.input.next();
-        System.out.println("Máximo de pessoas:");
+        System.out.println("MÃ¡ximo de pessoas:");
         int maximo = this.input.nextInt();
         System.out.println("ID:");
         String id = this.input.next();
         Turma turma = new Turma(horario, a.getPreco(), maximo, id);
         if (this.academia.incluirTurma(turma, a))
-            System.out.println("Turma incluída.");
+            System.out.println("Turma incluÃ­da.");
         else
-            System.out.println("Turma já existe ou atividade não existe.");
+            System.out.println("Turma jÃ¡ existe ou atividade nÃ£o existe.");
     }
 
     public void excluirTurma(){
-        System.out.println("EXCLUSÃO DE TURMAS");
+        System.out.println("EXCLUSÃƒO DE TURMAS");
         System.out.println("Nome da atividade:");
         String nome = this.input.next();
         Atividade a = this.academia.encontrarAtividade(nome);
@@ -169,13 +171,13 @@ public class Gerenciador {
         String id = this.input.next();
         Turma t = this.academia.encontrarTurma(id, a);
         if (this.academia.excluirTurma(t, a))
-            System.out.println("Turma excluída.");
+            System.out.println("Turma excluÃ­da.");
         else
-            System.out.println("Turma ou atividade não existe no sistema.");
+            System.out.println("Turma ou atividade nÃ£o existe no sistema.");
     }
 
     public void alterarTurma(){
-        System.out.println("ALTERAÇÃO DE TURMA");
+        System.out.println("ALTERAÃ‡ÃƒO DE TURMA");
         System.out.println("Atividade:");
         String atividade = this.input.next();
         Atividade atividade1 = this.academia.encontrarAtividade(atividade);
@@ -183,9 +185,9 @@ public class Gerenciador {
         String id = this.input.next();
         Turma antiga = this.academia.encontrarTurma(id, atividade1);
         Turma nova = new Turma();
-        System.out.println("Mudar horário?");
+        System.out.println("Mudar horÃ¡rio?");
         String horario = this.input.next();
-        System.out.println("Mudar máximo de pessoas?");
+        System.out.println("Mudar mÃ¡ximo de pessoas?");
         int max = this.input.nextInt();
         nova.setMaximoPessoas(max);
         nova.setHorario(horario);
@@ -193,7 +195,7 @@ public class Gerenciador {
         if (this.academia.alterarTurma(antiga, nova, atividade1))
             System.out.println("Turma alterada.");
         else
-            System.out.println("Turma ou atividade não encontrada no sistema.");
+            System.out.println("Turma ou atividade nÃ£o encontrada no sistema.");
     }
 
     public void relacionarTurmaCliente(){
@@ -208,7 +210,7 @@ public class Gerenciador {
         String id = this.input.next();
         Turma t = this.academia.encontrarTurma(id, a);
         if (this.academia.relacionarTurmaCliente(t, c))
-            System.out.println("Cliente incluído na turma.");
+            System.out.println("Cliente incluÃ­do na turma.");
         else
             System.out.println("Erro.");
     }
@@ -242,7 +244,7 @@ public class Gerenciador {
         String id = this.input.next();
         Turma t = this.academia.encontrarTurma(id, a);
         if (this.academia.relacionarTurmaInstrutor(t, i))
-            System.out.println("Instrutor associado à turma.");
+            System.out.println("Instrutor associado Ã  turma.");
         else
             System.out.println("Erro.");
     }
@@ -277,26 +279,26 @@ public class Gerenciador {
                     if (t.getId().equals(chave)) {
                         achou = true;
                         if (t.getClientes().size() == 0) {
-                            System.out.println("A turma ainda não tem clientes.");
+                            System.out.println("A turma ainda nÃ£o tem clientes.");
                         } else t.imprimirClientes();
                     }
                 }
             }
         }
         if (!achou) {
-            System.out.println("Atividade ou turma inválidas.");
+            System.out.println("Atividade ou turma invÃ¡lidas.");
         }
     }
 
     public void exibirAtividades() {
-        System.out.println("EXIBIÇÃO DE ATIVIDADES");
+        System.out.println("EXIBIÃ‡ÃƒO DE ATIVIDADES");
         for (Atividade a : this.academia.getAtividades()) {
             System.out.println(a.toString());
         }
     }
 
     public void exibirClientes() {
-        System.out.println("EXIBIÇÃO DE CLIENTES");
+        System.out.println("EXIBIÃ‡ÃƒO DE CLIENTES");
         for (Cliente c : this.academia.getClientes()) {
             if (c.isAtivo())
                 System.out.println(c.toString());
@@ -304,7 +306,7 @@ public class Gerenciador {
     }
 
     public void exibirInstrutores() {
-        System.out.println("EXIBIÇÃO DE INSTRUTORES");
+        System.out.println("EXIBIÃ‡ÃƒO DE INSTRUTORES");
         for (Instrutor i : this.academia.getInstrutores()) {
             if (i.isAtivo())
                 System.out.println(i.toString());
@@ -312,7 +314,7 @@ public class Gerenciador {
     }
 
     public void exibirTurmasPorAtividade() {
-        System.out.println("EXIBIÇÃO DE TURMAS POR ATIVIDADE");
+        System.out.println("EXIBIÃ‡ÃƒO DE TURMAS POR ATIVIDADE");
         for (Atividade a : this.academia.getAtividades()) {
             System.out.println(a.toString());
             System.out.println("TURMAS:");
@@ -338,7 +340,7 @@ public class Gerenciador {
             if (a.getNome().equalsIgnoreCase(atividade)) {
                 achou = true;
                 if(a.quantidadeTurmas() == 0) {
-                    System.out.println("A atividade ainda não tem turmas.");
+                    System.out.println("A atividade ainda nÃ£o tem turmas.");
                 } else {
                     for (Turma t : a.getTurmas()) {
                         t.imprimirClientes();
@@ -348,7 +350,7 @@ public class Gerenciador {
         }
 
         if(!achou){
-            System.out.println("Atividade inválida.");
+            System.out.println("Atividade invÃ¡lida.");
         }
     }
 
@@ -370,7 +372,7 @@ public class Gerenciador {
         }
 
         if(!achou){
-            System.out.println("Atividade inválida.");
+            System.out.println("Atividade invÃ¡lida.");
         }
     }
 
@@ -390,7 +392,7 @@ public class Gerenciador {
         }
 
         if(!achou){
-            System.out.println("Atividade inválida.");
+            System.out.println("Atividade invÃ¡lida.");
         }
     }
 
@@ -399,7 +401,7 @@ public class Gerenciador {
         Atividade ativ = this.academia.atividadeComMaisInscritos();
         if(ativ != null) {
             System.out.println("Atividade: " + ativ.getNome());
-            System.out.println("Número de clientes: " + ativ.quantosInscritos());
+            System.out.println("NÃºmero de clientes: " + ativ.quantosInscritos());
         }else{
             System.out.println("Nenhuma atividade registrada.");
         }
@@ -410,14 +412,14 @@ public class Gerenciador {
         Atividade ativ = this.academia.atividadeComMenosInscritos();
         if(ativ != null) {
             System.out.println("Atividade: " + ativ.getNome());
-            System.out.println("Número de clientes: " + ativ.quantosInscritos());
+            System.out.println("NÃºmero de clientes: " + ativ.quantosInscritos());
         }else{
             System.out.println("Nenhuma atividade registrada.");
         }
     }
 
     public void atividadeComMaiorPreco(){
-        System.out.println("ATIVIDADE COM MAIOR PREÇO");
+        System.out.println("ATIVIDADE COM MAIOR PREÃ‡O");
         Atividade ativ = this.academia.atividadeComMaiorPreco();
         if(ativ != null) {
             System.out.println("Atividade: " + ativ.getNome());
@@ -432,7 +434,7 @@ public class Gerenciador {
         Atividade ativ = this.academia.atividadeComMenorPreco();
         if(ativ != null) {
             System.out.println("Atividade: " + ativ.getNome());
-            System.out.println("Preço: " + ativ.getPreco());
+            System.out.println("PreÃ§o: " + ativ.getPreco());
         }else{
             System.out.println("Nenhuma atividade registrada.");
         }
@@ -451,10 +453,10 @@ public class Gerenciador {
                     System.out.println(t.toString());
                 }
             }else{
-                System.out.println("Cliente não está relacionado com nenhuma turma.");
+                System.out.println("Cliente nÃ£o estÃ¡ relacionado com nenhuma turma.");
             }
         }else{
-            System.out.println("Cliente não registrado.");
+            System.out.println("Cliente nÃ£o registrado.");
         }
     }
 
@@ -471,7 +473,7 @@ public class Gerenciador {
                     System.out.println(t.toString());
                 }
             }else{
-                System.out.println("Instrutor não está relacionado com nenhuma turma.");
+                System.out.println("Instrutor nÃ£o estÃ¡ relacionado com nenhuma turma.");
             }
         }else{
             System.out.println("Instrutor nao registrado.");
@@ -480,10 +482,10 @@ public class Gerenciador {
 
     public void incluirInstrutor(){
         if (!this.permissoes.equals(Permissoes.ADMIN)) {
-            System.out.println("Essa operação é permitida somente para administradores.");
+            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
             return;
         }
-        System.out.println("INCLUSÃO DE INSTRUTOR");
+        System.out.println("INCLUSÃƒO DE INSTRUTOR");
         String nome, endereco, telefone, dataNascimento;
         float salario;
         ArrayList<String> areas = new ArrayList<>();
@@ -492,7 +494,7 @@ public class Gerenciador {
         String rg = this.input.next();
         System.out.println("Nome:");
         nome = this.input.next();
-        System.out.println("Endereço:");
+        System.out.println("EndereÃ§o:");
         endereco = this.input.next();
         System.out.println("Telefone:");
         telefone = this.input.next();
@@ -500,22 +502,22 @@ public class Gerenciador {
         dataNascimento = this.input.next();
         System.out.println("Salario:");
         salario = this.input.nextFloat();
-        System.out.println("Em quantas áreas atua?");
+        System.out.println("Em quantas Ã¡reas atua?");
         int quantidade = this.input.nextInt();
-        System.out.println("Digite as áreas:");
+        System.out.println("Digite as Ã¡reas:");
         for (int i = 0; i < quantidade; i++) {
             areas.add(this.input.next());
         }
         Instrutor instrutor = new Instrutor(rg, nome, endereco, telefone, dataNascimento, true, salario, areas);
         if (this.academia.incluirInstrutor(instrutor))
-            System.out.println("Instrutor incluído.");
+            System.out.println("Instrutor incluÃ­do.");
         else
-            System.out.println("Já existe um instrutor com esse RG no sistema.");
+            System.out.println("JÃ¡ existe um instrutor com esse RG no sistema.");
     }
 
     public void desativarInstrutor() {
         if (!this.permissoes.equals(Permissoes.ADMIN)) {
-            System.out.println("Essa operação é permitida somente para administradores.");
+            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
             return;
         }
         System.out.println("DESATIVAR INSTRUTOR");
@@ -526,16 +528,16 @@ public class Gerenciador {
         if (this.academia.desativarInstrutor(i)) {
             System.out.println("Instrutor desativado.");
         } else {
-            System.out.println("Instrutor não encontrado no sistema.");
+            System.out.println("Instrutor nÃ£o encontrado no sistema.");
         }
     }
 
     public void alterarInstrutor(){
         if (!this.permissoes.equals(Permissoes.ADMIN)) {
-            System.out.println("Essa operação é permitida somente para administradores.");
+            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
             return;
         }
-        System.out.println("ALTERAÇÃO DOS DADOS DO INSTRUTOR");
+        System.out.println("ALTERAÃ‡ÃƒO DOS DADOS DO INSTRUTOR");
         System.out.println("RG do instrutor:");
 
         String rg = this.input.next();
@@ -545,7 +547,7 @@ public class Gerenciador {
         System.out.println("Mudar nome?");
         String nome = this.input.next();
         novo.setNome(nome);
-        System.out.println("Mudar endereço?");
+        System.out.println("Mudar endereÃ§o?");
         String endereco = this.input.next();
         novo.setEndereco(endereco);
         System.out.println("Mudar telefone?");
@@ -554,12 +556,12 @@ public class Gerenciador {
         System.out.println("Mudar data de nascimento?");
         String dataNascimento = this.input.next();
         novo.setDataNascimento(dataNascimento);
-        System.out.println("Mudar salário?");
+        System.out.println("Mudar salÃ¡rio?");
         float salario = this.input.nextFloat();
         novo.setSalario(salario);
-        System.out.println("Mudar quantidade de áreas?");
+        System.out.println("Mudar quantidade de Ã¡reas?");
         int quantidade = this.input.nextInt();
-        System.out.println("Digite as áreas:");
+        System.out.println("Digite as Ã¡reas:");
         ArrayList<String> areas = new ArrayList<>();
         for (int i = 0; i < quantidade; i++) {
             areas.add(this.input.next());
@@ -568,15 +570,15 @@ public class Gerenciador {
         if (this.academia.alterarInstutor(antigo, novo))
             System.out.println("Instrutor alterado.");
         else
-            System.out.println("Instrutor não encontrado no sistema.");
+            System.out.println("Instrutor nÃ£o encontrado no sistema.");
     }
 
     public void incluirUsuario(ArrayList<Gerenciador> gerenciadores){
         if (!this.permissoes.equals(Permissoes.ADMIN)) {
-            System.out.println("Essa operação é permitida somente para administradores.");
+            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
             return;
         }
-        System.out.println("INCLUSÃO DE USUÁRIOS");
+        System.out.println("INCLUSÃƒO DE USUÃ�RIOS");
         String username, senha;
         System.out.println("Username:");
         username = this.input.next();
@@ -584,15 +586,15 @@ public class Gerenciador {
         senha = this.input.next();
         Gerenciador gerenciador = new Gerenciador(username, senha);
         gerenciadores.add(gerenciador);
-        System.out.println("Usuário incluído.");
+        System.out.println("UsuÃ¡rio incluÃ­do.");
     }
 
     public void alterarUsuario(ArrayList<Gerenciador> gerenciadores){
         if (!this.permissoes.equals(Permissoes.ADMIN)) {
-            System.out.println("Essa operação é permitida somente para administradores.");
+            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
             return;
         }
-        System.out.println("ALTERAÇÃO DE USUÁRIOS");
+        System.out.println("ALTERAÃ‡ÃƒO DE USUÃ�RIOS");
         String username, senha;
         System.out.println("Username:");
 
@@ -607,20 +609,20 @@ public class Gerenciador {
                 System.out.println("Nova senha:");
                 senha = this.input.next();
                 u.setSenha(senha);
-                System.out.println("Usuário alterado.");
+                System.out.println("UsuÃ¡rio alterado.");
             }
         }
         if (!achou) {
-            System.out.println("Usuário não encontrado no sistema.");
+            System.out.println("UsuÃ¡rio nÃ£o encontrado no sistema.");
         }
     }
 
     public void excluirUsuario(ArrayList<Gerenciador> gerenciadores){
         if (!this.permissoes.equals(Permissoes.ADMIN)) {
-            System.out.println("Essa operação é permitida somente para administradores.");
+            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
             return;
         }
-        System.out.println("EXCLUSÃO DE USUÁRIOS");
+        System.out.println("EXCLUSÃƒO DE USUÃ�RIOS");
         String username, senha;
         System.out.println("Username:");
 
@@ -630,22 +632,99 @@ public class Gerenciador {
             if (u.getUsername().equals(username)) {
                 achou = true;
                 gerenciadores.remove(u);
-                System.out.println("Usuário excluído.");
+                System.out.println("UsuÃ¡rio excluÃ­do.");
                 break;
             }
         }
         if (!achou) {
-            System.out.println("Usuário não encontrado no sistema.");
+            System.out.println("UsuÃ¡rio nÃ£o encontrado no sistema.");
         }
     }
 
     public void imprimirUsuarios(ArrayList<Gerenciador> gerenciadores) {
         if (!this.permissoes.equals(Permissoes.ADMIN)) {
-            System.out.println("Essa operação é permitida somente para administradores.");
+            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
             return;
         }
         for (Gerenciador u : gerenciadores) {
             System.out.println(u.toString());
         }
     }
+    
+    public ArrayList<Cliente> buscaClientePorRG(String rg){
+    	return academia.getClientes().stream().filter(c -> c.getRg().contains(rg)).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Cliente> buscaClientePorNome(String nome){
+    	return academia.getClientes().stream().filter(c -> c.getNome().contains(nome)).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Cliente> buscaClientePorEndereco(String endereco){
+    	return academia.getClientes().stream().filter(c -> c.getEndereco().contains(endereco)).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Cliente> buscaClientePorTelefone(String telefone){
+    	return academia.getClientes().stream().filter(c -> c.getTelefone().contains(telefone)).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Cliente> buscaClientePorDataNascimento(String dataNascimento){
+    	return academia.getClientes().stream().filter(c -> c.getDataNascimento().contains(dataNascimento)).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Cliente> buscaClientePorAtivo(boolean ativo){
+    	return academia.getClientes().stream().filter(c -> c.isAtivo() == ativo).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Instrutor> buscaInstrutorPorRG(String rg){
+    	return academia.getInstrutores().stream().filter(c -> c.getRg().contains(rg)).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Instrutor> buscaInstrutorPorNome(String nome){
+    	return academia.getInstrutores().stream().filter(c -> c.getNome().contains(nome)).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Instrutor> buscaInstrutorPorEndereco(String endereco){
+    	return academia.getInstrutores().stream().filter(c -> c.getEndereco().contains(endereco)).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Instrutor> buscaInstrutorPorTelefone(String telefone){
+    	return academia.getInstrutores().stream().filter(c -> c.getTelefone().contains(telefone)).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Instrutor> buscaInstrutorPorDataNascimento(String dataNascimento){
+    	return academia.getInstrutores().stream().filter(c -> c.getDataNascimento().contains(dataNascimento)).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Instrutor> buscaInstrutorPorAtivo(boolean ativo){
+    	return academia.getInstrutores().stream().filter(c -> c.isAtivo() == ativo).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Instrutor> buscaInstrutorPorSalario(float salario){
+    	return academia.getInstrutores().stream().filter(c -> c.getSalario() == salario).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Instrutor> buscaInstrutorPorAreas(ArrayList<String> areas){
+    	return academia.getInstrutores().stream().filter(c -> c.getAreas() == areas).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Instrutor> buscaInstrutorPorArea(String area){
+    	return academia.getInstrutores().stream().filter(c -> c.getAreas().contains(area)).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Atividade> buscaAtividadePorNome(String nome){
+    	return academia.getAtividades().stream().filter(c -> c.getNome().contains(nome)).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Atividade> buscaAtividadePorPreco(float preco){
+    	return academia.getAtividades().stream().filter(c -> c.getPreco() == preco).collect(Collectors.toCollection(ArrayList::new));
+    }
+    
+    public ArrayList<Atividade> buscaAtividadePorTurmas(ArrayList<Turma> turmas){
+    	return academia.getAtividades().stream().filter(c -> c.getTurmas() == turmas).collect(Collectors.toCollection(ArrayList::new));	
+    }
+    
+    public ArrayList<Atividade> buscaAtividadePorTurma(Turma turma){
+    	return academia.getAtividades().stream().filter(c -> c.getTurmas().contains(turma)).collect(Collectors.toCollection(ArrayList::new));	
+    }
+    
 }

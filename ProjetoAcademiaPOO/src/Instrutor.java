@@ -23,14 +23,18 @@ public class Instrutor extends Pessoa{
             this.salario = salario;
     }
 
-    public void setAreas(ArrayList<String> areas) {
+    public ArrayList<String> getAreas() {
+		return areas;
+	}
+
+	public void setAreas(ArrayList<String> areas) {
         if (!areas.isEmpty())
             this.areas = areas;
     }
 
     public String toString() {
         String ret = super.toString();
-        ret += "\nSalário: " + this.salario;
+        ret += "\nSalÃ¡rio: " + this.salario;
         String strAreas = "";
         int count = 0;
         for (String a : areas) {
@@ -39,7 +43,7 @@ public class Instrutor extends Pessoa{
                 strAreas += ", ";
             count++;
         }
-        ret += "\nÁreas: " + strAreas;
+        ret += "\nÃ�reas: " + strAreas;
         return ret;
     }
 }
