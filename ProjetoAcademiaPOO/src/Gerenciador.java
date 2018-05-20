@@ -44,19 +44,8 @@ public class Gerenciador {
             this.senha = senha;
     }
 
-    public void incluirCliente(){
+    public void incluirCliente(String rg, String nome, String endereco, String telefone, String dataNascimento){
         System.out.println("INCLUSAO DE CLIENTE");
-        String nome, endereco, telefone, dataNascimento;
-        System.out.println("Nome:");
-        nome = this.input.next();
-        System.out.println("Endereco:");
-        endereco = this.input.next();
-        System.out.println("Telefone:");
-        telefone = this.input.next();
-        System.out.println("Data de nascimento:");
-        dataNascimento = this.input.next();
-        System.out.println("RG:");
-        String rg = this.input.next();
         Cliente cliente = new Cliente(rg, nome, endereco, telefone, dataNascimento, true);
         if (this.academia.incluirCliente(cliente)) {
             System.out.println("Cliente incluido.");
@@ -65,10 +54,8 @@ public class Gerenciador {
         }
     }
 
-    public void desativarCliente(){
+    public void desativarCliente(String rg){
         System.out.println("DESATIVAR CLIENTE");
-        System.out.println("RG do cliente:");
-        String rg = this.input.next();
         Cliente c = this.academia.encontrarCliente(rg);
         if (this.academia.desativarCliente(c)) {
             System.out.println("Cliente desativado.");
@@ -77,23 +64,13 @@ public class Gerenciador {
         }
     }
 
-    public void alterarCliente(){
+    public void alterarCliente(String rg, String nome, String endereco, String telefone, String dataNascimento){
         System.out.println("ALTERACAO DOS DADOS DO CLIENTE");
-        System.out.println("RG do cliente:");
-        String rg = this.input.next();
         Cliente antigo = this.academia.encontrarCliente(rg);
         Cliente novo = new Cliente();
-        System.out.println("Mudar nome?");
-        String nome = this.input.next();
         novo.setNome(nome);
-        System.out.println("Mudar endereco?");
-        String endereco = this.input.next();
         novo.setEndereco(endereco);
-        System.out.println("Mudar telefone?");
-        String telefone = this.input.next();
         novo.setTelefone(telefone);
-        System.out.println("Mudar data de nascimento?");
-        String dataNascimento = this.input.next();
         novo.setDataNascimento(dataNascimento);
         novo.setRG(rg);
         if (this.academia.alterarCliente(antigo, novo))
@@ -102,14 +79,8 @@ public class Gerenciador {
             System.out.println("Cliente nao encontrado no sistema.");
     }
 
-    public void incluirAtividade(){
+    public void incluirAtividade(String nome, float preco){
         System.out.println("INCLUSÃƒO DE ATIVIDADE");
-        String nome;
-        float preco;
-        System.out.println("Nome:");
-        nome = this.input.next();
-        System.out.println("Preco:");
-        preco = this.input.nextFloat();
         Atividade atividade = new Atividade(nome, preco);
         if (this.academia.incluirAtividade(atividade))
             System.out.println("Atividade incluÃ­da.");
@@ -117,10 +88,8 @@ public class Gerenciador {
             System.out.println("Essa atividade jÃ¡ existe.");
     }
 
-    public void excluirAtividade(){
+    public void excluirAtividade(String nome){
         System.out.println("EXCLUSÃƒO DE ATIVIDADES");
-        System.out.println("Nome da atividade:");
-        String nome = this.input.next();
         Atividade a = this.academia.encontrarAtividade(nome);
         if (this.academia.excluirAtividade(a))
             System.out.println("Atividade excluÃ­da.");
@@ -128,33 +97,21 @@ public class Gerenciador {
             System.out.println("Atividade nÃ£o existe no sistema.");
     }
 
-    public void alterarAtividade(){
+    public void alterarAtividade(String nome, float preco){
         System.out.println("ALTERAÃ‡ÃƒO DE ATIVIDADE");
-        System.out.println("Nome da atividade:");
-        String atividade = this.input.next();
-        Atividade antiga = this.academia.encontrarAtividade(atividade);
+        Atividade antiga = this.academia.encontrarAtividade(nome);
         Atividade nova = new Atividade();
-        System.out.println("Mudar preÃ§o?");
-        float preco = this.input.nextFloat();
         nova.setPreco(preco);
-        nova.setNome(atividade);
+        nova.setNome(nome);
         if (this.academia.alterarAtividade(antiga, nova))
             System.out.println("Atividade alterada.");
         else
             System.out.println("Atividade nÃ£o encontrada no sistema.");
     }
 
-    public void incluirTurma(){
+    public void incluirTurma(String atividade, String horario, int maximo, String id){
         System.out.println("CRIAÃ‡ÃƒO DE TURMA");
-        System.out.println("Atividade:");
-        String atividade = this.input.next();
         Atividade a = this.academia.encontrarAtividade(atividade);
-        System.out.println("HorÃ¡rio:");
-        String horario = this.input.next();
-        System.out.println("MÃ¡ximo de pessoas:");
-        int maximo = this.input.nextInt();
-        System.out.println("ID:");
-        String id = this.input.next();
         Turma turma = new Turma(horario, a.getPreco(), maximo, id);
         if (this.academia.incluirTurma(turma, a))
             System.out.println("Turma incluÃ­da.");
@@ -162,13 +119,9 @@ public class Gerenciador {
             System.out.println("Turma jÃ¡ existe ou atividade nÃ£o existe.");
     }
 
-    public void excluirTurma(){
+    public void excluirTurma(String nome, String id){
         System.out.println("EXCLUSÃƒO DE TURMAS");
-        System.out.println("Nome da atividade:");
-        String nome = this.input.next();
         Atividade a = this.academia.encontrarAtividade(nome);
-        System.out.println("ID da turma:");
-        String id = this.input.next();
         Turma t = this.academia.encontrarTurma(id, a);
         if (this.academia.excluirTurma(t, a))
             System.out.println("Turma excluÃ­da.");
@@ -176,19 +129,11 @@ public class Gerenciador {
             System.out.println("Turma ou atividade nÃ£o existe no sistema.");
     }
 
-    public void alterarTurma(){
+    public void alterarTurma(String nomeAtividade, String id, String horario, int max){
         System.out.println("ALTERAÃ‡ÃƒO DE TURMA");
-        System.out.println("Atividade:");
-        String atividade = this.input.next();
-        Atividade atividade1 = this.academia.encontrarAtividade(atividade);
-        System.out.println("ID da turma:");
-        String id = this.input.next();
+        Atividade atividade1 = this.academia.encontrarAtividade(nomeAtividade);
         Turma antiga = this.academia.encontrarTurma(id, atividade1);
         Turma nova = new Turma();
-        System.out.println("Mudar horÃ¡rio?");
-        String horario = this.input.next();
-        System.out.println("Mudar mÃ¡ximo de pessoas?");
-        int max = this.input.nextInt();
         nova.setMaximoPessoas(max);
         nova.setHorario(horario);
         nova.setId(id);
@@ -198,16 +143,10 @@ public class Gerenciador {
             System.out.println("Turma ou atividade nÃ£o encontrada no sistema.");
     }
 
-    public void relacionarTurmaCliente(){
+    public void relacionarTurmaCliente(String rg, String nomeAtividade, String id){
         System.out.println("RELACIONAMENTO DE TURMA E CLIENTE");
-        System.out.println("RG do cliente:");
-        String rg = this.input.next();
         Cliente c = this.academia.encontrarCliente(rg);
-        System.out.println("Atividade:");
-        String nomeAtividade = this.input.next();
         Atividade a = this.academia.encontrarAtividade(nomeAtividade);
-        System.out.println("ID da turma:");
-        String id = this.input.next();
         Turma t = this.academia.encontrarTurma(id, a);
         if (this.academia.relacionarTurmaCliente(t, c))
             System.out.println("Cliente incluÃ­do na turma.");
@@ -215,16 +154,10 @@ public class Gerenciador {
             System.out.println("Erro.");
     }
 
-    public void desrelacionarTurmaCliente() {
+    public void desrelacionarTurmaCliente(String rg, String nomeAtividade, String id) {
         System.out.println("DESFAZER RELACIONAMENTO DE TURMA E CLIENTE");
-        System.out.println("RG do cliente:");
-        String rg = this.input.next();
         Cliente c = this.academia.encontrarCliente(rg);
-        System.out.println("Atividade:");
-        String nomeAtividade = this.input.next();
         Atividade a = this.academia.encontrarAtividade(nomeAtividade);
-        System.out.println("ID da turma:");
-        String id = this.input.next();
         Turma t = this.academia.encontrarTurma(id, a);
         if (this.academia.desrelacionarTurmaCliente(t, c))
             System.out.println("Cliente removido da turma.");
@@ -232,16 +165,10 @@ public class Gerenciador {
             System.out.println("Erro.");
     }
 
-    public void relacionarTurmaInstrutor(){
+    public void relacionarTurmaInstrutor(String rg, String nomeAtividade, String id){
         System.out.println("RELACIONAMENTO DE TURMA E INSTRUTOR");
-        System.out.println("RG do instrutor:");
-        String rg = this.input.next();
         Instrutor i = this.academia.encontrarInstrutor(rg);
-        System.out.println("Atividade:");
-        String nomeAtividade = this.input.next();
         Atividade a = this.academia.encontrarAtividade(nomeAtividade);
-        System.out.println("ID da turma:");
-        String id = this.input.next();
         Turma t = this.academia.encontrarTurma(id, a);
         if (this.academia.relacionarTurmaInstrutor(t, i))
             System.out.println("Instrutor associado Ã  turma.");
@@ -249,16 +176,10 @@ public class Gerenciador {
             System.out.println("Erro.");
     }
 
-    public void desrelacionarTurmaInstrutor(){
+    public void desrelacionarTurmaInstrutor(String rg, String nomeAtividade, String id){
         System.out.println("DESFAZER RELACIONAMENTO DE TURMA E INSTRUTOR");
-        System.out.println("RG do instrutor:");
-        String rg = this.input.next();
         Instrutor i = this.academia.encontrarInstrutor(rg);
-        System.out.println("Atividade:");
-        String nomeAtividade = this.input.next();
         Atividade a = this.academia.encontrarAtividade(nomeAtividade);
-        System.out.println("ID da turma:");
-        String id = this.input.next();
         Turma t = this.academia.encontrarTurma(id, a);
         if (this.academia.desrelacionarTurmaInstrutor(t, i))
             System.out.println("Instrutor desassociado da turma.");
@@ -266,12 +187,8 @@ public class Gerenciador {
             System.out.println("Erro.");
     }
 
-    public void verificarClientesPorTurma() {
+    public void verificarClientesPorTurma(String atividade, String chave) {
         System.out.println("VERIFICAR CLIENTES DE UMA TURMA");
-        System.out.println("Atividade:");
-        String atividade = this.input.next();
-        System.out.println("ID da turma:");
-        String chave = this.input.next();
         boolean achou = false;
         for (Atividade a : this.academia.getAtividades()) {
             if (a.getNome().equalsIgnoreCase(atividade)) {
@@ -330,10 +247,8 @@ public class Gerenciador {
         return ret;
     }
 
-    public void clientesDeUmaAtividade(){
+    public void clientesDeUmaAtividade(String atividade){
         System.out.println("CLIENTES DE UMA ATIVIDADE");
-        System.out.println("Atividade:");
-        String atividade = this.input.next();
         boolean achou = false;
 
         for(Atividade a : this.academia.getAtividades()) {
@@ -354,11 +269,9 @@ public class Gerenciador {
         }
     }
 
-    public void instrutoresDeUmaAtividade(){
+    public void instrutoresDeUmaAtividade(String atividade){
         System.out.println("INSTRUTORES DE UMA ATIVIDADE");
-        System.out.println("Atividade:");
         
-        String atividade = this.input.next();
         boolean achou = false;
 
         for(Atividade a : this.academia.getAtividades()){
@@ -376,11 +289,9 @@ public class Gerenciador {
         }
     }
 
-    public void qtdClientesDeUmaAtividade(){
+    public void qtdClientesDeUmaAtividade(String atividade){
         System.out.println("QUANTIDADE DE CLIENTES QUE FAZEM UMA ATIVIDADE");
-        System.out.println("Atividade:");
         
-        String atividade = this.input.next();
         boolean achou = false;
 
         for(Atividade a : this.academia.getAtividades()){
@@ -440,11 +351,8 @@ public class Gerenciador {
         }
     }
 
-    public void turmasDeUmCliente(){
+    public void turmasDeUmCliente(String rg){
         System.out.println("TURMAS DE UM CLIENTE");
-        System.out.println("RG do cliente:");
-        
-        String rg = this.input.next();
         Cliente c = this.academia.encontrarCliente(rg);
         if(c != null) {
             if(c.quantidadeTurmas() > 0) {
@@ -460,11 +368,9 @@ public class Gerenciador {
         }
     }
 
-    public void turmasDeUmInstrutor(){
+    public void turmasDeUmInstrutor(String rg){
         System.out.println("TURMAS DE UM INSTRUTOR");
-        System.out.println("RG do instrutor:");
         
-        String rg = this.input.next();
         Instrutor i = this.academia.encontrarInstrutor(rg);
         if(i != null){
             if(i.quantidadeTurmas() > 0) {
@@ -480,34 +386,12 @@ public class Gerenciador {
         }
     }
 
-    public void incluirInstrutor(){
+    public void incluirInstrutor(String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, ArrayList<String> areas){
         if (!this.permissoes.equals(Permissoes.ADMIN)) {
             System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
             return;
         }
         System.out.println("INCLUSÃƒO DE INSTRUTOR");
-        String nome, endereco, telefone, dataNascimento;
-        float salario;
-        ArrayList<String> areas = new ArrayList<>();
-
-        System.out.println("RG:");
-        String rg = this.input.next();
-        System.out.println("Nome:");
-        nome = this.input.next();
-        System.out.println("EndereÃ§o:");
-        endereco = this.input.next();
-        System.out.println("Telefone:");
-        telefone = this.input.next();
-        System.out.println("Data de nascimento:");
-        dataNascimento = this.input.next();
-        System.out.println("Salario:");
-        salario = this.input.nextFloat();
-        System.out.println("Em quantas Ã¡reas atua?");
-        int quantidade = this.input.nextInt();
-        System.out.println("Digite as Ã¡reas:");
-        for (int i = 0; i < quantidade; i++) {
-            areas.add(this.input.next());
-        }
         Instrutor instrutor = new Instrutor(rg, nome, endereco, telefone, dataNascimento, true, salario, areas);
         if (this.academia.incluirInstrutor(instrutor))
             System.out.println("Instrutor incluÃ­do.");
@@ -515,7 +399,7 @@ public class Gerenciador {
             System.out.println("JÃ¡ existe um instrutor com esse RG no sistema.");
     }
 
-    public void desativarInstrutor() {
+    public void desativarInstrutor(String rg) {
         if (!this.permissoes.equals(Permissoes.ADMIN)) {
             System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
             return;
@@ -523,7 +407,6 @@ public class Gerenciador {
         System.out.println("DESATIVAR INSTRUTOR");
         System.out.println("RG do instrutor:");
 
-        String rg = this.input.next();
         Instrutor i = this.academia.encontrarInstrutor(rg);
         if (this.academia.desativarInstrutor(i)) {
             System.out.println("Instrutor desativado.");
@@ -532,7 +415,7 @@ public class Gerenciador {
         }
     }
 
-    public void alterarInstrutor(){
+    public void alterarInstrutor(String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, ArrayList<String> areas){
         if (!this.permissoes.equals(Permissoes.ADMIN)) {
             System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
             return;
@@ -540,32 +423,13 @@ public class Gerenciador {
         System.out.println("ALTERAÃ‡ÃƒO DOS DADOS DO INSTRUTOR");
         System.out.println("RG do instrutor:");
 
-        String rg = this.input.next();
         Instrutor antigo = this.academia.encontrarInstrutor(rg);
         Instrutor novo = new Instrutor();
         novo.setRG(rg);
-        System.out.println("Mudar nome?");
-        String nome = this.input.next();
         novo.setNome(nome);
-        System.out.println("Mudar endereÃ§o?");
-        String endereco = this.input.next();
         novo.setEndereco(endereco);
-        System.out.println("Mudar telefone?");
-        String telefone = this.input.next();
         novo.setTelefone(telefone);
-        System.out.println("Mudar data de nascimento?");
-        String dataNascimento = this.input.next();
         novo.setDataNascimento(dataNascimento);
-        System.out.println("Mudar salÃ¡rio?");
-        float salario = this.input.nextFloat();
-        novo.setSalario(salario);
-        System.out.println("Mudar quantidade de Ã¡reas?");
-        int quantidade = this.input.nextInt();
-        System.out.println("Digite as Ã¡reas:");
-        ArrayList<String> areas = new ArrayList<>();
-        for (int i = 0; i < quantidade; i++) {
-            areas.add(this.input.next());
-        }
         novo.setAreas(areas);
         if (this.academia.alterarInstutor(antigo, novo))
             System.out.println("Instrutor alterado.");
@@ -573,42 +437,31 @@ public class Gerenciador {
             System.out.println("Instrutor nÃ£o encontrado no sistema.");
     }
 
-    public void incluirUsuario(ArrayList<Gerenciador> gerenciadores){
+    public void incluirUsuario(ArrayList<Gerenciador> gerenciadores, String nome, String senha){
         if (!this.permissoes.equals(Permissoes.ADMIN)) {
             System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
             return;
         }
-        System.out.println("INCLUSÃƒO DE USUÃ�RIOS");
-        String username, senha;
-        System.out.println("Username:");
-        username = this.input.next();
-        System.out.println("Senha:");
-        senha = this.input.next();
-        Gerenciador gerenciador = new Gerenciador(username, senha);
+        Gerenciador gerenciador = new Gerenciador(nome, senha);
         gerenciadores.add(gerenciador);
         System.out.println("UsuÃ¡rio incluÃ­do.");
     }
 
-    public void alterarUsuario(ArrayList<Gerenciador> gerenciadores){
+    public void alterarUsuario(ArrayList<Gerenciador> gerenciadores, String nome, String novoNome, String novaSenha){
         if (!this.permissoes.equals(Permissoes.ADMIN)) {
             System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
             return;
         }
         System.out.println("ALTERAÃ‡ÃƒO DE USUÃ�RIOS");
-        String username, senha;
-        System.out.println("Username:");
 
-        username = this.input.next();
         boolean achou = false;
         for (Gerenciador u : gerenciadores) {
-            if (u.getUsername().equals(username)) {
+            if (u.getUsername().equals(nome)) {
                 achou = true;
                 System.out.println("Novo username:");
-                String novoUsername = this.input.next();
-                u.setUsername(novoUsername);
+                u.setUsername(novoNome);
                 System.out.println("Nova senha:");
-                senha = this.input.next();
-                u.setSenha(senha);
+                u.setSenha(novaSenha);
                 System.out.println("UsuÃ¡rio alterado.");
             }
         }
@@ -617,19 +470,15 @@ public class Gerenciador {
         }
     }
 
-    public void excluirUsuario(ArrayList<Gerenciador> gerenciadores){
+    public void excluirUsuario(ArrayList<Gerenciador> gerenciadores, String nome){
         if (!this.permissoes.equals(Permissoes.ADMIN)) {
             System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
             return;
         }
         System.out.println("EXCLUSÃƒO DE USUÃ�RIOS");
-        String username, senha;
-        System.out.println("Username:");
-
-        username = this.input.next();
         boolean achou = false;
         for (Gerenciador u : gerenciadores) {
-            if (u.getUsername().equals(username)) {
+            if (u.getUsername().equals(nome)) {
                 achou = true;
                 gerenciadores.remove(u);
                 System.out.println("UsuÃ¡rio excluÃ­do.");
