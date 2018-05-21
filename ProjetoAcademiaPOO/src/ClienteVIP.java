@@ -1,7 +1,7 @@
 //Um cliente VIP está matriculado normalmente à turmas e atividades porém pode comparecer a um numero de outras aulas por semana.
 
-public class ClienteVIP{
-    private int aulasPorSemana
+public class ClienteVIP extends Cliente{
+    private int aulasPorSemana;
 
     public ClienteVIP(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo, int aulasPorSemana){
         super(rg, nome, endereco, telefone, dataNascimento, ativo);
@@ -16,9 +16,7 @@ public class ClienteVIP{
         this.aulasPorSemana = aulasPorSemana;
     }
 
-    public float totalAPagar(){
-        float pagamento = 0;
-        int precoPorAula = 20;
-        super.totalAPagar() + precoPorAula * aulasPorSemana;
+    public float totalAPagar(int precoPorAula){
+        return super.totalAPagar() + precoPorAula * aulasPorSemana;
     }
 }
