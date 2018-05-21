@@ -3,8 +3,8 @@
 public class ClienteVIP extends Cliente{
     private int aulasPorSemana;
 
-    public ClienteVIP(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo, int aulasPorSemana){
-        super(rg, nome, endereco, telefone, dataNascimento, ativo);
+    public ClienteVIP(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo, Personal personal, int aulasPorSemana){
+        super(rg, nome, endereco, telefone, dataNascimento, ativo, personal);
         this.aulasPorSemana = aulasPorSemana;
     }
 

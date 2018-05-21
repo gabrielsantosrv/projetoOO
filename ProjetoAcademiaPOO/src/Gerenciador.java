@@ -44,9 +44,9 @@ public class Gerenciador {
             this.senha = senha;
     }
 
-    public void incluirCliente(String rg, String nome, String endereco, String telefone, String dataNascimento){
+    public void incluirCliente(String rg, String nome, String endereco, String telefone, String dataNascimento, Personal personal){
         System.out.println("INCLUSAO DE CLIENTE");
-        Cliente cliente = new Cliente(rg, nome, endereco, telefone, dataNascimento, true);
+        Cliente cliente = new Cliente(rg, nome, endereco, telefone, dataNascimento, true, personal);
         if (this.academia.incluirCliente(cliente)) {
             System.out.println("Cliente incluido.");
         } else {
@@ -64,7 +64,7 @@ public class Gerenciador {
         }
     }
 
-    public void alterarCliente(String rg, String nome, String endereco, String telefone, String dataNascimento){
+    public void alterarCliente(String rg, String nome, String endereco, String telefone, String dataNascimento, Personal personal){
         System.out.println("ALTERACAO DOS DADOS DO CLIENTE");
         Cliente antigo = this.academia.encontrarCliente(rg);
         Cliente novo = new Cliente();
@@ -73,6 +73,7 @@ public class Gerenciador {
         novo.setTelefone(telefone);
         novo.setDataNascimento(dataNascimento);
         novo.setRG(rg);
+        novo.setPersonal(personal);
         if (this.academia.alterarCliente(antigo, novo))
             System.out.println("Cliente alterado.");
         else
@@ -498,6 +499,18 @@ public class Gerenciador {
         for (Gerenciador u : gerenciadores) {
             System.out.println(u.toString());
         }
+    }
+    
+    public void relacionarPersonalCliente(String rgCliente, String rgPersonal){
+    	Cliente cliente = this.academia.encontrarCliente(rgCliente);
+    	Instrutor instrutor = this.academia.encontrarInstrutor(rgPersonal);
+    	if(instrutor instanceof Personal){
+    		Personal personal = (Personal) instrutor;
+			cliente.setPersonal(personal);
+			personal.adicionarCliente(cliente);    		
+    	}else{
+    		System.out.println("O instrutor selecionado não é um personal");
+    	}
     }
     
     public ArrayList<Cliente> buscaClientePorRG(String rg){

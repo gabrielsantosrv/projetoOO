@@ -62,12 +62,12 @@ public class Principal {
                 //Inclusões, exclusões e alterações
                 case 1: {
                     //Incluir cliente
-                    gerenciadorLogado.incluirCliente("1", "Ana", "Rua do IC", "40028922", "20/05/2017");
+                    gerenciadorLogado.incluirCliente("1", "Ana", "Rua do IC", "40028922", "20/05/2017", null);
                     break;
                 }
                 case 2: {
                     //Alterar cliente
-                    gerenciadorLogado.alterarCliente("1", "Gabriel", "Rua do IC", "40028922", "20/05/2018");
+                    gerenciadorLogado.alterarCliente("1", "Gabriel", "Rua do IC", "40028922", "20/05/2018", null);
                     break;
                 }
                 case 3: {
