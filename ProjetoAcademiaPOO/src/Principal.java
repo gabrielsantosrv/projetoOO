@@ -52,7 +52,8 @@ public class Principal {
         System.out.println(opcoes);
     }
 
-    public static void menu() {
+    @SuppressWarnings("resource")
+	public static void menu() {
         mensagem();
         Scanner input = new Scanner(System.in);
         int operacao = -1;

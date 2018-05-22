@@ -1,6 +1,6 @@
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.Scanner;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class Gerenciador {
@@ -478,13 +478,12 @@ public class Gerenciador {
         }
         System.out.println("EXCLUSÃƒO DE USUÃ�RIOS");
         boolean achou = false;
-        for (Gerenciador u : gerenciadores) {
-            if (u.getUsername().equals(nome)) {
-                achou = true;
-                gerenciadores.remove(u);
-                System.out.println("UsuÃ¡rio excluÃ­do.");
-                break;
-            }
+        Optional<Gerenciador> findFirst = gerenciadores.stream().filter(g -> g.getUsername().equals(nome)).findFirst();
+        if(findFirst.isPresent()){
+        	achou = true;
+        	Gerenciador gerenciador = findFirst.get();
+        	gerenciadores.remove(gerenciador);
+        	
         }
         if (!achou) {
             System.out.println("UsuÃ¡rio nÃ£o encontrado no sistema.");
