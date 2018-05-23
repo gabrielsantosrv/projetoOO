@@ -85,21 +85,15 @@ public class BaseDados {
     }
 
     public boolean clienteExistente(Cliente cliente) {
-        for(Cliente c: this.clientes){
-            if(c.equals(cliente)){
-                return true;
-            }
-        }
-        return false;
+        return this.clientes.stream().filter(c -> c.equals(cliente)).findAny().isPresent();
     }
 
     public Cliente encontrarCliente(String rg) {
-        for(Cliente c: this.clientes){
-            if(c.getRg().equals(rg)){
-                return c;
-            }
-        }
-        return null;
+    	try{
+    		return this.clientes.stream().filter(c -> c.getRg().equals(rg)).findFirst().get();    		
+    	}catch(Exception e){
+    		return null;
+    	}
     }
 
     public boolean incluirCliente(Cliente cliente){
@@ -135,21 +129,15 @@ public class BaseDados {
     }
 
     public boolean instrutorExistente(Instrutor instrutor) {
-        for(Instrutor i: this.instrutores){
-            if(i.equals(instrutor)){
-                return true;
-            }
-        }
-        return false;
+    	return this.instrutores.stream().filter(i -> i.equals(instrutor)).findAny().isPresent();
     }
 
     public Instrutor encontrarInstrutor(String rg) {
-        for(Instrutor i: this.instrutores){
-            if(i.getRg().equals(rg)){
-                return i;
-            }
-        }
-        return null;
+    	try{
+    		return this.instrutores.stream().filter(i -> i.getRg().equals(rg)).findFirst().get();    		
+    	}catch(Exception e){
+    		return null;
+    	}
     }
 
     public boolean incluirInstrutor(Instrutor instrutor){
@@ -185,11 +173,11 @@ public class BaseDados {
     }
 
     public Atividade encontrarAtividade(String nome) {
-        for(Atividade a : this.atividades) {
-            if (a.getNome().equalsIgnoreCase(nome))
-                return a;
-        }
-        return null;
+    	try{
+    		return this.atividades.stream().filter(a -> a.getNome().equals(nome)).findFirst().get();    		
+    	}catch(Exception e){
+    		return null;
+    	}
     }
 
     public boolean incluirAtividade(Atividade atividade){

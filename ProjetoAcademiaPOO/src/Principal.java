@@ -52,7 +52,8 @@ public class Principal {
         System.out.println(opcoes);
     }
 
-    public static void menu() {
+    @SuppressWarnings("resource")
+	public static void menu() {
         mensagem();
         Scanner input = new Scanner(System.in);
         int operacao = -1;
@@ -62,83 +63,83 @@ public class Principal {
                 //Inclusões, exclusões e alterações
                 case 1: {
                     //Incluir cliente
-                    gerenciadorLogado.incluirCliente();
+                    gerenciadorLogado.incluirCliente("1", "Ana", "Rua do IC", "40028922", "20/05/2017", null);
                     break;
                 }
                 case 2: {
                     //Alterar cliente
-                    gerenciadorLogado.alterarCliente();
+                    gerenciadorLogado.alterarCliente("1", "Gabriel", "Rua do IC", "40028922", "20/05/2018", null);
                     break;
                 }
                 case 3: {
                     //Desativar cliente
-                    gerenciadorLogado.desativarCliente();
+                    gerenciadorLogado.desativarCliente("1");
                     break;
                 }
                 case 4: {
                     //Incluir instrutor
-                    gerenciadorLogado.incluirInstrutor();
+                    gerenciadorLogado.incluirInstrutor("2", "Bruno", "Rua da Fef", "40028922", "20/05/0218", (float)500.0, null);
                     break;
                 }
                 case 5: {
                     //Alterar instrutor
-                    gerenciadorLogado.alterarInstrutor();
+                    gerenciadorLogado.alterarInstrutor("2", "Victor", "Rua da Fef", "40028922", "20/05/2017", (float)500.0, null);
                     break;
                 }
                 case 6: {
                     //Desativar instrutor
-                    gerenciadorLogado.desativarInstrutor();
+                    gerenciadorLogado.desativarInstrutor("2");
                     break;
                 }
                 case 7: {
                     //Incluir atividade
-                    gerenciadorLogado.incluirAtividade();
+                    gerenciadorLogado.incluirAtividade("Natacao", (float) 50);
                     break;
                 }
                 case 8: {
                     //Alterar atividade
-                    gerenciadorLogado.alterarAtividade();
+                    gerenciadorLogado.alterarAtividade("Natacao", (float) 45);
                     break;
                 }
                 case 9: {
                     //Excluir atividade
-                    gerenciadorLogado.excluirAtividade();
+                    gerenciadorLogado.excluirAtividade("Natacao");
                     break;
                 }
                 case 10: {
                     //Incluir turma
-                    gerenciadorLogado.incluirTurma();
+                    gerenciadorLogado.incluirTurma("Natacao", "8:00", 25, "1");
                     break;
                 }
                 case 11: {
                     //Alterar turma
-                    gerenciadorLogado.alterarTurma();
+                    gerenciadorLogado.alterarTurma("Natacao", "8:30", "1", 30);
                     break;
                 }
                 case 12: {
                     //Excluir turma
-                    gerenciadorLogado.excluirTurma();
+                    gerenciadorLogado.excluirTurma("Natacao", "1");
                     break;
                 }
                 //Relacionamentos
                 case 13: {
                     //Associar instrutor à turma
-                    gerenciadorLogado.relacionarTurmaInstrutor();
+                    gerenciadorLogado.relacionarTurmaInstrutor("1", "Natacao", "5");
                     break;
                 }
                 case 14: {
                     //Associar cliente à turma
-                    gerenciadorLogado.relacionarTurmaCliente();
+                    gerenciadorLogado.relacionarTurmaCliente("2", "Natacao", "3");
                     break;
                 }
                 case 15: {
                     //Desassociar instrutor e turma
-                    gerenciadorLogado.desrelacionarTurmaInstrutor();
+                    gerenciadorLogado.desrelacionarTurmaInstrutor("1", "Natacao", "5");
                     break;
                 }
                 case 16: {
                     //Desassociar cliente e turma
-                    gerenciadorLogado.desrelacionarTurmaCliente();
+                    gerenciadorLogado.desrelacionarTurmaCliente("2", "Natacao", "3");
                     break;
                 }
                 //Consultas - passar da base para a classe de interação
@@ -164,22 +165,22 @@ public class Principal {
                 }
                 case 21: {
                     //Clientes que fazem uma atividade específica
-                    gerenciadorLogado.clientesDeUmaAtividade();
+                    gerenciadorLogado.clientesDeUmaAtividade("Natacao");
                     break;
                 }
                 case 22: {
                     //Instrutores que cuidam de uma atividade específica
-                    gerenciadorLogado.instrutoresDeUmaAtividade();
+                    gerenciadorLogado.instrutoresDeUmaAtividade("Natacao");
                     break;
                 }
                 case 23: {
                     //Quantidade de clientes que fazem uma atividade específica
-                    gerenciadorLogado.qtdClientesDeUmaAtividade();
+                    gerenciadorLogado.qtdClientesDeUmaAtividade("Natacao");
                     break;
                 }
                 case 24: {
                     //Clientes que estão em uma turma específica
-                    gerenciadorLogado.verificarClientesPorTurma();
+                    gerenciadorLogado.verificarClientesPorTurma("Natacao", "5");
                     break;
                 }
                 case 25: {
@@ -204,12 +205,12 @@ public class Principal {
                 }
                 case 29: {
                     //Turmas por cliente específico
-                    gerenciadorLogado.turmasDeUmCliente();
+                    gerenciadorLogado.turmasDeUmCliente("1");
                     break;
                 }
                 case 30: {
                     //Turmas por instrutor específico
-                    gerenciadorLogado.turmasDeUmInstrutor();
+                    gerenciadorLogado.turmasDeUmInstrutor("2");
                     break;
                 }
             }
