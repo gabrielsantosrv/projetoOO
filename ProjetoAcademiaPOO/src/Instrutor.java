@@ -10,6 +10,11 @@ public class Instrutor extends Pessoa{
         this.setAreas(areas);
     }
 
+    public Instrutor(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo, ArrayList<String> areas){
+        super(rg, nome, endereco, telefone, dataNascimento, ativo);
+        this.setAreas(areas);
+    }
+
     public Instrutor() {
         super();
     }

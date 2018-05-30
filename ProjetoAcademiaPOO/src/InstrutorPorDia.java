@@ -2,11 +2,13 @@ import java.util.ArrayList;
 
 public class InstrutorPorDia extends Instrutor{
     private int diasTrabalhados;
-    private int pagamentoPorDia;
+    private float pagamentoPorDia;
 
-    public InstrutorPorDia(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo, float salario, ArrayList<String> areas, int diasTrabalhados){
-        super(rg, nome, endereco, telefone, dataNascimento, ativo, salario, areas);
+    public InstrutorPorDia(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo, ArrayList<String> areas, int diasTrabalhados, float pagamentoPorDia){
+        super(rg, nome, endereco, telefone, dataNascimento, ativo, areas);
         this.diasTrabalhados = diasTrabalhados;
+        this.pagamentoPorDia = pagamentoPorDia;
+        super.setSalario(pagamentoPorDia);
     }
 
     public int getDiasTrabalhados() {
@@ -17,7 +19,13 @@ public class InstrutorPorDia extends Instrutor{
         this.diasTrabalhados = diasTrabalhados;
     }
 
-    public float getPagamentoPorDia(){
-        return super.getSalario()/this.diasTrabalhados;
+    public float getPagamentoPorDia(){ return pagamentoPorDia; }
+
+    public void setPagamentoPorDia(float pagamentoPorDia){ this.pagamentoPorDia = pagamentoPorDia; }
+
+    @Override
+    public float getSalario(){
+        return this.diasTrabalhados * super.getSalario();
     }
+
 }
