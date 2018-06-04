@@ -4,17 +4,17 @@ public class Turma {
     private ArrayList<Cliente> clientes;
     private ArrayList<Instrutor> instrutores;
     private String horario;
-    private float precoAtividade;
     private int maximoPessoas;
     private String id;
+    private Atividade atividade;
 
-    public Turma(String horario, float precoAtividade, int maximoPessoas, String id) {
+    public Turma(String horario, int maximoPessoas, String id, Atividade atividade) {
         this.clientes = new ArrayList<>();
         this.instrutores = new ArrayList<>();
         this.setMaximoPessoas(maximoPessoas);
         this.setHorario(horario);
-        this.setPrecoAtividade(precoAtividade);
         this.setId(id);
+        this.setAtividade(atividade);
     }
 
     public Turma() {
@@ -22,8 +22,15 @@ public class Turma {
         this.instrutores = new ArrayList<>();
         this.maximoPessoas = 0;
         this.horario = "";
-        this.precoAtividade = 0;
         this.id = "";
+    }
+
+    public Atividade getAtividade() {
+        return atividade;
+    }
+
+    public void setAtividade(Atividade atividade) {
+        this.atividade = atividade;
     }
 
     public String getId() {
@@ -71,15 +78,6 @@ public class Turma {
     public void setHorario(String horario) {
         if (!horario.equals(""))
             this.horario = horario;
-    }
-
-    public float getPrecoAtividade() {
-        return this.precoAtividade;
-    }
-
-    public void setPrecoAtividade(float precoAtividade) {
-        if (precoAtividade > 0)
-            this.precoAtividade = precoAtividade;
     }
 
     public int vagas() {
