@@ -10,7 +10,7 @@ public class Gerenciador {
     protected Scanner input;
     private Permissoes permissoes;
 
-    public Gerenciador(String username, String senha) {
+''    public Gerenciador(String username, String senha) {
         this.setPermissoes(Permissoes.COMUM);
         this.setUsername(username);
         this.setSenha(senha);
