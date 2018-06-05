@@ -10,14 +10,4 @@ public class frmDadosCliente {
     private JTextField textField4;
     private JTextField textField5;
     private JButton salvarButton;
-
-
-    public frmDadosCliente() {
-        salvarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-              greerr.inclt  textField1.getText()
-            }
-        });
-    }
 }

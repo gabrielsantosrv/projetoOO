@@ -13,17 +13,4 @@ public class frmTelaPrincipal {
     private JButton consultarAtividadesButton;
     private JButton consultarTurmasButton;
     private JButton button1;
-
-    private Gerenciador gerenciador = new Gerenciador("admin", "admin");
-
-
-    public frmTelaPrincipal() {
-        cadastrarClienteButton.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent mouseEvent) {
-                super.mouseClicked(mouseEvent);
-                gerenciador.
-            }
-        });
-    }
 }
