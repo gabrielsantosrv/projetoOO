@@ -143,7 +143,7 @@ public class Gerenciador {
         Atividade a = academia.encontrarAtividade(nomeAtividade);
         Turma t = academia.encontrarTurma(id, a);
         if (academia.relacionarTurmaInstrutor(t, i))
-            System.out.println("Instrutor associado Ã  turma.");
+            System.out.println("Instrutor associado Ã  turma.");
         else
             System.out.println("Erro.");
     }
@@ -163,9 +163,9 @@ public class Gerenciador {
         System.out.println("VERIFICAR CLIENTES DE UMA TURMA");
         Optional<Atividade> ati = academia.getAtividades().stream().filter( a -> atividade.equals(a.getNome())).findFirst();
         if(ati.isPresent()){
-            Optional<Turma> turma = ati.get().getTurmas().stream().filter(t -> chave.equals(t.getId())).findFirst();
-            if(turma.isPresent())
-                return turma.get().getClientes();
+        	Optional<Turma> turma = ati.get().getTurmas().stream().filter(t -> chave.equals(t.getId())).findFirst();
+        	if(turma.isPresent())
+        		return turma.get().getClientes();
         }
         return new ArrayList<>();
     }
@@ -212,9 +212,8 @@ public class Gerenciador {
         ArrayList<Cliente> retorno = new ArrayList<>();
         Optional<Atividade> ati = academia.getAtividades().stream().filter(a -> atividade.equals(a.getNome())).findFirst();
         if(ati.isPresent()){
-            ati.get().getTurmas().forEach(t -> retorno.addAll(t.getClientes()));
+        	ati.get().getTurmas().forEach(t -> retorno.addAll(t.getClientes()));
         }
-
         return retorno;
     }
 
@@ -223,7 +222,7 @@ public class Gerenciador {
         ArrayList<Instrutor> retorno = new ArrayList<>();
         Optional<Atividade> ati = academia.getAtividades().stream().filter(a -> atividade.equals(a.getNome())).findFirst();
         if(ati.isPresent()){
-            ati.get().getTurmas().forEach(t -> retorno.addAll(t.getInstrutores()));
+        	ati.get().getTurmas().forEach(t -> retorno.addAll(t.getInstrutores()));
         }
         return retorno;
     }
@@ -232,7 +231,7 @@ public class Gerenciador {
         System.out.println("QUANTIDADE DE CLIENTES QUE FAZEM UMA ATIVIDADE");
         Optional<Atividade> ati = academia.getAtividades().stream().filter(a -> atividade.equals(a.getNome())).findFirst();
         if(ati.isPresent()){
-            return ati.get().quantosInscritos();
+        	return ati.get().quantosInscritos();
         }
         return 0;
     }
@@ -285,7 +284,7 @@ public class Gerenciador {
         System.out.println("TURMAS DE UM CLIENTE");
         Cliente c = academia.encontrarCliente(rg);
         if(c != null){
-            return c.getTurmas();
+        	return c.getTurmas();
         }else{
             System.out.println("Cliente nÃ£o registrado.");
         }
@@ -294,14 +293,13 @@ public class Gerenciador {
 
     public static ArrayList<Turma> turmasDeUmInstrutor(String rg){
         System.out.println("TURMAS DE UM INSTRUTOR");
-
         Instrutor i = academia.encontrarInstrutor(rg);
         if(i != null){
-            return i.getTurmas();
+        	return i.getTurmas();
         }else{
             System.out.println("Instrutor nao registrado.");
         }
-        return new ArrayList<>();
+		return new ArrayList<>();
     }
 
     public static void incluirInstrutor(String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, ArrayList<String> areas){
@@ -400,7 +398,6 @@ public class Gerenciador {
 //        	achou = true;
 //        	Gerenciador gerenciador = findFirst.get();
 //        	gerenciadores.remove(gerenciador);
-//
 //        }
 //        if (!achou) {
 //            System.out.println("UsuÃ¡rio nÃ£o encontrado no sistema.");
@@ -416,19 +413,18 @@ public class Gerenciador {
 //            System.out.println(u.toString());
 //        }
 //    }
-
     public static void relacionarPersonalCliente(String rgCliente, String rgPersonal){
-        Cliente cliente = academia.encontrarCliente(rgCliente);
-        Instrutor instrutor = academia.encontrarInstrutor(rgPersonal);
-        if(instrutor instanceof Personal){
-            Personal personal = (Personal) instrutor;
-            cliente.setPersonal(personal);
-            personal.adicionarCliente(cliente);
-        }else{
-            System.out.println("O instrutor selecionado não é um personal");
-        }
+    	Cliente cliente = academia.encontrarCliente(rgCliente);
+    	Instrutor instrutor = academia.encontrarInstrutor(rgPersonal);
+    	if(instrutor instanceof Personal){
+    		Personal personal = (Personal) instrutor;
+			cliente.setPersonal(personal);
+			personal.adicionarCliente(cliente);    		
+    	}else{
+    		System.out.println("O instrutor selecionado não é um personal");
+    	}
     }
-
+    
     public ArrayList<Cliente> buscaClientePorRG(String rg){
         return academia.getClientes().stream().filter(c -> c.getRg().contains(rg)).collect(Collectors.toCollection(ArrayList::new));
     }
