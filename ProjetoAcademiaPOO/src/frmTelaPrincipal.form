@@ -43,100 +43,12 @@
           <text value="Cadastrar Cliente"/>
         </properties>
       </component>
-      <component id="761d1" class="javax.swing.JButton" binding="consultarClientesButton" default-binding="true">
+      <component id="761d1" class="javax.swing.JButton" binding="consultarPessoasButton" default-binding="true">
         <constraints>
           <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Consultar Clientes"/>
-        </properties>
-      </component>
-      <component id="a1a28" class="javax.swing.JButton" binding="consultarInstrutoresButton" default-binding="true">
-        <constraints>
-          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Consultar Instrutores"/>
-        </properties>
-      </component>
-      <component id="e7ba9" class="javax.swing.JButton" binding="associarClientesÀTurmaButton" default-binding="true">
-        <constraints>
-          <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Associar Clientes à Turma"/>
-        </properties>
-      </component>
-      <component id="1064b" class="javax.swing.JButton" binding="associarInstrutoresÀTurmaButton" default-binding="true">
-        <constraints>
-          <grid row="8" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Associar Instrutores à Turma"/>
-        </properties>
-      </component>
-      <component id="f5561" class="javax.swing.JButton" binding="consultarAtividadesButton" default-binding="true">
-        <constraints>
-          <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Consultar Atividades"/>
-        </properties>
-      </component>
-      <component id="6dfa7" class="javax.swing.JButton" binding="consultarTurmasButton" default-binding="true">
-        <constraints>
-          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Consultar Turmas"/>
-        </properties>
-      </component>
-      <component id="22843" class="javax.swing.JButton" binding="turmasPorAtividadeButton" default-binding="true">
-        <constraints>
-          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Turmas por Atividade"/>
-        </properties>
-      </component>
-      <component id="d3618" class="javax.swing.JButton" binding="clientesPorAtividadeButton" default-binding="true">
-        <constraints>
-          <grid row="5" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Clientes por Atividade"/>
-        </properties>
-      </component>
-      <component id="8567b" class="javax.swing.JButton" binding="instrutoresPorAtividadeButton" default-binding="true">
-        <constraints>
-          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Instrutores por Atividade"/>
-        </properties>
-      </component>
-      <component id="2b631" class="javax.swing.JButton" binding="clientesPorTurmaButton" default-binding="true">
-        <constraints>
-          <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Clientes por Turma"/>
-        </properties>
-      </component>
-      <component id="e7d68" class="javax.swing.JButton" binding="turmasPorClienteButton" default-binding="true">
-        <constraints>
-          <grid row="6" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Turmas por Cliente"/>
-        </properties>
-      </component>
-      <component id="5dc94" class="javax.swing.JButton" binding="turmasPorInstrutorButton" default-binding="true">
-        <constraints>
-          <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Turmas por Instrutor"/>
+          <text value="Consultar Pessoas"/>
         </properties>
       </component>
       <component id="987b5" class="javax.swing.JButton" binding="cadastrarInstrutorButton" default-binding="true">
@@ -163,20 +75,28 @@
           <text value="Cadastrar Turma"/>
         </properties>
       </component>
-      <component id="15c96" class="javax.swing.JButton" binding="desassociarClienteETurmaButton" default-binding="true">
+      <component id="f5561" class="javax.swing.JButton" binding="consultarAtividadesButton" default-binding="true">
         <constraints>
-          <grid row="9" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Desassociar Cliente e Turma"/>
+          <text value="Consultar Atividades"/>
         </properties>
       </component>
-      <component id="50c3b" class="javax.swing.JButton" binding="desassociarInstrutorETurmaButton" default-binding="true">
+      <component id="6dfa7" class="javax.swing.JButton" binding="consultarTurmasButton" default-binding="true">
         <constraints>
-          <grid row="9" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Desassociar Instrutor e Turma"/>
+          <text value="Consultar Turmas"/>
+        </properties>
+      </component>
+      <component id="e7ba9" class="javax.swing.JButton" binding="associarDesassociarATurmaButton">
+        <constraints>
+          <grid row="8" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Associar/Desassociar à Turma"/>
         </properties>
       </component>
     </children>

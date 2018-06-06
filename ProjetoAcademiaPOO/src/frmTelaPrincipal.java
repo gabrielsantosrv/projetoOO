@@ -4,23 +4,13 @@ import java.awt.event.MouseEvent;
 
 public class frmTelaPrincipal {
     private JButton cadastrarClienteButton;
-    private JButton consultarClientesButton;
-    private JButton associarClientesÀTurmaButton;
+    private JButton consultarPessoasButton;
+    private JButton associarDesassociarATurmaButton;
     private JButton cadastrarInstrutorButton;
     private JButton cadastrarAtividadeButton;
     private JButton cadastrarTurmaButton;
-    private JButton consultarInstrutoresButton;
     private JButton consultarAtividadesButton;
     private JButton consultarTurmasButton;
-    private JButton associarInstrutoresÀTurmaButton;
-    private JButton turmasPorAtividadeButton;
-    private JButton clientesPorAtividadeButton;
-    private JButton instrutoresPorAtividadeButton;
-    private JButton clientesPorTurmaButton;
-    private JButton turmasPorClienteButton;
-    private JButton turmasPorInstrutorButton;
-    private JButton desassociarClienteETurmaButton;
-    private JButton desassociarInstrutorETurmaButton;
     private JPanel telaPrincipal;
 
     public static void main(String args[]){
