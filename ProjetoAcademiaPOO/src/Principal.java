@@ -220,10 +220,10 @@ public class Principal {
     public static void carregarUsuariosPadrao() {
         gerenciadores = new ArrayList<>();
 
-        Gerenciador gerenciador = new Gerenciador("admin", "admin");
-        gerenciador.setPermissoes(Permissoes.ADMIN);
+        //Gerenciador gerenciador = new Gerenciador("admin", "admin");
+        //gerenciador.setPermissoes(Permissoes.ADMIN);
 
-        gerenciadores.add(gerenciador);
+        //gerenciadores.add(gerenciador);
     }
 
     public static boolean login() {
@@ -234,10 +234,10 @@ public class Principal {
         String senha = input.next();
 
         for (Gerenciador gerenciador : gerenciadores) {
-            if (gerenciador.getUsername().equals(username) && gerenciador.getSenha().equals(senha)) {
-                gerenciadorLogado = gerenciador;
-                return true;
-            }
+            //if (gerenciador.getUsername().equals(username) && gerenciador.getSenha().equals(senha)) {
+            //    gerenciadorLogado = gerenciador;
+            //    return true;
+            //}
         }
 
         return false;

@@ -266,7 +266,7 @@ public class BaseDados {
 
             //troca quando achar o cliente antigo
             if(turmaAnt.equals(t)){
-                turmaNova.setPrecoAtividade(atividade.getPreco());
+                //turmaNova.setPrecoAtividade(atividade.getPreco());
                 atividade.getTurmas().set(i, turmaNova);
                 return true;
             }

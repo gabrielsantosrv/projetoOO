@@ -424,7 +424,7 @@ public class Gerenciador {
     		System.out.println("O instrutor selecionado não é um personal");
     	}
     }
-    
+
     public ArrayList<Cliente> buscaClientePorRG(String rg){
         return academia.getClientes().stream().filter(c -> c.getRg().contains(rg)).collect(Collectors.toCollection(ArrayList::new));
     }

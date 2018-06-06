@@ -22,7 +22,7 @@ public class Cliente extends Pessoa{
 	public float totalAPagar() {
         float pagamento = 0;
         for (Turma t : this.getTurmas()) {
-            pagamento += t.getPrecoAtividade();
+            pagamento += t.getAtividade().getPreco();
         }
         return personal != null ? pagamento + personal.getMensalidade() : pagamento;
     }
