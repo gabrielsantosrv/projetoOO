@@ -22,6 +22,8 @@ public class InstrutorPorHora extends Instrutor{
 
     public void setPagamentoPorHora(float pagamentoPorHora) { this.pagamentoPorHora = pagamentoPorHora; }
 
+    
+    //instrutor por hora nao precida de um atributo salario pois ele ganha 
     @Override
     public float getSalario(){
         return this.horasTrabalhadas * this.pagamentoPorHora;

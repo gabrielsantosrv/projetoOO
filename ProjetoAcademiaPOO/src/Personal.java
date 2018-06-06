@@ -6,9 +6,8 @@ public class Personal extends Instrutor {
 	private float mensalidade;
 	private ArrayList<Cliente> clientes;
 
-	public Personal(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo,
-			float salario, ArrayList<String> areas, float mensalidade) {
-		super(rg, nome, endereco, telefone, dataNascimento, ativo, salario, areas);
+	public Personal(String rg, String nome, String endereco, String telefone, String dataNascimento, boolean ativo, ArrayList<String> areas, float mensalidade) {
+		super(rg, nome, endereco, telefone, dataNascimento, ativo, areas);
 		this.mensalidade = mensalidade;
 		clientes = new ArrayList<>();
 	}
@@ -30,8 +29,9 @@ public class Personal extends Instrutor {
 	}
 	
 	//cada cliente que o personal tem paga a quantida da mensalidade pra ele
+	@Override
 	public float getSalario(){
-		return super.getSalario() + mensalidade*clientes.size();
+		return mensalidade*clientes.size();
 	}
 
 }

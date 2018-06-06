@@ -8,7 +8,6 @@ public class InstrutorPorDia extends Instrutor{
         super(rg, nome, endereco, telefone, dataNascimento, ativo, areas);
         this.diasTrabalhados = diasTrabalhados;
         this.pagamentoPorDia = pagamentoPorDia;
-        super.setSalario(pagamentoPorDia);
     }
 
     public int getDiasTrabalhados() {
@@ -25,7 +24,7 @@ public class InstrutorPorDia extends Instrutor{
 
     @Override
     public float getSalario(){
-        return this.diasTrabalhados * super.getSalario();
+        return this.diasTrabalhados * pagamentoPorDia;
     }
 
 }

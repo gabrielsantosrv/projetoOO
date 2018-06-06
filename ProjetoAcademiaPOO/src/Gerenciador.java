@@ -302,18 +302,44 @@ public class Gerenciador {
 		return new ArrayList<>();
     }
 
-    public static void incluirInstrutor(String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, ArrayList<String> areas){
+    public static void incluirInstrutorDiario(String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, int diasTrabalhados, ArrayList<String> areas){
 //        if (!permissoes.equals(Permissoes.ADMIN)) {
 //            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
 //            return;
 //        }
         System.out.println("INCLUSÃƒO DE INSTRUTOR");
-        Instrutor instrutor = new Instrutor(rg, nome, endereco, telefone, dataNascimento, true, salario, areas);
+        Instrutor instrutor = new InstrutorPorDia(rg, nome, endereco, telefone, dataNascimento, true, areas, diasTrabalhados, salario);
         if (academia.incluirInstrutor(instrutor))
             System.out.println("Instrutor incluÃ­do.");
         else
             System.out.println("JÃ¡ existe um instrutor com esse RG no sistema.");
     }
+    
+    public static void incluirInstrutorHorario(String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, float horas, ArrayList<String> areas){
+//      if (!permissoes.equals(Permissoes.ADMIN)) {
+//          System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
+//          return;
+//      }
+      System.out.println("INCLUSÃƒO DE INSTRUTOR");
+      Instrutor instrutor = new InstrutorPorHora(rg, nome, endereco, telefone, dataNascimento, true, areas, horas, salario);
+      if (academia.incluirInstrutor(instrutor))
+          System.out.println("Instrutor incluÃ­do.");
+      else
+          System.out.println("JÃ¡ existe um instrutor com esse RG no sistema.");
+  }
+    
+    public static void incluirInstrutorPersonal(String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, ArrayList<String> areas){
+//      if (!permissoes.equals(Permissoes.ADMIN)) {
+//          System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
+//          return;
+//      }
+      System.out.println("INCLUSÃƒO DE INSTRUTOR");
+      Instrutor instrutor = new Personal(rg, nome, endereco, telefone, dataNascimento, true, areas, salario);
+      if (academia.incluirInstrutor(instrutor))
+          System.out.println("Instrutor incluÃ­do.");
+      else
+          System.out.println("JÃ¡ existe um instrutor com esse RG no sistema.");
+  } 
 
     public static void desativarInstrutor(String rg) {
 //        if (!permissoes.equals(Permissoes.ADMIN)) {
@@ -331,7 +357,7 @@ public class Gerenciador {
         }
     }
 
-    public static void alterarInstrutor(String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, ArrayList<String> areas){
+    public static void alterarDadosInstrutor(String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, ArrayList<String> areas){
 //        if (!permissoes.equals(Permissoes.ADMIN)) {
 //            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
 //            return;
@@ -339,17 +365,16 @@ public class Gerenciador {
         System.out.println("ALTERAÃ‡ÃƒO DOS DADOS DO INSTRUTOR");
         System.out.println("RG do instrutor:");
 
-        Instrutor antigo = academia.encontrarInstrutor(rg);
-        Instrutor novo = new Instrutor();
-        novo.setRG(rg);
-        novo.setNome(nome);
-        novo.setEndereco(endereco);
-        novo.setTelefone(telefone);
-        novo.setDataNascimento(dataNascimento);
-        novo.setAreas(areas);
-        if (academia.alterarInstutor(antigo, novo))
+        Instrutor instrutor = academia.encontrarInstrutor(rg);
+        if (instrutor != null){
+        	instrutor.setRG(rg);
+        	instrutor.setNome(nome);
+        	instrutor.setEndereco(endereco);
+        	instrutor.setTelefone(telefone);
+        	instrutor.setDataNascimento(dataNascimento);
+        	instrutor.setAreas(areas);
             System.out.println("Instrutor alterado.");
-        else
+        }else
             System.out.println("Instrutor nÃ£o encontrado no sistema.");
     }
 

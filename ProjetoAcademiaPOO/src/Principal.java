@@ -78,12 +78,12 @@ public class Principal {
                 }
                 case 4: {
                     //Incluir instrutor
-                    gerenciadorLogado.incluirInstrutor("2", "Bruno", "Rua da Fef", "40028922", "20/05/0218", (float)500.0, null);
+                    //gerenciadorLogado.incluirInstrutor("2", "Bruno", "Rua da Fef", "40028922", "20/05/0218", (float)500.0, null);
                     break;
                 }
                 case 5: {
                     //Alterar instrutor
-                    gerenciadorLogado.alterarInstrutor("2", "Victor", "Rua da Fef", "40028922", "20/05/2017", (float)500.0, null);
+                    //gerenciadorLogado.alterarInstrutor("2", "Victor", "Rua da Fef", "40028922", "20/05/2017", (float)500.0, null);
                     break;
                 }
                 case 6: {
