@@ -1,0 +1,115 @@
+% Exemplo de relatório técnico do IC
+
+% Criado por P.J.de Rezende antes do Alvorecer da História.
+% Modificado em 97-06-15 e 01-02-26 por J.Stolfi.
+% modificado em 2003-06-07 21:12:18 por stolfi
+% modificado em 2008-10-01 por cll
+% modificado em 2010-03-16 17:56:58 por stolfi
+% modificado em 2012-09-25 para ajustar o pacote UTF8. Contribuicao de Rogerio Cardoso
+% \def\lastedit{2015-03-18 00:52:20 by bit}
+
+\nonstopmode % PARA RODAR LATEX EM BATCH MODE
+\documentclass[11pt,twoside]{article}
+
+\usepackage{techrep-ic}
+
+%%% SE USAR INGLÊS, TROQUE AS ATIVAÇÕES DOS DOIS COMANDOS A SEGUIR:
+\usepackage[brazil]{babel}
+
+\usepackage{makeidx}
+%%% SE USAR CODIFICAÇÃO LATIN1 OU UTF-8, ATIVE UM DOS DOIS COMANDOS A
+%%% SEGUIR:
+%%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+
+%%% Para obter o tamanho de texto recomendado:
+\usepackage[margin=1in]{geometry}
+
+%%% Para colocar imagens:
+\usepackage{graphicx}
+
+\makeindex
+
+\begin{document}
+
+%%% PÁGINA DE CAPA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Número do relatório
+\TRNumber{01} % Dois dígitos
+
+% DATA DE PUBLICAÇÃO (PARA A CAPA)
+%
+\TRYear{18} % Dois dígitos
+\TRMonth{6} % Numérico, 01-12
+
+% LISTA DE AUTORES PARA CAPA (sem afiliações).
+\TRAuthor{Ana Clara Zoppi Serpa  \and Bruno de Marco Apolonio \and Gabriel Oliveira dos Santos \and Lucas Costa de Oliveira \and
+Vítor Mosso Dario}
+
+% TÍTULO PARA A CAPA (use \\ para forçar quebras de linha).
+\TRTitle{Grupo Caramelo: Sistema de gerenciamento de academia}
+
+\TRMakeCover
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% O que segue é apenas uma sugestão - sinta-se à vontade para
+% usar seu formato predileto, desde que as margens tenham pelo
+% menos 25mm nos quatro lados, e o tamanho do fonte seja pelo menos
+% 11pt. Certifique-se também de que o título e lista de autores
+% estão reproduzidos na íntegra na página 1, a primeira depois da
+% página de capa.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Nomes de autores ABREVIADOS e titulo ABREVIADO,
+% para cabeçalhos em cada página.
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TÍTULO e NOMES DOS AUTORES, completos, para a página 1.
+% Use "\\" para quebrar linhas, "\and" para separar autores.
+%
+\title{Caramelo: Sistema de gerenciamento de academia}
+
+\author{
+Ana Clara Zoppi Serpa - RA 165880
+\and
+Bruno de Marco Apolonio - RA 195036
+\and
+Gabriel Oliveira dos Santos - RA 197460
+\and
+Lucas Costa de Oliveira - RA 182410
+\and
+Vítor Mosso Dario - RA 207024
+}
+
+\date{}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+Quisque accumsan ipsum id tortor laoreet feugiat. In accumsan id risus quis rutrum. Aliquam risus nunc, lacinia ac tincidunt at, accumsan ut purus. Morbi vestibulum et lacus at interdum. Cras pellentesque consectetur sapien, ac lobortis leo aliquam at. In consectetur nibh at bibendum laoreet. Aenean molestie lorem id mattis mattis. Integer rhoncus sem dictum, mattis massa vitae, pretium justo. Curabitur euismod dolor non neque semper tincidunt.
+
+In congue consectetur risus eu pharetra. Vestibulum at lacus auctor, cursus leo et, placerat nibh. Suspendisse vitae enim justo. Praesent feugiat dolor accumsan dui euismod blandit. Maecenas interdum velit dolor, in laoreet urna feugiat finibus. Ut cursus eros id velit laoreet, at fringilla nibh ullamcorper. Donec aliquet elit nisi, quis pellentesque nibh molestie quis. Praesent volutpat hendrerit augue id molestie. Nullam orci ex, auctor non tristique vitae, dignissim at mauris. Fusce tempor eleifend aliquet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin mollis ligula id laoreet dignissim.
+\end{abstract}
+
+\clearpage
+\tableofcontents
+
+\clearpage
+
+\section{Etapa 0: Proposta de Software}
+entregamos aquele documento que descrevia o projeto
+\section{Etapa 1: Classes do sistema}
+fizemos a primeira uml com base no documento
+\section{Etapa 2: Release 0}
+as classes e alguns métodos, esqueleto ainda
+\section{Etapa 3: Release 1}
+estava faltando herança, conceitos de POO e buscas
+\section{Etapa 4: Release 2}
+colocamos conceitos de POO e buscas
+\section{Release final}
+colocamos o login que tínhamos tirado
+\end{document}

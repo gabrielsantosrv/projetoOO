@@ -1,0 +1,160 @@
+PWD C:/Users/alber/Documents/GitHub/projetoOO/relatorio
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/miktex/data/le/pdftex/pdflatex.fmt
+INPUT relatorio_projeto.tex
+OUTPUT relatorio_projeto.log
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/article.cls
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/article.cls
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/size11.clo
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/size11.clo
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmr10.tfm
+INPUT techrep-ic.sty
+INPUT techrep-ic.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphicx.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/keyval.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/keyval.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphics.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/graphics.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/trig.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/trig.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/graphics.cfg
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/graphics.cfg
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-def/pdftex.def
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/color.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics/color.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/color.cfg
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/graphics-cfg/color.cfg
+INPUT logo-ic-unicamp.sty
+INPUT logo-ic-unicamp.sty
+INPUT logo-unicamp.sty
+INPUT logo-unicamp.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/babel.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/babel.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/switch.def
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/arabi/bblopts.cfg
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/arabi/bblopts.cfg
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/babel-portuges/portuges.ldf
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/babel-portuges/portuges.ldf
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/babel.def
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/babel/txtbabel.def
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/makeidx.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/makeidx.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/inputenc.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/inputenc.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/utf8.def
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/utf8.def
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/t1enc.dfu
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/t1enc.dfu
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/ot1enc.dfu
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/ot1enc.dfu
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omsenc.dfu
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omsenc.dfu
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/geometry/geometry.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/geometry/geometry.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifpdf.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifvtex.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifvtex.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/geometry/geometry.cfg
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/geometry/geometry.cfg
+OUTPUT relatorio_projeto.idx
+INPUT relatorio_projeto.aux
+INPUT relatorio_projeto.aux
+OUTPUT relatorio_projeto.aux
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/context/base/supp-pdf.mkii
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/epstopdf-base.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/epstopdf-base.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/infwarerr.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/infwarerr.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/grfext.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/grfext.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/kvdefinekeys.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/kvdefinekeys.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ltxcmds.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ltxcmds.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/oberdiek/kvoptions.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/kvsetkeys.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/kvsetkeys.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/etexcmds.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/etexcmds.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifluatex.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/ifluatex.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/pdftexcmds.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/oberdiek/pdftexcmds.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/t1cmss.fd
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/t1cmss.fd
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecss1095.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecss1440.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmr8.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmr6.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmmi10.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmmi8.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmmi6.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmsy10.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmsy8.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmsy6.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecbx2488.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecti1095.tfm
+INPUT logo-unicamp.eps
+INPUT ./logo-unicamp.eps
+INPUT ./logo-unicamp.eps
+INPUT ./logo-unicamp-eps-converted-to.pdf
+INPUT ./logo-unicamp-eps-converted-to.pdf
+INPUT ./logo-unicamp.eps
+INPUT ./logo-unicamp-eps-converted-to.pdf
+INPUT ./logo-unicamp-eps-converted-to.pdf
+OUTPUT relatorio_projeto.pdf
+INPUT ./logo-unicamp-eps-converted-to.pdf
+INPUT ./logo-unicamp-eps-converted-to.pdf
+INPUT logo-ic-unicamp.eps
+INPUT ./logo-ic-unicamp.eps
+INPUT ./logo-ic-unicamp.eps
+INPUT ./logo-ic-unicamp-eps-converted-to.pdf
+INPUT ./logo-ic-unicamp-eps-converted-to.pdf
+INPUT ./logo-ic-unicamp.eps
+INPUT ./logo-ic-unicamp-eps-converted-to.pdf
+INPUT ./logo-ic-unicamp-eps-converted-to.pdf
+INPUT ./logo-ic-unicamp-eps-converted-to.pdf
+INPUT ./logo-ic-unicamp-eps-converted-to.pdf
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecss2074.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/jknappen/ec/ecss1000.tfm
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmr17.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmr12.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmmi12.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmsy10.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmbx10.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmr12.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmbx12.tfm
+INPUT relatorio_projeto.toc
+INPUT relatorio_projeto.toc
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmbx10.tfm
+OUTPUT relatorio_projeto.toc
+INPUT relatorio_projeto.aux
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1000.pk
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1000.pk
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1095.pk
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1095.pk
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1095.pk
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecti1095.pk
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx2488.pk
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss2074.pk
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss2074.pk
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1440.pk
+INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1440.pk
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
