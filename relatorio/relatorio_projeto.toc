@@ -3,5 +3,5 @@
 \contentsline {section}{\numberline {2}Etapa 1: Classes do sistema}{4}
 \contentsline {section}{\numberline {3}Etapa 2: Release 0}{5}
 \contentsline {section}{\numberline {4}Etapa 3: Release 1}{5}
-\contentsline {section}{\numberline {5}Etapa 4: Release 2}{6}
-\contentsline {section}{\numberline {6}Release final}{6}
+\contentsline {section}{\numberline {5}Etapa 4: Release 2}{7}
+\contentsline {section}{\numberline {6}Release final}{7}

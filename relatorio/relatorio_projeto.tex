@@ -194,18 +194,86 @@ e implementamos alguns deles, deixando outros vazios para serem implementados po
 Para essa Release, implementamos os métodos que, na anterior, estavam vazios. Realizamos algumas mudanças ao perceber alternativas
 e necessidades não previstas.
 
+Percebemos que não precisaríamos guardar nome, telefone, endereço e data de nascimento dos usuários do sistema, apenas username e
+senha para controlar o acesso. Portanto, Usuário e Administrador deixaram de ser subclasses de Pessoa.
+
+Decidimos, em vez de ter as classes Usuário e Administrador, ter apenas a classe Gerenciador e um enum (Permissões) para controlar
+o que cada gerenciador pode fazer. O enum contém dois valores possíveis: COMUM e ADMIN. A classe Gerenciador possui métodos que
+refletem as operações que o gerenciador realiza ao usar o sistema, sendo elas:
 \begin{itemize}
-  \item Percemos que não precisaríamos guardar nome, telefone, endereço e data de nascimento dos usuários do sistema.
+  \item Incluir/alterar/desativar cliente.
+  \item Incluir/alterar/desativar instrutor - apenas se a permissão for ADMIN.
+  \item Incluir/alterar/remover um gerenciador - apenas se a permissão for ADMIN.
+  \item Ver lista de gerenciadores do sistema - apenas se a permissão for ADMIN.
+
+  As operações que podem ser realizadas apenas por ADMIN foram implementadas com um if. Se a permissão é ADMIN, os comandos
+  seguintes correspondentes à operação são executados. Se a permissão não é ADMIN, é exibido um aviso.
+
+  \item Incluir/alterar/remover atividade.
+  \item Incluir/alterar/remover turma.
+  \item Relacionar um cliente a uma turma, ou seja, incluí-lo naquela turma.
+  \item Relacionar um instrutor a uma turma, ou seja, colocá-lo como responsável por aquela turma.
+  \item Desrelacionar clientes/instrutores de uma turma.
+  \item Verificar quais clientes estão em uma turma específica.
+  \item Verificar quais clientes realizam uma atividade específica.
+  \item Verificar quais instrutores cuidam de turmas de uma dada atividade.
+  \item Consultar quantidade de clientes que realizam uma atividade.
+  \item Consultar turmas de um cliente/instrutor.
 \end{itemize}
 
-% Não teve como colocar o diagrama porque ele é muito grande e, se reduz, fica impossível de ler.
+A classe Principal contém uma lista (ArrayList) de gerenciadores e uma instância de  Gerenciador para guardar qual gerenciador
+está logado.
+Na tentativa de login, procuramos um gerenciador com o login e a senha informados pelo usuário.
+Se existe, o gerenciador logado passa a ser esse que encontramos e exibimos uma mensagem (menu) com as operações possíveis.
+Conforme o gerenciador digita o número correspondente à operação, chamam-se os métodos da classe Gerenciador correspondentes.
+O código possui um switch case que chama os métodos correspondentes aos números das operações. Por exemplo, seja 1 a operação de
+incluir um cliente: o código chama gerenciadorLogado.incluirCliente().
+
+Os métodos da classe Gerenciador imprimem mensagens na tela solicitando os dados necessários, criando objetos a partir deles e
+então chamando métodos da classe BaseDados que alteram suas listas de clientes, instrutores e atividades conforme adequado.
+A classe que guardaria as listas de entidades do sistema antes se chamava Academia, mas mudamos seu nome para BaseDados.
+
+Por exemplo, para uma inclusão de cliente, o fluxo seria o seguinte:
+\begin{itemize}
+  \item O método da classe Gerenciador é chamado.
+  \item Um objeto Cliente é criado com base nos dados fornecidos.
+  \item O método da classe BaseDados é chamado, incluindo o cliente no ArrayList de clientes que a instância de
+  BaseDados possui.
+\end{itemize}
+
+Durante a implementação deles, percebemos que precisávamos de um identificador único para as turmas criadas, para que pudéssemos
+associar os clientes e instrutores a elas e excluí-las. Por conta disso, acrescentamos à classe Turma um atributo ID,
+a ser informado pelo
+gerenciador durante a criação da turma, junto com a atividade e o horário. Também decidimos acrescentar à classe Pessoa o atributo
+RG, para que fosse possível identificar unicamente cada cliente e instrutor para encontrá-los nas operações de associação a turmas,
+exclusão e alteração de dados.
+
+Para desativar um cliente, o fluxo seria o seguinte:
+\begin{itemize}
+  \item O método da classe Gerenciador é chamado.
+  \item O RG do cliente é solicitado.
+  \item O método da classe BaseDados é chamado, procurando o cliente e removendo-o caso exista.
+\end{itemize}
+
+A classe BaseDados possui, portanto, listas de clientes, atividades e instrutores, métodos para incluir/alterar/desativar/removê-los,
+verificar se existem dado seu identificador único (ID de turma ou RG), relacioná-los/desrelacioná-los e verificar atividades com mais/menos
+clientes e com maior/menor preço. Esses métodos são chamados pela classe Gerenciador, que realiza a interação com o usuário para conseguir
+os dados necessários.
+
+As respectivas validações também foram implementadas: por exemplo, não é possível incluir clientes de RG repetido e o sistema exibe uma mensagem
+avisando sobre isso. Tentativas de desativar clientes/instrutores inexistentes também são tratadas, assim como exclusão de turmas
+e atividades, entre outros casos.
+
+Nessa etapa, as principais funcionalidades estavam prontas com suas respectivas validações, como desejado para essa release.
 
 Atualizamos o diagrama UML para que refletisse essas mudanças, acrescentando algumas correções mencionadas
-pelo professor (cardinalidades, associações, agregações etc).
+pelo professor (cardinalidades, associações, agregações etc). Não apresentamos esse diagrama neste relatório por conta de
+problemas com legibilidade do texto na imagem, mas submetemos o diagrama no Google Classroom.
 
-Também fizemos alguns protótipos de interface gráfica (telas) para o software.
+Também fizemos alguns protótipos de interface gráfica (telas) para o software, já que a interação com o usuário se dava apenas via console e
+gostaríamos de mudar isso.
 
-O professor sugeriu que implementássemos métodos de busca, por exemplo, buscar clientes por nome/endereço/telefone e
+Durante a apresentação do código dessa release, o professor sugeriu que implementássemos métodos de busca, por exemplo, buscar clientes por nome/endereço/telefone e
 aumentássemos a complexidade do sistema acrescentando mais conceitos de Programação Orientada a Objetos, como herança e
 polimorfismo. Isso foi feito nas releases seguintes.
 
