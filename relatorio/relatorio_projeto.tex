@@ -46,8 +46,11 @@
 \TRMonth{6} % Numérico, 01-12
 
 % LISTA DE AUTORES PARA CAPA (sem afiliações).
-\TRAuthor{Ana Clara Zoppi Serpa  \and Bruno de Marco Apolonio \and Gabriel Oliveira dos Santos \and Lucas Costa de Oliveira \and
-Vítor Mosso Dario}
+\TRAuthor{Ana Clara Zoppi Serpa - RA 165880
+\and Bruno de Marco Apolonio - RA 195036
+\and Gabriel Oliveira dos Santos - RA 197460
+\and Lucas Costa de Oliveira - RA 182410
+\and Vítor Mosso Dario - RA 207024}
 
 % TÍTULO PARA A CAPA (use \\ para forçar quebras de linha).
 \TRTitle{Grupo Caramelo: Sistema de gerenciamento de academia}
@@ -75,15 +78,15 @@ Vítor Mosso Dario}
 \title{Caramelo: Sistema de gerenciamento de academia}
 
 \author{
-Ana Clara Zoppi Serpa - RA 165880
+Ana Clara Zoppi Serpa
 \and
-Bruno de Marco Apolonio - RA 195036
+Bruno de Marco Apolonio
 \and
-Gabriel Oliveira dos Santos - RA 197460
+Gabriel Oliveira dos Santos
 \and
-Lucas Costa de Oliveira - RA 182410
+Lucas Costa de Oliveira
 \and
-Vítor Mosso Dario - RA 207024
+Vítor Mosso Dario
 }
 
 \date{}
@@ -134,16 +137,12 @@ Em vez de remover clientes e instrutores, optamos por desativá-los. Tivemos ess
 decide deixar de frequentar a academia, mas, após algum tempo, retorna. Seria prático se já tivéssemos os dados dele e bastasse
 reativá-lo. O mesmo ocorre com instrutores que parem de trabalhar na academia, mas depois retornem. Ou, por exemplo, a academia
 talvez tenha interesse em tentar contactar um instrutor para contratá-lo novamente, ou um cliente antigo para perguntar se ele
-não deseja retornar.
-
-Nessa etapa do projeto, as coisas ainda não estavam muito bem definidas quanto à implementação e às classes: tínhamos apenas
-a ideia e a lista de funcionalidades.
+deseja retornar.
 
 \section{Etapa 1: Classes do sistema}
 Nessa etapa, pensamos sobre as classes e relacionamentos entre elas e construímos um diagrama UML. O professor indicou correções,
-as quais realizamos em outras etapas,
-ou seja, o diagrama a seguir está parcialmente correto e o apresentamos aqui apenas para facilitar a compreensão das ideias
-que tivemos a respeito das classes.
+as quais realizamos em outras etapas. O diagrama a seguir está parcialmente correto e o apresentamos apenas para facilitar a
+compreensão das ideias.
 
 \begin{figure}[H]
 \centering
@@ -155,15 +154,17 @@ Decidimos que o relacionamento entre cliente, horário, atividade e instrutor se
 Turma, da seguinte forma:
 
 \begin{itemize}
-  \item Uma atividade possui n n turmas.
-  \item Uma turma possui n clientes, instrutores e um horário que representaremos com o tipo String.
+  \item Uma atividade possui n turmas.
+  \item Uma turma possui n clientes, n instrutores e um horário que representaremos com o tipo String.
   \item Um cliente possui n turmas, afinal, ele pode realizar várias atividades diferentes.
   \item Um instrutor possui n turmas porque ele pode dar aulas em várias turmas diferentes.
 \end{itemize}
 
-Percebemos que clientes e instrutores possuiriam nome, endereço, telefone, data de nascimento, lista de turmas e o indicador
-se estão ativos no sistema como atributos em comum. Portanto, decidimos criar a classe Pessoa e fazer com que clientes
-e instrutores fossem suas subclasses, aproveitando, assim, esses atributos, getters e setters.
+Percebemos que clientes e instrutores possuiriam nome, endereço, telefone, data de nascimento, lista de turmas e a indicação
+de que estão ou não ativos no sistema como atributos em comum. Portanto, decidimos criar a classe Pessoa com esses atributos, getters e
+setters
+e fazer com que clientes
+e instrutores fossem suas subclasses.
 
 O cliente possui, além dos métodos e atributos da classe Pessoa, o método que calcula quanto ele precisa pagar pelas atividades
 realizadas.
@@ -173,17 +174,17 @@ qual é a sua atividade, decidimos, por questões de facilidade, guardar o preç
 para calcular quanto o cliente precisa pagar, basta iterar por sua lista de turmas e acumular os preços.
 
 O instrutor possui, além dos métodos e atributos da classe Pessoa, um atributo salário e uma lista de áreas
-(que representamos também com o tipo String) nas quais atua.
+(que representamos com uma lista de Strings) nas quais atua.
 
 A classe Academia seria nossa base de dados, guardando em listas todos os clientes, instrutores, atividades e turmas do sistema
-e possuindo métodos para exibí-los e consultá-los.
+e possuindo métodos para exibí-los.
 
 Decidimos também implementar uma etapa de login no sistema e separar os usuários entre usuários comuns e usuários administradores.
-Um usuário comum poderia incluir/alterar/remover/desativar clientes, atividades, turmas, enquanto um usuário administrador poderia,
-além disso, incluir/alterar/remover/desativar instrutores e usuários. Portanto, usuário administrador é uma subclasse de usuário.
+Um usuário comum poderia incluir/alterar/remover/desativar clientes, atividades e turmas, enquanto um usuário administrador
+poderia fazê-lo também para instrutores e usuários. Portanto, administrador é uma subclasse de usuário.
 
 Usuários possuem username e senha. Nessa etapa do projeto, pensamos em fazer com que Usuário fosse subclasse de Pessoa, para
-guardarmos também seus dados. Posteriormente percebemos que isso não seria necessário.
+guardarmos também seus dados (nome, endereço, telefone, data de nascimento).
 
 \section{Etapa 2: Release 0}
 - as classes e alguns métodos, esqueleto ainda
