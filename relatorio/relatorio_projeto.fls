@@ -60,6 +60,8 @@ INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/ifxetex/ifxet
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/generic/ifxetex/ifxetex.sty
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/geometry/geometry.cfg
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/geometry/geometry.cfg
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/float/float.sty
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/float/float.sty
 OUTPUT relatorio_projeto.idx
 INPUT relatorio_projeto.aux
 INPUT relatorio_projeto.aux
@@ -137,6 +139,11 @@ INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmbx1
 OUTPUT relatorio_projeto.toc
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omscmr.fd
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omscmr.fd
+INPUT images/uml0.png
+INPUT ./images/uml0.png
+INPUT ./images/uml0.png
+INPUT ./images/uml0.png
+INPUT ./images/uml0.png
 INPUT relatorio_projeto.aux
 INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1000.pk
 INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1000.pk

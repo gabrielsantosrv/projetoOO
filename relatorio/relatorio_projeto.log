@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.8)  16 JUN 2018 21:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.8)  17 JUN 2018 13:03
 entering extended mode
 **./relatorio_projeto.tex
 (relatorio_projeto.tex
@@ -455,6 +455,14 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 
 ("C:\Users\alber\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geometry.
 cfg"))
+("C:\Users\alber\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count92
+\float@exts=\toks18
+\float@box=\box26
+\@float@everytoks=\toks19
+\@floatcapt=\box27
+)
 \@indexfile=\write3
 \openout3 = `relatorio_projeto.idx'.
 
@@ -463,33 +471,33 @@ Writing index file relatorio_projeto.idx
 (relatorio_projeto.aux)
 \openout1 = `relatorio_projeto.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
 
 ("C:\Users\alber\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count92
+\scratchcounter=\count93
 \scratchdimen=\dimen114
-\scratchbox=\box26
-\nofMPsegments=\count93
-\nofMParguments=\count94
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count95
+\scratchbox=\box28
+\nofMPsegments=\count94
+\nofMParguments=\count95
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count96
 \MPscratchDim=\dimen115
-\MPnumerator=\count96
-\makeMPintoPDFobject=\count97
-\everyMPtoPDFconversion=\toks19
+\MPnumerator=\count97
+\makeMPintoPDFobject=\count98
+\everyMPtoPDFconversion=\toks21
 )
 ("C:\Users\alber\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-
 base.sty"
@@ -583,37 +591,37 @@ G,.JBIG2,.JB2,.eps]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\TR@Banner=\box27
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 52.
+\TR@Banner=\box29
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 55.
 ("C:\Users\alber\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
 []\T1/cmss/m/n/10.95 UNIVERSIDADE ES-TA-DUAL DE CAM-PI-NAS
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
 []\T1/cmss/m/n/14.4 INSTITUTO DE COM-PU-TA-ÇÃO
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 52.
+(Font)              <10.95> on input line 55.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 52.
+(Font)              <8> on input line 55.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 52.
-\TR@Title=\box28
+(Font)              <6> on input line 55.
+\TR@Title=\box30
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <11> on input line 52.
+(Font)              <11> on input line 55.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 52.
-\TR@NumDate=\box29
+(Font)              <5> on input line 55.
+\TR@NumDate=\box31
 
-Overfull \vbox (10.52089pt too high) detected at line 52
+Overfull \vbox (10.52089pt too high) detected at line 55
  []
 
-\TR@Cover=\box30
+\TR@Cover=\box32
 Package epstopdf Info: Source file: <logo-unicamp.eps>
 (epstopdf)                    date: 2017-01-20 02:05:22
 (epstopdf)                    size: 96223 bytes
@@ -622,13 +630,13 @@ Package epstopdf Info: Source file: <logo-unicamp.eps>
 (epstopdf)                    size: 17011 bytes
 (epstopdf)             Command: <epstopdf --outfile=logo-unicamp-eps-converted-
 to.pdf logo-unicamp.eps>
-(epstopdf)             \includegraphics on input line 52.
+(epstopdf)             \includegraphics on input line 55.
 Package epstopdf Info: Output file is already uptodate.
 <logo-unicamp-eps-converted-to.pdf, id=1, 481.8pt x 421.575pt>
 File: logo-unicamp-eps-converted-to.pdf Graphic file (type pdf)
 <use logo-unicamp-eps-converted-to.pdf>
 Package pdftex.def Info: logo-unicamp-eps-converted-to.pdf  used on input line 
-52.
+55.
 (pdftex.def)             Requested size: 60.0pt x 52.49733pt.
 Package epstopdf Info: Source file: <logo-ic-unicamp.eps>
 (epstopdf)                    date: 2017-01-20 02:05:22
@@ -638,25 +646,25 @@ Package epstopdf Info: Source file: <logo-ic-unicamp.eps>
 (epstopdf)                    size: 81475 bytes
 (epstopdf)             Command: <epstopdf --outfile=logo-ic-unicamp-eps-convert
 ed-to.pdf logo-ic-unicamp.eps>
-(epstopdf)             \includegraphics on input line 52.
+(epstopdf)             \includegraphics on input line 55.
 Package epstopdf Info: Output file is already uptodate.
 <logo-ic-unicamp-eps-converted-to.pdf, id=3, 481.8pt x 413.545pt>
 File: logo-ic-unicamp-eps-converted-to.pdf Graphic file (type pdf)
 <use logo-ic-unicamp-eps-converted-to.pdf>
 Package pdftex.def Info: logo-ic-unicamp-eps-converted-to.pdf  used on input li
-ne 52.
+ne 55.
 (pdftex.def)             Requested size: 60.0pt x 51.49738pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
 []\T1/cmss/m/n/14.4 UNIVERSIDADE ES-TA-DUAL DE CAM-PI-NAS
  []
 
 
 LaTeX Font Warning: Font shape `T1/cmss/m/n' in size <20> not available
-(Font)              size <20.74> substituted on input line 52.
+(Font)              size <20.74> substituted on input line 55.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
 []\T1/cmss/m/n/20.74 INSTITUTO DE COM-PU-TA-ÇÃO
  []
 
@@ -665,7 +673,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--52
 {C:/Users/alber/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./logo-unic
 amp-eps-converted-to.pdf> <./logo-ic-unicamp-eps-converted-to.pdf>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 88.
+(Font)              <12> on input line 91.
  [1]
 (relatorio_projeto.toc)
 \tf@toc=\write4
@@ -674,28 +682,45 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [2
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 113.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 116.
 
 
 ("C:\Users\alber\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 113.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 116.
+<./images/uml0.png, id=34, 830.10126pt x 595.22375pt>
+File: ./images/uml0.png Graphic file (type png)
+<use ./images/uml0.png>
+Package pdftex.def Info: ./images/uml0.png  used on input line 150.
+(pdftex.def)             Requested size: 352.31625pt x 252.62616pt.
 
 [3
 
-] [4] (relatorio_projeto.aux)
+] [4 <./images/uml0.png (PNG copy)>]
+Overfull \hbox (34.14836pt too wide) in paragraph at lines 181--184
+\OT1/cmr/m/n/10.95 usuarios co-muns e usuarios ad-mi-nis-tra-do-res. Um usua
+rio co-mum po-de-ria in-cluir/alterar/remover/desativar
+ []
+
+
+Overfull \hbox (90.12527pt too wide) in paragraph at lines 181--184
+\OT1/cmr/m/n/10.95 cli-en-tes, ati-vi-da-des, tur-mas, en-quanto um usuario ad
+-mi-nis-tra-dor po-de-ria, alem disso, in-cluir/alterar/remover/desativar
+ []
+
+[5] (relatorio_projeto.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 2978 strings out of 493305
- 43100 string characters out of 3129803
- 119200 words of memory out of 3000000
- 6457 multiletter control sequences out of 15000+200000
+ 3045 strings out of 493305
+ 44043 string characters out of 3129803
+ 120592 words of memory out of 3000000
+ 6517 multiletter control sequences out of 15000+200000
  13351 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,32p,676b,298s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -713,9 +738,9 @@ msfonts/cm/cmr10.pfb><C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmr12.pfb><C:/Users/alber/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/alber/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on relatorio_projeto.pdf (5 pages, 233671 bytes).
+Output written on relatorio_projeto.pdf (6 pages, 326292 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
+ 203 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
