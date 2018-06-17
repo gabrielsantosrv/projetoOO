@@ -137,7 +137,36 @@ Nessa etapa do projeto, as coisas ainda não estavam muito bem definidas quanto 
 a ideia e a lista de funcionalidades.
 
 \section{Etapa 1: Classes do sistema}
-fizemos a primeira uml com base no documento
+Nessa etapa, pensamos sobre as classes e relacionamentos entre elas que precisaríamos para implementar as funcionalidades
+consideradas na Etapa 0 e construímos um diagrama UML.
+
+Decidimos que o relacionamento entre cliente, horário, atividade e instrutor seria feito por meio de uma nova classe, a classe
+Turma, da seguinte forma:
+
+\begin{itemize}
+  \item Uma \emph{atividade} possui n \emph{turmas}.
+  \item Uma \emph{turma} possui n \emph{clientes}, \emph{instrutores} e um horário que representaremos com o tipo String.
+  \item Um \emph{cliente} possui n \emph{turmas}, afinal, ele pode realizar várias atividades diferentes.
+  \item Um \emph{instrutor} possui n \emph{turmas} porque ele pode dar aulas em várias turmas diferentes.
+  \item Um
+
+Segue a lista de classes e algumas considerações a seu respeito:
+\begin{itemize}
+  \item Cliente
+  Possui nome, endereço, telefone, data de nascimento, lista de turmas, indicador se está ativo, construtor e getters e setters.
+  \item Instrutor
+  Possui atributos , construtor e getters e setters.
+  \item Pessoa
+  Percebemos que as classes Cliente e Instrutor teriam exatamente os mesmos atributos. Portanto, decidimos criar uma superclasse
+  Pessoa da qual eles herdariam esses atributos.
+  \item Usuario
+  \item Administrador
+  \item Academia
+  \item Turma
+  \item Atividade
+  \item Principal
+\end{itemize}
+
 \section{Etapa 2: Release 0}
 as classes e alguns métodos, esqueleto ainda
 \section{Etapa 3: Release 1}
