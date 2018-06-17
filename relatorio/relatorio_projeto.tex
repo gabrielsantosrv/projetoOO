@@ -101,7 +101,41 @@ In congue consectetur risus eu pharetra. Vestibulum at lacus auctor, cursus leo 
 \clearpage
 
 \section{Etapa 0: Proposta de Software}
-entregamos aquele documento que descrevia o projeto
+Nessa etapa, decidimos qual seria o tema do nosso projeto e quais suas funcionalidades.
+Optamos por implementar um sistema de gerenciamento de academias com cadastro de clientes, atividades
+e instrutores e a associação destes, por exemplo: o cliente Gabriel faz pilates
+de segunda e quarta, das 16h às 17h, e o instrutor responsável pelas aulas de pilates desse horário é o Lucas.
+
+Escrevemos um documento descrevendo as funcionalidades que prevíamos para o sistema e entregamos para o professor.
+Como elas já foram descritas no documento, aqui são mencionadas mais brevemente:
+
+\begin{itemize}
+  \item Cadastro dos clientes que frequentam a academia
+  \item Alteração dos dados de um cliente já cadastrado
+  \item Desativar um cliente
+  \item Cadastro de atividades que a academia oferece
+  \item Alteração dos dados da atividade, por exemplo, preço
+  \item Remoção de uma atividade
+  \item Associar/desassociar horários às atividades oferecidas
+  \item Associar/desassociar clientes aos horários e atividades
+  \item Cadastrar instrutores que trabalham na academia
+  \item Alterar dados de um instrutor cadastrado
+  \item Desativar um instrutor
+  \item Consultar qual atividade possui mais clientes
+  \item Consultar qual atividade possui menos clientes
+  \item Consultar qual atividade tem o maior preço
+  \item Consultar qual atividade tem o menor preço
+\end{itemize}
+
+Em vez de remover clientes e instrutores, optamos por desativá-los. Tivemos essa ideia pensando no seguinte cenário: um cliente
+decide deixar de frequentar a academia, mas, após algum tempo, retorna. Seria prático se já tivéssemos os dados dele e bastasse
+reativá-lo. O mesmo ocorre com instrutores que parem de trabalhar na academia, mas depois retornem. Ou, por exemplo, a academia
+talvez tenha interesse em tentar contactar um instrutor para contratá-lo novamente, ou um cliente antigo para perguntar se ele
+não deseja retornar.
+
+Nessa etapa do projeto, as coisas ainda não estavam muito bem definidas quanto à implementação e às classes: tínhamos apenas
+a ideia e a lista de funcionalidades.
+
 \section{Etapa 1: Classes do sistema}
 fizemos a primeira uml com base no documento
 \section{Etapa 2: Release 0}

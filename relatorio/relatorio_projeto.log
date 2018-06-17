@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.8)  16 JUN 2018 19:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.8)  16 JUN 2018 20:56
 entering extended mode
 **./relatorio_projeto.tex
 (relatorio_projeto.tex
@@ -673,19 +673,29 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  [2
 
-] [3
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 113.
 
-] (relatorio_projeto.aux)
+
+("C:\Users\alber\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 113.
+
+[3
+
+] [4] (relatorio_projeto.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 2957 strings out of 493305
- 42735 string characters out of 3129803
+ 2978 strings out of 493305
+ 43100 string characters out of 3129803
  119200 words of memory out of 3000000
- 6439 multiletter control sequences out of 15000+200000
+ 6457 multiletter control sequences out of 15000+200000
  13351 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,32p,676b,298s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -701,10 +711,11 @@ Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 bx12.pfb><C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
 msfonts/cm/cmr10.pfb><C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmr12.pfb><C:/Users/alber/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on relatorio_projeto.pdf (4 pages, 214022 bytes).
+2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/alber/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on relatorio_projeto.pdf (5 pages, 232466 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
+ 199 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

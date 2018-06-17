@@ -135,6 +135,8 @@ INPUT relatorio_projeto.toc
 INPUT relatorio_projeto.toc
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmbx10.tfm
 OUTPUT relatorio_projeto.toc
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omscmr.fd
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omscmr.fd
 INPUT relatorio_projeto.aux
 INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1000.pk
 INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1000.pk
@@ -158,3 +160,5 @@ INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
