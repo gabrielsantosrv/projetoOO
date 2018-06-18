@@ -21,6 +21,18 @@ public class frmConsultasTurmas {
                 super.mouseClicked(mouseEvent);
             }
         });
+        consultarButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                super.mouseClicked(mouseEvent);
+            }
+        });
+        limparFiltrosButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                super.mouseClicked(mouseEvent);
+            }
+        });
     }
 
     public JPanel getTelaConsultasTurmas() {
