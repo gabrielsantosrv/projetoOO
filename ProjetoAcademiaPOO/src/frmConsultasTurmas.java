@@ -1,7 +1,9 @@
 import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class frmConsultasTurmas {
-    private JPanel panel1;
+    private JPanel telaConsultasTurmas;
     private JTextField atividadeTextField;
     private JTextField clienteTextField;
     private JButton consultarButton;
@@ -11,4 +13,17 @@ public class frmConsultasTurmas {
     private JLabel filtrarPorClienteLabel;
     private JLabel filtrarPorInstrutorLabel;
     private JList list1;
+
+    public frmConsultasTurmas() {
+        telaConsultasTurmas.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                super.mouseClicked(mouseEvent);
+            }
+        });
+    }
+
+    public JPanel getTelaConsultasTurmas() {
+        return telaConsultasTurmas;
+    }
 }

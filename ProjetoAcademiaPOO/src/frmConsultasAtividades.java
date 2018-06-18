@@ -1,7 +1,9 @@
 import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class frmConsultasAtividades {
-    private JPanel panel1;
+    private JPanel telaConsultasAtividades;
     private JTextField atividadeComMaisClientesTextField;
     private JTextField atividadeComMenosClientesTextField;
     private JTextField atividadeComMaiorPrecoTextField;
@@ -12,4 +14,17 @@ public class frmConsultasAtividades {
     private JLabel atividadeComMaiorPrecoLabel;
     private JLabel atividadeComMenorPrecoLabel;
     private JLabel listaDeAtividadesLabel;
+
+    public frmConsultasAtividades() {
+        listaDeAtividadesList.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                super.mouseClicked(mouseEvent);
+            }
+        });
+    }
+
+    public JPanel getTelaConsultasAtividades() {
+        return telaConsultasAtividades;
+    }
 }
