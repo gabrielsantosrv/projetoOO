@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.8)  17 JUN 2018 19:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.8)  17 JUN 2018 19:42
 entering extended mode
 **./relatorio_projeto.tex
 (relatorio_projeto.tex
@@ -686,48 +686,48 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [2
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 119.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 117.
 
 
 ("C:\Users\alber\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 119.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
 <./images/uml0.png, id=34, 830.10126pt x 595.22375pt>
 File: ./images/uml0.png Graphic file (type png)
 <use ./images/uml0.png>
-Package pdftex.def Info: ./images/uml0.png  used on input line 149.
+Package pdftex.def Info: ./images/uml0.png  used on input line 147.
 (pdftex.def)             Requested size: 352.31625pt x 252.62616pt.
 
 [3
 
 ] [4 <./images/uml0.png (PNG copy)>]
-Overfull \hbox (34.14836pt too wide) in paragraph at lines 182--185
+Overfull \hbox (34.14836pt too wide) in paragraph at lines 180--183
 \OT1/cmr/m/n/10.95 usuarios co-muns e usuarios ad-mi-nis-tra-do-res. Um usua
 rio co-mum po-de-ria in-cluir/alterar/remover/desativar
  []
 
 [5] [6]
-Overfull \hbox (9.85133pt too wide) in paragraph at lines 270--273
+Overfull \hbox (9.85133pt too wide) in paragraph at lines 267--270
 []\OT1/cmr/m/n/10.95 Atualizamos o di-a-grama UML para que re-fle-tisse es-sas 
 mu-dancas, acres-cen-tando al-gu-mas correc~oes
  []
 
-[7] (relatorio_projeto.aux)
+[7] [8] (relatorio_projeto.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 3048 strings out of 493305
- 44067 string characters out of 3129803
+ 3049 strings out of 493305
+ 44082 string characters out of 3129803
  120592 words of memory out of 3000000
- 6520 multiletter control sequences out of 15000+200000
- 13351 words of font info for 37 fonts, out of 3000000 for 9000
+ 6521 multiletter control sequences out of 15000+200000
+ 13658 words of font info for 38 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,32p,676b,298s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,32p,286b,298s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\alber\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
 ecss1000.pk> <C:\Users\alber\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
 ec\dpi600\ecss1095.pk> <C:\Users\alber\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
@@ -742,9 +742,9 @@ msfonts/cm/cmr10.pfb><C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
 pe1/public/amsfonts/cm/cmr12.pfb><C:/Users/alber/AppData/Local/Programs/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/alber/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on relatorio_projeto.pdf (8 pages, 335261 bytes).
+Output written on relatorio_projeto.pdf (9 pages, 338592 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
+ 226 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

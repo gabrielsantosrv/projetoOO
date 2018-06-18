@@ -4,4 +4,6 @@
 \contentsline {section}{\numberline {3}Etapa 2: Release 0}{5}
 \contentsline {section}{\numberline {4}Etapa 3: Release 1}{5}
 \contentsline {section}{\numberline {5}Etapa 4: Release 2}{7}
-\contentsline {section}{\numberline {6}Release final}{7}
+\contentsline {subsection}{\numberline {5.1}Heran\IeC {\c c}as, classes abstratas e polimorfismo}{7}
+\contentsline {subsection}{\numberline {5.2}M\IeC {\'e}todos de busca}{7}
+\contentsline {section}{\numberline {6}Release final}{8}

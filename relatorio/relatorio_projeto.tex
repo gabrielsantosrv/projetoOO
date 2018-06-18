@@ -96,9 +96,13 @@ Vítor Mosso Dario
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
-Quisque accumsan ipsum id tortor laoreet feugiat. In accumsan id risus quis rutrum. Aliquam risus nunc, lacinia ac tincidunt at, accumsan ut purus. Morbi vestibulum et lacus at interdum. Cras pellentesque consectetur sapien, ac lobortis leo aliquam at. In consectetur nibh at bibendum laoreet. Aenean molestie lorem id mattis mattis. Integer rhoncus sem dictum, mattis massa vitae, pretium justo. Curabitur euismod dolor non neque semper tincidunt.
+Neste relatório abordamos o processo de desenvolvimento do projeto de MC302 ao longo deste semestre. Utilizamos a ferramenta
+GitHub para controle de versões do projeto e um grupo no WhatsApp para nos comunicar e discutir o andamento do mesmo, devido às
+diferenças de disponibilidade entre os membros. Dividimos o relatório em seções de acordo com as etapas de desenvolvimento
+designadas pelo professor (Etapa 0, Etapa 1, Etapa 2, Etapa 3, Etapa 4 e Release Final) e descrevemos o que foi implementado/decidido
+em cada uma delas e por quê.
 
-In congue consectetur risus eu pharetra. Vestibulum at lacus auctor, cursus leo et, placerat nibh. Suspendisse vitae enim justo. Praesent feugiat dolor accumsan dui euismod blandit. Maecenas interdum velit dolor, in laoreet urna feugiat finibus. Ut cursus eros id velit laoreet, at fringilla nibh ullamcorper. Donec aliquet elit nisi, quis pellentesque nibh molestie quis. Praesent volutpat hendrerit augue id molestie. Nullam orci ex, auctor non tristique vitae, dignissim at mauris. Fusce tempor eleifend aliquet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin mollis ligula id laoreet dignissim.
+Primeiramente, decidimos o tema e pensamos nas classes que precisaríamos, fazendo um primeiro diagrama UML.
 \end{abstract}
 
 \clearpage
@@ -278,9 +282,41 @@ aumentássemos a complexidade do sistema acrescentando mais conceitos de Program
 polimorfismo. Isso foi feito nas releases seguintes.
 
 \section{Etapa 4: Release 2}
-- colocamos conceitos de POO e buscas
-- mais interface gráfica
+Seguindo as orientações do professor, implementamos métodos de busca e exploramos mais conceitos de POO no projeto. Também
+fizemos mais protótipos de interface gráfica.
+
+Além disso, removemos a interação via console com o usuário, fazendo com que os métodos da classe Gerenciador recebessem por
+parâmetro os dados necessários. Fizemos isso pensando na ligação com a interface gráfica (da qual os parâmetros seriam
+recuperados futuramente).
+\subsection{Heranças, classes abstratas e polimorfismo}
+Percebemos que não haveria instanciação de objetos da classe Pessoa no sistema, apenas de Clientes e Instrutores. Portanto, a classe
+Pessoa se tornou abstrata.
+
+Decidimos especializar mais os instrutores, tendo três tipos de instrutores: instrutores que recebem por dia trabalhado, instrutores que
+recebem por hora trabalhada e instrutores que são personal trainers de clientes. Com essa mudança, clientes passaram a ter o atributo
+Personal e a classe Instrutor se tornou, também, abstrata, porque todos os instrutores do sistema seriam de um desses tipos.
+
+Decidimos que, além dos clientes comuns, teríamos clientes VIP que, além de frequentar turmas, teriam aulas a mais por semana. Mas o sistema
+possui instâncias tanto de clientes como de clientes VIP, então a classe Cliente continuou concreta.
+
+\subsection{Métodos de busca}
+Implementamos, na classe Gerenciador, métodos de busca de clientes por cada um de seus atributos. O mesmo para instrutores e atividades.
+Então é possível buscar clientes/instrutores por RG, nome, endereço, telefone, data de nascimento, indicação de estar ativo no sistema. No caso
+dos instrutores, por área, lista de áreas e por salário também. Esses métodos retornam ArrayList<Cliente>/ArrayList<Instrutor>.
+
+As atividades podem ser buscadas por nome, preço, lista de turmas e uma só turma. Os métodos retornam ArrayList<Atividade>.
+
+Essas buscas podem ser realizadas tanto por gerenciadores comuns como por administradores.
+
+{\color{red}
+TODO: explicar o polimorfismo, detalhar mais o que eu escrevi acima se achar preciso.
+}
+
 \section{Release final}
+{\color{red}
+TODO: explicar o que foi feito.
 - colocamos o login que tínhamos tirado
 - mais interface gráfica
+- o que mais for feito
+}
 \end{document}
