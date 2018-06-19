@@ -4,7 +4,8 @@ public class BaseDados {
     private ArrayList<Cliente> clientes;
     private ArrayList<Instrutor> instrutores;
     private ArrayList<Atividade> atividades;
-
+    private ArrayList<Logavel> logins;
+    
     public BaseDados(){
         clientes = new ArrayList<>();
         instrutores = new ArrayList<>();
@@ -304,5 +305,9 @@ public class BaseDados {
         t.removerCliente(c);
         c.removerTurma(t);
         return true;
+    }
+    
+    public boolean insereLogin(Logavel login){
+    	return this.logins.add(login);
     }
 }

@@ -5,15 +5,6 @@ import java.util.stream.Collectors;
 
 public class Gerenciador {
     protected static BaseDados academia = new BaseDados();
-//    private Permissoes permissoes;
-//
-//    public Permissoes getPermissoes() {
-//        return permissoes;
-//    }
-//
-//    public static void setPermissoes(Permissoes permissoes) {
-//        permissoes = permissoes;
-//    }
 
     public static void incluirCliente(String rg, String nome, String endereco, String telefone, String dataNascimento, Personal personal){
         System.out.println("INCLUSAO DE CLIENTE");
@@ -302,11 +293,11 @@ public class Gerenciador {
 		return new ArrayList<>();
     }
 
-    public static void incluirInstrutorDiario(String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, int diasTrabalhados, ArrayList<String> areas){
-//        if (!permissoes.equals(Permissoes.ADMIN)) {
-//            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
-//            return;
-//        }
+    public static void incluirInstrutorDiario(Logavel login,String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, int diasTrabalhados, ArrayList<String> areas){
+        if (!login.getPermissoes() .equals(Permissoes.ADMIN)) {
+            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
+            return;
+        }
         System.out.println("INCLUSÃƒO DE INSTRUTOR");
         Instrutor instrutor = new InstrutorPorDia(rg, nome, endereco, telefone, dataNascimento, true, areas, diasTrabalhados, salario);
         if (academia.incluirInstrutor(instrutor))
@@ -315,11 +306,11 @@ public class Gerenciador {
             System.out.println("JÃ¡ existe um instrutor com esse RG no sistema.");
     }
     
-    public static void incluirInstrutorHorario(String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, float horas, ArrayList<String> areas){
-//      if (!permissoes.equals(Permissoes.ADMIN)) {
-//          System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
-//          return;
-//      }
+    public static void incluirInstrutorHorario(Logavel login, String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, float horas, ArrayList<String> areas){
+      if (!login.getPermissoes().equals(Permissoes.ADMIN)) {
+          System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
+          return;
+      }
       System.out.println("INCLUSÃƒO DE INSTRUTOR");
       Instrutor instrutor = new InstrutorPorHora(rg, nome, endereco, telefone, dataNascimento, true, areas, horas, salario);
       if (academia.incluirInstrutor(instrutor))
@@ -328,11 +319,11 @@ public class Gerenciador {
           System.out.println("JÃ¡ existe um instrutor com esse RG no sistema.");
   }
     
-    public static void incluirInstrutorPersonal(String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, ArrayList<String> areas){
-//      if (!permissoes.equals(Permissoes.ADMIN)) {
-//          System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
-//          return;
-//      }
+    public static void incluirInstrutorPersonal(Logavel login, String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, ArrayList<String> areas){
+      if (!login.getPermissoes().equals(Permissoes.ADMIN)) {
+          System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
+          return;
+      }
       System.out.println("INCLUSÃƒO DE INSTRUTOR");
       Instrutor instrutor = new Personal(rg, nome, endereco, telefone, dataNascimento, true, areas, salario);
       if (academia.incluirInstrutor(instrutor))
@@ -357,11 +348,11 @@ public class Gerenciador {
         }
     }
 
-    public static void alterarDadosInstrutor(String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, ArrayList<String> areas){
-//        if (!permissoes.equals(Permissoes.ADMIN)) {
-//            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
-//            return;
-//        }
+    public static void alterarDadosInstrutor(Logavel login, String rg, String nome, String endereco, String telefone, String dataNascimento, float salario, ArrayList<String> areas){
+        if (!login.getPermissoes().equals(Permissoes.ADMIN)) {
+            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
+            return;
+        }
         System.out.println("ALTERAÃ‡ÃƒO DOS DADOS DO INSTRUTOR");
         System.out.println("RG do instrutor:");
 
@@ -378,15 +369,19 @@ public class Gerenciador {
             System.out.println("Instrutor nÃ£o encontrado no sistema.");
     }
 
-//    public static void incluirUsuario(ArrayList<Gerenciador> gerenciadores, String nome, String senha){
-//        if (!permissoes.equals(Permissoes.ADMIN)) {
-//            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
-//            return;
-//        }
-//        Gerenciador gerenciador = new Gerenciador(nome, senha);
-//        gerenciadores.add(gerenciador);
-//        System.out.println("UsuÃ¡rio incluÃ­do.");
-//    }
+    public static void incluirUsuario(Logavel login, String nome, String senha, Permissoes permissoes){
+        if (!login.getPermissoes().equals(Permissoes.ADMIN)) {
+            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
+            return;
+        }
+        if(Permissoes.ADMIN.equals(permissoes)){
+        	Admin admin = new Admin(nome, senha);
+        	academia.insereLogin(admin);
+        }else if(Permissoes.COMUM.equals(permissoes)){
+        	Comum comum = new Comum(senha, senha);
+        	academia.insereLogin(comum);
+        }
+    }
 
 //    public static void alterarUsuario(ArrayList<Gerenciador> gerenciadores, String nome, String novoNome, String novaSenha){
 //        if (!permissoes.equals(Permissoes.ADMIN)) {
