@@ -310,4 +310,12 @@ public class BaseDados {
     public boolean insereLogin(Logavel login){
     	return this.logins.add(login);
     }
+
+	public ArrayList<Logavel> getLogins() {
+		return logins;
+	}
+	
+	public boolean removeLogin(Logavel login){
+		return this.logins.remove(login);
+	}
 }

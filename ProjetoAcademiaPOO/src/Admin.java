@@ -22,4 +22,9 @@ public class Admin implements Logavel{
 		return usuario.equals(this.usuario) && senha.equals(this.senha);
 	}
 
+	@Override
+	public String getUsername() {
+		return this.usuario;
+	}
+
 }

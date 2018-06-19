@@ -22,4 +22,9 @@ public class Comum implements Logavel {
 		return permissao;
 	}
 
+	@Override
+	public String getUsername() {
+		return this.usuario;
+	}
+
 }

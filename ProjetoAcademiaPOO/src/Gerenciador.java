@@ -382,6 +382,15 @@ public class Gerenciador {
         	academia.insereLogin(comum);
         }
     }
+    
+    //Funcao para chamar ao logar no Sistema
+    public Logavel logar(String usuario, String senha){
+    	for(Logavel l : academia.getLogins()){
+    		if(l.logar(usuario, senha))
+    			return l;
+    	}
+    	return null;
+    }
 
 //    public static void alterarUsuario(ArrayList<Gerenciador> gerenciadores, String nome, String novoNome, String novaSenha){
 //        if (!permissoes.equals(Permissoes.ADMIN)) {
@@ -406,23 +415,23 @@ public class Gerenciador {
 //        }
 //    }
 
-//    public static void excluirUsuario(ArrayList<Gerenciador> gerenciadores, String nome){
-//        if (!permissoes.equals(Permissoes.ADMIN)) {
-//            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
-//            return;
-//        }
-//        System.out.println("EXCLUSÃƒO DE USUÃ�RIOS");
-//        boolean achou = false;
-//        Optional<Gerenciador> findFirst = gerenciadores.stream().filter(g -> g.getUsername().equals(nome)).findFirst();
-//        if(findFirst.isPresent()){
-//        	achou = true;
-//        	Gerenciador gerenciador = findFirst.get();
-//        	gerenciadores.remove(gerenciador);
-//        }
-//        if (!achou) {
-//            System.out.println("UsuÃ¡rio nÃ£o encontrado no sistema.");
-//        }
-//    }
+    public static void excluirUsuario(Logavel login,ArrayList<Gerenciador> gerenciadores, String nome){
+        if (!login.getPermissoes().equals(Permissoes.ADMIN)) {
+            System.out.println("Essa operaÃ§Ã£o Ã© permitida somente para administradores.");
+            return;
+        }
+        System.out.println("EXCLUSÃƒO DE USUÃ�RIOS");
+        boolean achou = false;
+        Optional<Logavel> findFirst = academia.getLogins().stream().filter(l -> l.getUsername().equals(nome)).findFirst();
+        if(findFirst.isPresent()){
+        	achou = true;
+        	Logavel logavel = findFirst.get();
+        	academia.removeLogin(logavel);
+        }
+        if (!achou) {
+            System.out.println("UsuÃ¡rio nÃ£o encontrado no sistema.");
+        }
+    }
 
 //    public static void imprimirUsuarios(ArrayList<Gerenciador> gerenciadores) {
 //        //if (!permissoes.equals(Permissoes.ADMIN)) {
