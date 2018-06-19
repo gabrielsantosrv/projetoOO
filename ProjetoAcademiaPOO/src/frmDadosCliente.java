@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class frmDadosCliente {
     public JPanel principalDadosCliente;
@@ -11,7 +13,16 @@ public class frmDadosCliente {
     private JTextField textField5;
     private JButton salvarButton;
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
+    public frmDadosCliente() {
+        salvarButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                super.mouseClicked(mouseEvent);
+            }
+        });
+    }
+
+    public JPanel getPrincipalDadosCliente() {
+        return principalDadosCliente;
     }
 }
