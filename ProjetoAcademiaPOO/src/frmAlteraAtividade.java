@@ -15,6 +15,7 @@ public class frmAlteraAtividade {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 super.mouseClicked(mouseEvent);
+                
             }
         });
     }

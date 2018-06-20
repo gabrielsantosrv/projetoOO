@@ -227,11 +227,11 @@ public class BaseDados {
         return false;
     }
 
-    public Turma encontrarTurma(String id, Atividade atividade) {
+    public Turma encontrarTurma(String horario, Atividade atividade) {
         if (atividade == null)
             return null;
         for (Turma t : atividade.getTurmas())
-            if (t.getId().equalsIgnoreCase(id))
+            if (t.getAtividade().equals(atividade) && t.getHorario().equals(horario))
                 return t;
         return null;
     }

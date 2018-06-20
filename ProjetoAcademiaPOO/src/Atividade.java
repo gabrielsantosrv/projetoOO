@@ -41,7 +41,7 @@ public class Atividade{
 
     public boolean adicionarTurma(Turma turma) {
         for (Turma t : this.turmas)
-            if (t.getId().equalsIgnoreCase(turma.getId()))
+            if (t.getAtividade().equals(turma.getAtividade()) && t.getHorario().equals(turma.getHorario()))
                 return false;
 
         this.turmas.add(turma);

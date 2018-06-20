@@ -84,79 +84,78 @@ public class Gerenciador {
             System.out.println("Turma jÃ¡ existe ou atividade nÃ£o existe.");
     }
 
-    public static void excluirTurma(String nome, String id){
+    public static void excluirTurma(String nome, String horario){
         System.out.println("EXCLUSÃƒO DE TURMAS");
         Atividade a = academia.encontrarAtividade(nome);
-        Turma t = academia.encontrarTurma(id, a);
+        Turma t = academia.encontrarTurma(horario, a);
         if (academia.excluirTurma(t, a))
             System.out.println("Turma excluÃ­da.");
         else
             System.out.println("Turma ou atividade nÃ£o existe no sistema.");
     }
 
-    public static void alterarTurma(String nomeAtividade, String id, String horario, int max){
+    public static void alterarTurma(String nomeAtividade, String horario, int max){
         System.out.println("ALTERAÃ‡ÃƒO DE TURMA");
         Atividade atividade1 = academia.encontrarAtividade(nomeAtividade);
-        Turma antiga = academia.encontrarTurma(id, atividade1);
+        Turma antiga = academia.encontrarTurma(horario, atividade1);
         Turma nova = new Turma();
         nova.setMaximoPessoas(max);
         nova.setHorario(horario);
-        nova.setId(id);
         if (academia.alterarTurma(antiga, nova, atividade1))
             System.out.println("Turma alterada.");
         else
             System.out.println("Turma ou atividade nÃ£o encontrada no sistema.");
     }
 
-    public static void relacionarTurmaCliente(String rg, String nomeAtividade, String id){
+    public static void relacionarTurmaCliente(String rg, String nomeAtividade, String horario){
         System.out.println("RELACIONAMENTO DE TURMA E CLIENTE");
         Cliente c = academia.encontrarCliente(rg);
         Atividade a = academia.encontrarAtividade(nomeAtividade);
-        Turma t = academia.encontrarTurma(id, a);
+        Turma t = academia.encontrarTurma(horario, a);
         if (academia.relacionarTurmaCliente(t, c))
             System.out.println("Cliente incluÃ­do na turma.");
         else
             System.out.println("Erro.");
     }
 
-    public static void desrelacionarTurmaCliente(String rg, String nomeAtividade, String id) {
+    public static void desrelacionarTurmaCliente(String rg, String nomeAtividade, String horario) {
         System.out.println("DESFAZER RELACIONAMENTO DE TURMA E CLIENTE");
         Cliente c = academia.encontrarCliente(rg);
         Atividade a = academia.encontrarAtividade(nomeAtividade);
-        Turma t = academia.encontrarTurma(id, a);
+        Turma t = academia.encontrarTurma(horario, a);
         if (academia.desrelacionarTurmaCliente(t, c))
             System.out.println("Cliente removido da turma.");
         else
             System.out.println("Erro.");
     }
 
-    public static void relacionarTurmaInstrutor(String rg, String nomeAtividade, String id){
+    public static void relacionarTurmaInstrutor(String rg, String nomeAtividade, String horario){
         System.out.println("RELACIONAMENTO DE TURMA E INSTRUTOR");
         Instrutor i = academia.encontrarInstrutor(rg);
         Atividade a = academia.encontrarAtividade(nomeAtividade);
-        Turma t = academia.encontrarTurma(id, a);
+        Turma t = academia.encontrarTurma(horario, a);
         if (academia.relacionarTurmaInstrutor(t, i))
             System.out.println("Instrutor associado Ã  turma.");
         else
             System.out.println("Erro.");
     }
 
-    public static void desrelacionarTurmaInstrutor(String rg, String nomeAtividade, String id){
+    public static void desrelacionarTurmaInstrutor(String rg, String nomeAtividade, String horario){
         System.out.println("DESFAZER RELACIONAMENTO DE TURMA E INSTRUTOR");
         Instrutor i = academia.encontrarInstrutor(rg);
         Atividade a = academia.encontrarAtividade(nomeAtividade);
-        Turma t = academia.encontrarTurma(id, a);
+        Turma t = academia.encontrarTurma(horario, a);
         if (academia.desrelacionarTurmaInstrutor(t, i))
             System.out.println("Instrutor desassociado da turma.");
         else
             System.out.println("Erro.");
     }
 
-    public static ArrayList<Cliente> verificarClientesPorTurma(String atividade, String chave) {
+    public static ArrayList<Cliente> verificarClientesPorTurma(String atividade, String horario) {
         System.out.println("VERIFICAR CLIENTES DE UMA TURMA");
         Optional<Atividade> ati = academia.getAtividades().stream().filter( a -> atividade.equals(a.getNome())).findFirst();
         if(ati.isPresent()){
-        	Optional<Turma> turma = ati.get().getTurmas().stream().filter(t -> chave.equals(t.getId())).findFirst();
+        	Optional<Turma> turma = ati.get().getTurmas().stream().filter(t -> horario.equals(t.getHorario())).findFirst();
         	if(turma.isPresent())
         		return turma.get().getClientes();
         }
