@@ -5,15 +5,13 @@ public class Turma {
     private ArrayList<Instrutor> instrutores;
     private String horario;
     private int maximoPessoas;
-    private String id;
     private Atividade atividade;
 
-    public Turma(String horario, int maximoPessoas, String id, Atividade atividade) {
+    public Turma(String horario, int maximoPessoas, Atividade atividade) {
         this.clientes = new ArrayList<>();
         this.instrutores = new ArrayList<>();
         this.setMaximoPessoas(maximoPessoas);
         this.setHorario(horario);
-        this.setId(id);
         this.setAtividade(atividade);
     }
 
@@ -22,7 +20,6 @@ public class Turma {
         this.instrutores = new ArrayList<>();
         this.maximoPessoas = 0;
         this.horario = "";
-        this.id = "";
     }
 
     public Atividade getAtividade() {
@@ -31,15 +28,6 @@ public class Turma {
 
     public void setAtividade(Atividade atividade) {
         this.atividade = atividade;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        if (!id.equals(""))
-            this.id = id;
     }
 
     public void setMaximoPessoas(int maximoPessoas) {
@@ -95,7 +83,7 @@ public class Turma {
     }
 
     public String toString() {
-        return "ID: " + this.id + "\nHorário: " + this.horario + "\nVagas: " + this.vagas();
+        return "Horário: " + this.horario + "\nVagas: " + this.vagas();
     }
 
     public void imprimirClientes() {

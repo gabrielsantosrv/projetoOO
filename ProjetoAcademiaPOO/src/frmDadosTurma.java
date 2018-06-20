@@ -17,6 +17,15 @@
                 @Override
                 public void mouseClicked(MouseEvent mouseEvent) {
                     super.mouseClicked(mouseEvent);
+                    String horario = txtHorarioTurma.getText();
+                    String atividade = txtAtividadeTurma.getText();
+                    String maxPessoas = txtMaxPessoas.getText();
+                    if(!horario.isEmpty() && !atividade.isEmpty() && !maxPessoas.isEmpty()){
+                        Gerenciador.incluirTurma(atividade, horario, Integer.parseInt(maxPessoas));
+                        txtAtividadeTurma.setText("");
+                        txtHorarioTurma.setText("");
+                        txtMaxPessoas.setText("");
+                    }
                 }
             });
         }

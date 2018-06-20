@@ -74,10 +74,10 @@ public class Gerenciador {
             System.out.println("Atividade nÃ£o encontrada no sistema.");
     }
 
-    public static void incluirTurma(String atividade, String horario, int maximo, String id){
+    public static void incluirTurma(String atividade, String horario, int maximo){
         System.out.println("CRIAÃ‡ÃƒO DE TURMA");
         Atividade a = academia.encontrarAtividade(atividade);
-        Turma turma = new Turma(horario, maximo, id, a);
+        Turma turma = new Turma(horario, maximo, a);
         if (academia.incluirTurma(turma, a))
             System.out.println("Turma incluÃ­da.");
         else

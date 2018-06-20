@@ -15,6 +15,13 @@ public class frmDadosAtividade {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 super.mouseClicked(mouseEvent);
+                String nome = txtNomeAtividade.getText();
+                String preco = txtPrecoAtividade.getText();
+                if(!nome.isEmpty() && !preco.isEmpty()){
+                    Gerenciador.incluirAtividade(nome, Float.valueOf(preco));
+                    txtPrecoAtividade.setText("");
+                    txtNomeAtividade.setText("");
+                }
             }
         });
     }
