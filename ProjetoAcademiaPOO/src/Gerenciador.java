@@ -229,7 +229,7 @@ public class Gerenciador {
         return 0;
     }
 
-    public static void atividadeComMaisClientes(){
+    public static Atividade atividadeComMaisClientes(){
         System.out.println("ATIVIDADE COM MAIS CLIENTES");
         Atividade ativ = academia.atividadeComMaisInscritos();
         if(ativ != null) {
@@ -238,9 +238,10 @@ public class Gerenciador {
         }else{
             System.out.println("Nenhuma atividade registrada.");
         }
+        return ativ;
     }
 
-    public static void atividadeComMenosClientes(){
+    public static Atividade atividadeComMenosClientes(){
         System.out.println("ATIVIDADE COM MENOS CLIENTES");
         Atividade ativ = academia.atividadeComMenosInscritos();
         if(ativ != null) {
@@ -249,9 +250,10 @@ public class Gerenciador {
         }else{
             System.out.println("Nenhuma atividade registrada.");
         }
+        return ativ;
     }
 
-    public static void atividadeComMaiorPreco(){
+    public static Atividade atividadeComMaiorPreco(){
         System.out.println("ATIVIDADE COM MAIOR PREÃ‡O");
         Atividade ativ = academia.atividadeComMaiorPreco();
         if(ativ != null) {
@@ -260,9 +262,10 @@ public class Gerenciador {
         }else{
             System.out.println("Nenhuma atividade registrada.");
         }
+        return ativ;
     }
 
-    public static void atividadeComMenorPreco(){
+    public static Atividade atividadeComMenorPreco(){
         System.out.println("ATIVIDADE COM MENOR PRECO");
         Atividade ativ = academia.atividadeComMenorPreco();
         if(ativ != null) {
@@ -271,6 +274,7 @@ public class Gerenciador {
         }else{
             System.out.println("Nenhuma atividade registrada.");
         }
+        return ativ;
     }
 
     public static ArrayList<Turma> turmasDeUmCliente(String rg){
