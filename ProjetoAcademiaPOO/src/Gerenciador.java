@@ -386,7 +386,7 @@ public class Gerenciador {
     }
     
     //Funcao para chamar ao logar no Sistema
-    public boolean logar(String usuario, String senha){
+    public static boolean logar(String usuario, String senha){
     	for(Logavel l : academia.getLogins()){
     		if(l.logar(usuario, senha)){
     			loginAtual = l;
@@ -396,11 +396,11 @@ public class Gerenciador {
     	return false;
     }
     
-    public void deslogar(){
+    public static void deslogar(){
     	loginAtual = null;
     }
     
-    public Logavel getLoginAtual(){
+    public static Logavel getLoginAtual(){
     	return loginAtual;
     }
 

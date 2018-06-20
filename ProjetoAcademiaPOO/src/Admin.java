@@ -11,6 +11,10 @@ public class Admin implements Logavel{
 		this.usuario = usuario;
 		this.senha = senha;
 	}
+
+	public Admin(){
+
+	}
 	
 	@Override
 	public Permissoes getPermissoes() {

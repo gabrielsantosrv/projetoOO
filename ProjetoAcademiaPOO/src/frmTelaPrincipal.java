@@ -12,13 +12,15 @@ public class frmTelaPrincipal {
     private JButton consultarAtividadesButton;
     private JButton consultarTurmasButton;
     private JPanel telaPrincipal;
+    private JButton deslogarButton;
+    private static JFrame framePrincipal = new JFrame("Academia");
 
-    public static void main(String args[]){
-        JFrame frame = new JFrame("Academia");
-        frame.setContentPane(new frmTelaPrincipal().telaPrincipal);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+    public JPanel getTelaPrincipal() {
+        return telaPrincipal;
+    }
+
+    public static JFrame getFramePrincipal() {
+        return framePrincipal;
     }
 
     public frmTelaPrincipal() {
@@ -108,6 +110,15 @@ public class frmTelaPrincipal {
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
+            }
+        });
+        deslogarButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                super.mouseClicked(mouseEvent);
+                Gerenciador.deslogar();
+                frmLogin.openFrame();
+                framePrincipal.setVisible(false);
             }
         });
     }

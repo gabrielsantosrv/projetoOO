@@ -10,6 +10,7 @@ public class BaseDados {
         clientes = new ArrayList<>();
         instrutores = new ArrayList<>();
         atividades = new ArrayList<>();
+        logins = new ArrayList<>();
     }
 
     public ArrayList<Atividade> getAtividades() {
