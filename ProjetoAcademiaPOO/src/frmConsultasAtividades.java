@@ -1,4 +1,6 @@
 import javax.swing.*;
+
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -8,7 +10,7 @@ public class frmConsultasAtividades {
     private JTextField atividadeComMenosClientesTextField;
     private JTextField atividadeComMaiorPrecoTextField;
     private JTextField atividadeComMenorPrecoTextField;
-    private JList listaDeAtividadesList;
+    private JList<Atividade> listaDeAtividadesList;
     private JLabel atividadeComMaisClientesLabel;
     private JLabel atividadeComMenosClientesLabel;
     private JLabel atividadeComMaiorPrecoLabel;
@@ -16,10 +18,21 @@ public class frmConsultasAtividades {
     private JLabel listaDeAtividadesLabel;
 
     public frmConsultasAtividades() {
-        listaDeAtividadesList.addMouseListener(new MouseAdapter() {
+    	
+    	Atividade atividadeComMaiorPreco = Gerenciador.atividadeComMaiorPreco();
+    	Atividade atividadeComMaisClientes = Gerenciador.atividadeComMaisClientes();
+    	Atividade atividadeComMenorPreco = Gerenciador.atividadeComMenorPreco();
+    	Atividade atividadeComMenosClientes = Gerenciador.atividadeComMenosClientes();
+		atividadeComMaiorPrecoTextField.setText(atividadeComMaiorPreco != null ? atividadeComMaiorPreco.getNome() : "");
+		atividadeComMenosClientesTextField.setText(atividadeComMenosClientes != null ? atividadeComMenosClientes.getNome() : "");
+		atividadeComMaisClientesTextField.setText(atividadeComMaisClientes != null ? atividadeComMaisClientes.getNome() : "");
+		atividadeComMenorPrecoTextField.setText(atividadeComMenorPreco != null ? atividadeComMenorPreco.getNome() : "");
+		listaDeAtividadesList.setListData((Atividade[])Gerenciador.exibirAtividades().toArray());
+		listaDeAtividadesList.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 super.mouseClicked(mouseEvent);
+
             }
         });
     }
