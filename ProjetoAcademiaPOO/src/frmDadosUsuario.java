@@ -13,6 +13,11 @@ public class frmDadosUsuario {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 super.mouseClicked(mouseEvent);
+                if(!txtSenha.getText().isEmpty() && !txtUsuario.getText().isEmpty()){
+                	Gerenciador.incluirUsuario(Gerenciador.getLoginAtual(), txtUsuario.getText(), txtSenha.getText(), comboBox1.getSelectedIndex() == 1 ? Permissoes.ADMIN : Permissoes.COMUM);
+                	txtSenha.setText("");
+                	txtUsuario.setText("");
+                }
             }
         });
     }
