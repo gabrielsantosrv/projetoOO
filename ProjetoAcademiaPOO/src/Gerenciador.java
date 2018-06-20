@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 
 public class Gerenciador {
     protected static BaseDados academia = new BaseDados();
+    
+    private static Logavel loginAtual = null;
 
     public static void incluirCliente(String rg, String nome, String endereco, String telefone, String dataNascimento, Personal personal){
         System.out.println("INCLUSAO DE CLIENTE");
@@ -384,12 +386,22 @@ public class Gerenciador {
     }
     
     //Funcao para chamar ao logar no Sistema
-    public Logavel logar(String usuario, String senha){
+    public boolean logar(String usuario, String senha){
     	for(Logavel l : academia.getLogins()){
-    		if(l.logar(usuario, senha))
-    			return l;
+    		if(l.logar(usuario, senha)){
+    			loginAtual = l;
+    			return true;
+    		}
     	}
-    	return null;
+    	return false;
+    }
+    
+    public void deslogar(){
+    	loginAtual = null;
+    }
+    
+    public Logavel getLoginAtual(){
+    	return loginAtual;
     }
 
 //    public static void alterarUsuario(ArrayList<Gerenciador> gerenciadores, String nome, String novoNome, String novaSenha){
