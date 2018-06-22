@@ -108,12 +108,12 @@ public class Principal {
                 }
                 case 10: {
                     //Incluir turma
-                    gerenciadorLogado.incluirTurma("Natacao", "8:00", 25, "1");
+                    //gerenciadorLogado.incluirTurma("Natacao", "8:00", 25, "1");
                     break;
                 }
                 case 11: {
                     //Alterar turma
-                    gerenciadorLogado.alterarTurma("Natacao", "8:30", "1", 30);
+                    //gerenciadorLogado.alterarTurma("Natacao", "8:30", "1", 30);
                     break;
                 }
                 case 12: {
