@@ -15,6 +15,13 @@ public class frmAlteraAtividade {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 super.mouseClicked(mouseEvent);
+                String nome = txtAlteraNome.getText();
+                String preco = txtAlteraPreco.getText();
+                if(!preco.isEmpty() && !nome.isEmpty()){
+                    Gerenciador.alterarAtividade(nome, Float.valueOf(preco));
+                    txtAlteraNome.setText("");
+                    txtAlteraPreco.setText("");
+                }
                 
             }
         });

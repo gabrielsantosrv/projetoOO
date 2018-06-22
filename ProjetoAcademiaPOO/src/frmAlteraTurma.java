@@ -14,6 +14,15 @@ public class frmAlteraTurma {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 super.mouseClicked(mouseEvent);
+                String horario = txtAlteraHorario.getText();
+                String maxPessoas = txtAlteraMaxPessoas.getText();
+                String atividade = txtAlteraAtividade.getText();
+                if(!horario.isEmpty() && !maxPessoas.isEmpty() && !atividade.isEmpty()){
+                    Gerenciador.alterarTurma(atividade, horario, Integer.parseInt(maxPessoas));
+                    txtAlteraHorario.setText("");
+                    txtAlteraAtividade.setText("");
+                    txtAlteraMaxPessoas.setText("");
+                }
             }
         });
     }

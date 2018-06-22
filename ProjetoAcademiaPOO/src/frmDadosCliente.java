@@ -6,11 +6,11 @@ import java.awt.event.MouseEvent;
 
 public class frmDadosCliente {
     public JPanel principalDadosCliente;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
+    private JTextField txtNome;
+    private JTextField txtRg;
+    private JTextField txtNascimento;
+    private JTextField txtTelefone;
+    private JTextField txtEndereco;
     private JButton salvarButton;
 
     public frmDadosCliente() {
@@ -18,6 +18,20 @@ public class frmDadosCliente {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 super.mouseClicked(mouseEvent);
+                String nome = txtNome.getText();
+                String rg = txtRg.getText();
+                String nascimento = txtNascimento.getText();
+                String telefone= txtTelefone.getText();
+                String endereco = txtEndereco.getText();
+                if(!nome.isEmpty() && !rg.isEmpty() && !nascimento.isEmpty() && !telefone.isEmpty() && !endereco.isEmpty()){
+                    Gerenciador.incluirCliente(rg, nome, endereco, telefone, nascimento, null);
+                    txtEndereco.setText("");
+                    txtNascimento.setText("");
+                    txtNome.setText("");
+                    txtRg.setText("");
+                    txtTelefone.setText("");
+                }
+
             }
         });
     }

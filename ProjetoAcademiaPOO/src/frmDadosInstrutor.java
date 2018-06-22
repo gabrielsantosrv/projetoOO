@@ -4,14 +4,14 @@ import java.awt.event.MouseEvent;
 
 public class frmDadosInstrutor {
     private JPanel telaDadosInstrutor;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField5;
-    private JTextField textField6;
+    private JTextField txtNome;
+    private JTextField txtRg;
+    private JTextField txtNascimento;
+    private JTextField txtTelefone;
+    private JTextField txtEndereco;
+    private JTextField txtSalario;
     private JButton salvarButton;
-    private JTextArea textArea1;
+    private JTextArea listaAreas;
 
     public frmDadosInstrutor() {
         salvarButton.addMouseListener(new MouseAdapter() {

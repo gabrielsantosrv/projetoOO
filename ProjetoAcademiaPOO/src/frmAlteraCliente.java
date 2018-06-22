@@ -16,6 +16,19 @@ public class frmAlteraCliente {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 super.mouseClicked(mouseEvent);
+                String nome = txtAlteraNome.getText();
+                String rg = txtAlteraRg.getText();
+                String nascimento = txtAlteraNascimento.getText();
+                String telefone = txtAlteraTelefone.getText();
+                String endereco = txtAlteraEndereco.getText();
+                if(!nome.isEmpty() && !rg.isEmpty() && !nascimento.isEmpty() && !telefone.isEmpty() && !endereco.isEmpty()){
+                    Gerenciador.alterarCliente(rg, nome, endereco, telefone, nascimento, null);
+                    txtAlteraNome.setText("");
+                    txtAlteraEndereco.setText("");
+                    txtAlteraNascimento.setText("");
+                    txtAlteraRg.setText("");
+                    txtAlteraTelefone.setText("");
+                }
             }
         });
     }
