@@ -15,6 +15,9 @@ public class frmConsultasPessoas {
     private JLabel quantidadeLabel;
 
     public frmConsultasPessoas() {
+        String quantidadePessoas = Integer.toString(Gerenciador.exibirClientes().size());
+        quantidadeTextField.setText(quantidadePessoas);
+
         list.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
@@ -24,13 +27,17 @@ public class frmConsultasPessoas {
         consultarButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
-                super.mouseClicked(mouseEvent);
+                String filtroAtividade = atividadeTextField.getText();
+                String filtroTurma = turmaTextField.getText();
+                //Buscar as turmas e atividades aqui
             }
         });
         limparFiltrosButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 super.mouseClicked(mouseEvent);
+                turmaTextField.setText("");
+                atividadeTextField.setText("");
             }
         });
     }

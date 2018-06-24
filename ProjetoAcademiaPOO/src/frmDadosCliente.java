@@ -12,6 +12,7 @@ public class frmDadosCliente {
     private JTextField txtTelefone;
     private JTextField txtEndereco;
     private JButton salvarButton;
+    private JTextField txtVip;
 
     public frmDadosCliente() {
         salvarButton.addMouseListener(new MouseAdapter() {
@@ -23,8 +24,13 @@ public class frmDadosCliente {
                 String nascimento = txtNascimento.getText();
                 String telefone= txtTelefone.getText();
                 String endereco = txtEndereco.getText();
+                String aulasAMais = txtVip.getText();
                 if(!nome.isEmpty() && !rg.isEmpty() && !nascimento.isEmpty() && !telefone.isEmpty() && !endereco.isEmpty()){
-                    Gerenciador.incluirCliente(rg, nome, endereco, telefone, nascimento, null);
+                    if(!aulasAMais.isEmpty()){
+                        Gerenciador.incluirClienteVip(rg, nome, endereco, telefone, nascimento, Integer.parseInt(aulasAMais), null);
+                    }else{
+                        Gerenciador.incluirCliente(rg, nome, endereco, telefone, nascimento, null);
+                    }
                     txtEndereco.setText("");
                     txtNascimento.setText("");
                     txtNome.setText("");

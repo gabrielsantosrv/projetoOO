@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class frmDadosInstrutor {
     private JPanel telaDadosInstrutor;
@@ -30,10 +32,14 @@ public class frmDadosInstrutor {
                 if(!nome.isEmpty() && !rg.isEmpty() && !nascimento.isEmpty() && !telefone.isEmpty() && !endereco.isEmpty() && !salario.isEmpty() && areas.length != 0 && !tipoInstrutor.isEmpty()){
                     switch (tipoInstrutor){
                         case "Diário":
-                            Gerenciador.incluirInstrutorDiario(Gerenciador.getLoginAtual(), rg, nome, endereco, telefone, nascimento, Float.valueOf(salario), areas);
-
+                            Gerenciador.incluirInstrutorDiario(Gerenciador.getLoginAtual(), rg, nome, endereco, telefone, nascimento, Float.valueOf(salario), 0, new ArrayList<>(Arrays.asList(areas)));
                         break;
-
+                        case "Horário":
+                            Gerenciador.incluirInstrutorHorario(Gerenciador.getLoginAtual(), rg, nome, endereco, telefone, nascimento, Float.valueOf(salario), 0, new ArrayList<>(Arrays.asList(areas)));
+                        break;
+                        case "Personal":
+                            Gerenciador.incluirInstrutorPersonal(Gerenciador.getLoginAtual(), rg, nome, endereco, telefone, nascimento, Float.valueOf(salario), new ArrayList<>(Arrays.asList(areas)));
+                        break;
                     }
                 }
             }

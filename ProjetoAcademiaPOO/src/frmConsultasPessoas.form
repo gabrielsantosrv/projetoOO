@@ -71,7 +71,9 @@
           </grid>
           <forms defaultalign-horz="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <editable value="false"/>
+        </properties>
       </component>
       <component id="f48d" class="javax.swing.JButton" binding="consultarButton" default-binding="true">
         <constraints>
