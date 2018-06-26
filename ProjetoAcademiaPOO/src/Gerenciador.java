@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.Scanner;
@@ -197,15 +198,14 @@ public class Gerenciador {
         return academia.getInstrutores();
     }
 
-    public static void exibirTurmasPorAtividade() {
+    public static ArrayList<Turma> exibirTurmasPorAtividade(Atividade atividade) {
         System.out.println("EXIBIÃ‡ÃƒO DE TURMAS POR ATIVIDADE");
-        for (Atividade a : academia.getAtividades()) {
-            System.out.println(a.toString());
-            System.out.println("TURMAS:");
-            for (Turma t : a.getTurmas()) {
-                System.out.println(t.toString());
-            }
+        ArrayList<Turma> retorno = new ArrayList<>();
+        ArrayList<Turma> turmas = atividade.getTurmas();
+        for (Turma t : turmas) {
+            retorno.add(t);
         }
+        return retorno;
     }
 
     public static ArrayList<Cliente> clientesDeUmaAtividade(String atividade){

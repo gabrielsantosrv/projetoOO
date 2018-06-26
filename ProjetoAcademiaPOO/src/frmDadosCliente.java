@@ -37,7 +37,6 @@ public class frmDadosCliente {
                     txtRg.setText("");
                     txtTelefone.setText("");
                 }
-
             }
         });
     }

@@ -41,6 +41,13 @@ public class frmDadosInstrutor {
                             Gerenciador.incluirInstrutorPersonal(Gerenciador.getLoginAtual(), rg, nome, endereco, telefone, nascimento, Float.valueOf(salario), new ArrayList<>(Arrays.asList(areas)));
                         break;
                     }
+                    txtNome.setText("");
+                    txtRg.setText("");
+                    txtNascimento.setText("");
+                    txtTelefone.setText("");
+                    txtEndereco.setText("");
+                    txtSalario.setText("");
+                    listaAreas.setText("");
                 }
             }
         });

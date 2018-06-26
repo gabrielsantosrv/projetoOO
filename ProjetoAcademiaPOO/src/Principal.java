@@ -160,7 +160,7 @@ public class Principal {
                 }
                 case 20: {
                     //Turmas por atividade específica
-                    gerenciadorLogado.exibirTurmasPorAtividade();
+                    //gerenciadorLogado.exibirTurmasPorAtividade();
                     break;
                 }
                 case 21: {
