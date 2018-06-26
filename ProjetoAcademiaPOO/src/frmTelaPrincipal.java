@@ -14,6 +14,7 @@ public class frmTelaPrincipal {
     private JPanel telaPrincipal;
     private JButton deslogarButton;
     private JButton associarPersonalButton;
+    private JButton cadastrarUsuárioButton;
     private static JFrame framePrincipal = new JFrame("Academia");
 
     public JPanel getTelaPrincipal() {
@@ -128,6 +129,17 @@ public class frmTelaPrincipal {
                 super.mouseClicked(mouseEvent);
                 JFrame frame = new JFrame("AssociarPersonal");
                 frame.setContentPane(new frmAssociaPersonal().getTelaPersonal());
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
+        cadastrarUsuárioButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                super.mouseClicked(mouseEvent);
+                JFrame frame = new JFrame("DadosUsuario");
+                frame.setContentPane(new frmDadosUsuario().getTelaLogin());
                 frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);

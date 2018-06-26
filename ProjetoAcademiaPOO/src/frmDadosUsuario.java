@@ -7,6 +7,7 @@ public class frmDadosUsuario {
     private JButton salvarButton;
     private JTextField txtUsuario;
     private JTextField txtSenha;
+    private JPanel telaLogin;
 
     public frmDadosUsuario() {
         salvarButton.addMouseListener(new MouseAdapter() {
@@ -20,5 +21,9 @@ public class frmDadosUsuario {
                 }
             }
         });
+    }
+
+    public JPanel getTelaLogin() {
+        return telaLogin;
     }
 }
