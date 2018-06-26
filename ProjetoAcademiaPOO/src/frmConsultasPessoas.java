@@ -17,8 +17,13 @@ public class frmConsultasPessoas {
 
     public frmConsultasPessoas() {
     	
-    	Cliente[] arrayClientes = new Cliente[Gerenciador.exibirClientes().size()];
-    	list.setListData(Gerenciador.exibirClientes().toArray(arrayClientes));
+    	ArrayList<Pessoa> pessoas = new ArrayList<>();
+    	pessoas.addAll(Gerenciador.exibirClientes());
+    	pessoas.addAll(Gerenciador.exibirInstrutores());
+    	Pessoa[] arrayPessoa = new Pessoa[pessoas.size()];
+    	
+    	list.setListData(pessoas.toArray(arrayPessoa));
+    	quantidadeTextField.setText(""+pessoas.size());
     	
         list.addMouseListener(new MouseAdapter() {
             @Override
@@ -32,9 +37,10 @@ public class frmConsultasPessoas {
                 super.mouseClicked(mouseEvent);
                 String atividade = atividadeTextField.getText();
                 String turma = turmaTextField.getText();
-                ArrayList<Cliente> filtro = Gerenciador.verificarClientesPorAtividadeTurma(atividade, turma);
-                Cliente[] arrayClientes = new Cliente[filtro.size()];
-            	list.setListData(filtro.toArray(arrayClientes));
+                ArrayList<Pessoa> filtro = Gerenciador.verificarPessoasPorAtividadeTurma(atividade, turma);
+                Pessoa[] arrayPessoas = new Pessoa[filtro.size()];
+            	list.setListData(filtro.toArray(arrayPessoas));
+            	quantidadeTextField.setText(""+filtro.size());
             }
         });
         limparFiltrosButton.addMouseListener(new MouseAdapter() {

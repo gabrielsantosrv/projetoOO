@@ -151,7 +151,7 @@ public class Gerenciador {
             System.out.println("Erro.");
     }
 
-    public static ArrayList<Cliente> verificarClientesPorAtividadeTurma(String atividade, String horario) {
+    public static ArrayList<Pessoa> verificarPessoasPorAtividadeTurma(String atividade, String horario) {
         if(horario.isEmpty()){
         	return Gerenciador.verificarClientesPorAtividade(atividade);
         }
@@ -159,19 +159,24 @@ public class Gerenciador {
         Optional<Atividade> ati = academia.getAtividades().stream().filter( a -> atividade.equals(a.getNome())).findFirst();
         if(ati.isPresent()){
         	Optional<Turma> turma = ati.get().getTurmas().stream().filter(t -> horario.equals(t.getHorario())).findFirst();
-        	if(turma.isPresent())
-        		return turma.get().getClientes();
+        	if(turma.isPresent()){
+        		ArrayList<Pessoa> pessoas = new ArrayList<>();
+        		pessoas.addAll(turma.get().getInstrutores());
+        		pessoas.addAll(turma.get().getClientes());
+        		return pessoas;
+        	}
         }
         return new ArrayList<>();
     }
     
-    public static ArrayList<Cliente> verificarClientesPorAtividade(String atividade){
-    	ArrayList<Cliente> retorno = new ArrayList<>();
+    public static ArrayList<Pessoa> verificarClientesPorAtividade(String atividade){
+    	ArrayList<Pessoa> retorno = new ArrayList<>();
     	System.out.println("VERIFICAR CLIENTES DE UMA ATIVIDADE");
         Optional<Atividade> ati = academia.getAtividades().stream().filter( a -> atividade.equals(a.getNome())).findFirst();
         if(ati.isPresent()){
         	for(Turma t: ati.get().getTurmas()){
         		retorno.addAll(t.getClientes());
+        		retorno.addAll(t.getInstrutores());
         	}
         }
         return retorno;
