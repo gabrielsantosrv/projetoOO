@@ -131,13 +131,13 @@ public abstract class Pessoa {
     public String toString() {
         String ret = "Nome: ";
         ret += this.nome;
-        ret += "\nRG: ";
+        ret += "\n RG: ";
         ret += this.rg;
-        ret += "\nData de nascimento: ";
+        ret += "\n Data de nascimento: ";
         ret += this.dataNascimento;
-        ret += "\nEndereco: ";
+        ret += "\n Endereco: ";
         ret += this.endereco;
-        ret += "\nTelefone: ";
+        ret += "\n Telefone: ";
         ret += this.telefone;
         return ret;
     }
