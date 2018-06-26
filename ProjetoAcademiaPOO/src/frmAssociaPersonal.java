@@ -7,6 +7,7 @@ public class frmAssociaPersonal {
     private JTextField txtCliente;
     private JTextField txtPersonal;
     private JButton associarButton;
+    private JPanel telaPersonal;
 
     public frmAssociaPersonal() {
 
@@ -16,5 +17,9 @@ public class frmAssociaPersonal {
                 super.mouseClicked(mouseEvent);
             }
         });
+    }
+
+    public JPanel getTelaPersonal() {
+        return telaPersonal;
     }
 }
