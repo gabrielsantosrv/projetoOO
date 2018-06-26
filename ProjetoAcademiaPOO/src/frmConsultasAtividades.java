@@ -27,7 +27,8 @@ public class frmConsultasAtividades {
 		atividadeComMenosClientesTextField.setText(atividadeComMenosClientes != null ? atividadeComMenosClientes.getNome() : "");
 		atividadeComMaisClientesTextField.setText(atividadeComMaisClientes != null ? atividadeComMaisClientes.getNome() : "");
 		atividadeComMenorPrecoTextField.setText(atividadeComMenorPreco != null ? atividadeComMenorPreco.getNome() : "");
-		listaDeAtividadesList.setListData((Atividade[])Gerenciador.exibirAtividades().toArray());
+		Atividade[] arrayAtividade = new Atividade[Gerenciador.exibirAtividades().size()];
+		listaDeAtividadesList.setListData(Gerenciador.exibirAtividades().toArray(arrayAtividade));
 		listaDeAtividadesList.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
