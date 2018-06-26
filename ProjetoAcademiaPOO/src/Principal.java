@@ -160,7 +160,7 @@ public class Principal {
                 }
                 case 20: {
                     //Turmas por atividade específica
-                    gerenciadorLogado.exibirTurmasPorAtividade();
+                    //gerenciadorLogado.exibirTurmasPorAtividade();
                     break;
                 }
                 case 21: {
@@ -180,7 +180,7 @@ public class Principal {
                 }
                 case 24: {
                     //Clientes que estão em uma turma específica
-                    gerenciadorLogado.verificarClientesPorTurma("Natacao", "5");
+                    //gerenciadorLogado.verificarClientesPorTurma("Natacao", "5");
                     break;
                 }
                 case 25: {

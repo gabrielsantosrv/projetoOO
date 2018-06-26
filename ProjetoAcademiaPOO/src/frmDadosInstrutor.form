@@ -169,7 +169,6 @@
         </constraints>
         <properties>
           <model>
-            <item value="Mensal"/>
             <item value="Diário"/>
             <item value="Horário"/>
             <item value="Personal"/>

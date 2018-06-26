@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.Scanner;
@@ -15,6 +16,15 @@ public class Gerenciador {
             System.out.println("Cliente incluido.");
         } else {
             System.out.println("Ja existe um cliente com esse RG.");
+        }
+    }
+
+    public static boolean incluirClienteVip(String rg, String nome, String endereco, String telefone, String dataNascimento, int aulasPorSemana, Personal personal){
+        ClienteVIP cliente = new ClienteVIP(rg, nome, endereco, telefone, dataNascimento, true, null, aulasPorSemana);
+        if(academia.incluirClienteVip(cliente)){
+            return true;
+        }else{
+            return false;
         }
     }
 
@@ -208,15 +218,14 @@ public class Gerenciador {
         return academia.getInstrutores();
     }
 
-    public static void exibirTurmasPorAtividade() {
+    public static ArrayList<Turma> exibirTurmasPorAtividade(Atividade atividade) {
         System.out.println("EXIBIÃ‡ÃƒO DE TURMAS POR ATIVIDADE");
-        for (Atividade a : academia.getAtividades()) {
-            System.out.println(a.toString());
-            System.out.println("TURMAS:");
-            for (Turma t : a.getTurmas()) {
-                System.out.println(t.toString());
-            }
+        ArrayList<Turma> retorno = new ArrayList<>();
+        ArrayList<Turma> turmas = atividade.getTurmas();
+        for (Turma t : turmas) {
+            retorno.add(t);
         }
+        return retorno;
     }
 
     public static ArrayList<Cliente> clientesDeUmaAtividade(String atividade){
@@ -489,79 +498,79 @@ public class Gerenciador {
     	}
     }
 
-    public ArrayList<Cliente> buscaClientePorRG(String rg){
+    public static ArrayList<Cliente> buscaClientePorRG(String rg){
         return academia.getClientes().stream().filter(c -> c.getRg().contains(rg)).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Cliente> buscaClientePorNome(String nome){
+    public static ArrayList<Cliente> buscaClientePorNome(String nome){
         return academia.getClientes().stream().filter(c -> c.getNome().contains(nome)).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Cliente> buscaClientePorEndereco(String endereco){
+    public static ArrayList<Cliente> buscaClientePorEndereco(String endereco){
         return academia.getClientes().stream().filter(c -> c.getEndereco().contains(endereco)).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Cliente> buscaClientePorTelefone(String telefone){
+    public static ArrayList<Cliente> buscaClientePorTelefone(String telefone){
         return academia.getClientes().stream().filter(c -> c.getTelefone().contains(telefone)).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Cliente> buscaClientePorDataNascimento(String dataNascimento){
+    public static ArrayList<Cliente> buscaClientePorDataNascimento(String dataNascimento){
         return academia.getClientes().stream().filter(c -> c.getDataNascimento().contains(dataNascimento)).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Cliente> buscaClientePorAtivo(boolean ativo){
+    public static ArrayList<Cliente> buscaClientePorAtivo(boolean ativo){
         return academia.getClientes().stream().filter(c -> c.isAtivo() == ativo).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Instrutor> buscaInstrutorPorRG(String rg){
+    public static ArrayList<Instrutor> buscaInstrutorPorRG(String rg){
         return academia.getInstrutores().stream().filter(c -> c.getRg().contains(rg)).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Instrutor> buscaInstrutorPorNome(String nome){
+    public static ArrayList<Instrutor> buscaInstrutorPorNome(String nome){
         return academia.getInstrutores().stream().filter(c -> c.getNome().contains(nome)).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Instrutor> buscaInstrutorPorEndereco(String endereco){
+    public static ArrayList<Instrutor> buscaInstrutorPorEndereco(String endereco){
         return academia.getInstrutores().stream().filter(c -> c.getEndereco().contains(endereco)).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Instrutor> buscaInstrutorPorTelefone(String telefone){
+    public static ArrayList<Instrutor> buscaInstrutorPorTelefone(String telefone){
         return academia.getInstrutores().stream().filter(c -> c.getTelefone().contains(telefone)).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Instrutor> buscaInstrutorPorDataNascimento(String dataNascimento){
+    public static ArrayList<Instrutor> buscaInstrutorPorDataNascimento(String dataNascimento){
         return academia.getInstrutores().stream().filter(c -> c.getDataNascimento().contains(dataNascimento)).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Instrutor> buscaInstrutorPorAtivo(boolean ativo){
+    public static ArrayList<Instrutor> buscaInstrutorPorAtivo(boolean ativo){
         return academia.getInstrutores().stream().filter(c -> c.isAtivo() == ativo).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Instrutor> buscaInstrutorPorSalario(float salario){
+    public static ArrayList<Instrutor> buscaInstrutorPorSalario(float salario){
         return academia.getInstrutores().stream().filter(c -> c.getSalario() == salario).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Instrutor> buscaInstrutorPorAreas(ArrayList<String> areas){
+    public static ArrayList<Instrutor> buscaInstrutorPorAreas(ArrayList<String> areas){
         return academia.getInstrutores().stream().filter(c -> c.getAreas() == areas).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Instrutor> buscaInstrutorPorArea(String area){
+    public static ArrayList<Instrutor> buscaInstrutorPorArea(String area){
         return academia.getInstrutores().stream().filter(c -> c.getAreas().contains(area)).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Atividade> buscaAtividadePorNome(String nome){
+    public static ArrayList<Atividade> buscaAtividadePorNome(String nome){
         return academia.getAtividades().stream().filter(c -> c.getNome().contains(nome)).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Atividade> buscaAtividadePorPreco(float preco){
+    public static ArrayList<Atividade> buscaAtividadePorPreco(float preco){
         return academia.getAtividades().stream().filter(c -> c.getPreco() == preco).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Atividade> buscaAtividadePorTurmas(ArrayList<Turma> turmas){
+    public static ArrayList<Atividade> buscaAtividadePorTurmas(ArrayList<Turma> turmas){
         return academia.getAtividades().stream().filter(c -> c.getTurmas() == turmas).collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public ArrayList<Atividade> buscaAtividadePorTurma(Turma turma){
+    public static ArrayList<Atividade> buscaAtividadePorTurma(Turma turma){
         return academia.getAtividades().stream().filter(c -> c.getTurmas().contains(turma)).collect(Collectors.toCollection(ArrayList::new));
     }
 

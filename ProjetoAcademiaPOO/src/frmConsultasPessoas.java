@@ -16,6 +16,8 @@ public class frmConsultasPessoas {
     private JLabel quantidadeLabel;
 
     public frmConsultasPessoas() {
+        String quantidadePessoas = Integer.toString(Gerenciador.exibirClientes().size());
+        quantidadeTextField.setText(quantidadePessoas);
     	
     	ArrayList<Pessoa> pessoas = new ArrayList<>();
     	pessoas.addAll(Gerenciador.exibirClientes());
@@ -24,7 +26,6 @@ public class frmConsultasPessoas {
     	
     	list.setListData(pessoas.toArray(arrayPessoa));
     	quantidadeTextField.setText(""+pessoas.size());
-    	
         list.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
@@ -34,6 +35,7 @@ public class frmConsultasPessoas {
         consultarButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
+                //Buscar as turmas e atividades aqui
                 super.mouseClicked(mouseEvent);
                 String atividade = atividadeTextField.getText();
                 String turma = turmaTextField.getText();

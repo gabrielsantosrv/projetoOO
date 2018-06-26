@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class BaseDados {
     private ArrayList<Cliente> clientes;
+    private ArrayList<ClienteVIP> clientesVIP;
     private ArrayList<Instrutor> instrutores;
     private ArrayList<Atividade> atividades;
     private ArrayList<Logavel> logins;
@@ -90,6 +91,10 @@ public class BaseDados {
         return this.clientes.stream().filter(c -> c.equals(cliente)).findAny().isPresent();
     }
 
+    public boolean clienteVipExistente(ClienteVIP clienteVIP){
+        return this.clientes.stream().filter(c -> c.equals(clienteVIP)).findAny().isPresent();
+    }
+
     public Cliente encontrarCliente(String rg) {
     	try{
     		return this.clientes.stream().filter(c -> c.getRg().equals(rg)).findFirst().get();    		
@@ -101,6 +106,14 @@ public class BaseDados {
     public boolean incluirCliente(Cliente cliente){
         if (!clienteExistente(cliente)) {
             this.clientes.add(cliente);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean incluirClienteVip(ClienteVIP clienteVIP){
+        if(!clienteVipExistente(clienteVIP)){
+            this.clientesVIP.add(clienteVIP);
             return true;
         }
         return false;
