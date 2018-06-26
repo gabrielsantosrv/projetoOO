@@ -4,20 +4,14 @@ import java.awt.event.MouseEvent;
 
 public class AssociarDesassociarATurma {
     private JPanel telaAcoesTurma;
-    private JList listTurmas;
-    private JList listAssociados;
-    private JList listDesassociados;
     private JButton associarButton;
+    private JTextField txtRg;
+    private JTextField txtTurma;
+    private JTextField txtHorario;
     private JButton desassociarButton;
 
     public AssociarDesassociarATurma() {
         associarButton.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent mouseEvent) {
-                super.mouseClicked(mouseEvent);
-            }
-        });
-        desassociarButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 super.mouseClicked(mouseEvent);
