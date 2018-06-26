@@ -83,7 +83,7 @@ public class Turma {
     }
 
     public String toString() {
-        return "Hor√°rio: " + this.horario + "\nVagas: " + this.vagas();
+        return "Hor·rio: " + this.horario + "\n Vagas: " + this.vagas();
     }
 
     public void imprimirClientes() {

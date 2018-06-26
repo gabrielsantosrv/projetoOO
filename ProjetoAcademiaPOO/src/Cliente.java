@@ -29,7 +29,7 @@ public class Cliente extends Pessoa{
 
     public String toString() {
         String ret = super.toString();
-        ret += "\nTotal a pagar: " + this.totalAPagar();
+        ret += "\n Total a pagar: " + this.totalAPagar();
         return ret;
     }
 }

@@ -89,8 +89,9 @@ public class Atividade{
         return inscritos;
     }
 
+    @Override
     public String toString() {
-        return "Nome: " + this.nome + "\nPreco: " + this.preco;
+        return "Nome: " + this.nome + " Preco: " + this.preco;
     }
 
     public boolean equals(Atividade atividade) {
