@@ -16,9 +16,6 @@ public class frmConsultasPessoas {
     private JLabel quantidadeLabel;
 
     public frmConsultasPessoas() {
-        String quantidadePessoas = Integer.toString(Gerenciador.exibirClientes().size());
-        quantidadeTextField.setText(quantidadePessoas);
-    	
     	ArrayList<Pessoa> pessoas = new ArrayList<>();
     	pessoas.addAll(Gerenciador.exibirClientes());
     	pessoas.addAll(Gerenciador.exibirInstrutores());
