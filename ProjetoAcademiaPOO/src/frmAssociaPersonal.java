@@ -14,6 +14,9 @@ public class frmAssociaPersonal {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 super.mouseClicked(mouseEvent);
+                String cliente = txtCliente.getText();
+                String personal = txtPersonal.getText();
+                Gerenciador.relacionarPersonalCliente(cliente, personal);
             }
         });
     }
