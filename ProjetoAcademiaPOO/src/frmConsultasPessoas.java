@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 public class frmConsultasPessoas {
     private JPanel panelTelaConsultasPessoas;
@@ -8,7 +9,7 @@ public class frmConsultasPessoas {
     private JTextField turmaTextField;
     private JTextField quantidadeTextField;
     private JButton consultarButton;
-    private JList list;
+    private JList<Pessoa> list;
     private JButton limparFiltrosButton;
     private JLabel filtrarPorAtividadeLabel;
     private JLabel filtrarPorTurmaLabel;
@@ -17,6 +18,9 @@ public class frmConsultasPessoas {
     public frmConsultasPessoas() {
         String quantidadePessoas = Integer.toString(Gerenciador.exibirClientes().size());
         quantidadeTextField.setText(quantidadePessoas);
+    	
+    	Cliente[] arrayClientes = new Cliente[Gerenciador.exibirClientes().size()];
+    	list.setListData(Gerenciador.exibirClientes().toArray(arrayClientes));
 
         list.addMouseListener(new MouseAdapter() {
             @Override
@@ -27,17 +31,21 @@ public class frmConsultasPessoas {
         consultarButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
-                String filtroAtividade = atividadeTextField.getText();
-                String filtroTurma = turmaTextField.getText();
                 //Buscar as turmas e atividades aqui
+                super.mouseClicked(mouseEvent);
+                String atividade = atividadeTextField.getText();
+                String turma = turmaTextField.getText();
+                ArrayList<Cliente> filtro = Gerenciador.verificarClientesPorAtividadeTurma(atividade, turma);
+                Cliente[] arrayClientes = new Cliente[filtro.size()];
+            	list.setListData(filtro.toArray(arrayClientes));
             }
         });
         limparFiltrosButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 super.mouseClicked(mouseEvent);
-                turmaTextField.setText("");
                 atividadeTextField.setText("");
+                turmaTextField.setText("");
             }
         });
     }
