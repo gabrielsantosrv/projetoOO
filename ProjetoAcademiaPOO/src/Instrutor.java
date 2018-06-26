@@ -33,7 +33,7 @@ public abstract class Instrutor extends Pessoa{
                 strAreas += ", ";
             count++;
         }
-        ret += "\nÃ�reas: " + strAreas;
+        ret += "\n Áreas: " + strAreas;
         return ret;
     }
 }
