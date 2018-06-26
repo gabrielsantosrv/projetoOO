@@ -494,7 +494,7 @@ public class Gerenciador {
 			cliente.setPersonal(personal);
 			personal.adicionarCliente(cliente);    		
     	}else{
-    		System.out.println("O instrutor selecionado não é um personal");
+    		System.out.println("O instrutor selecionado não é um personal ou nao existe");
     	}
     }
 
