@@ -316,6 +316,19 @@ TODO: explicar o polimorfismo, detalhar mais o que eu escrevi acima se achar pre
 
 \section{Release final}
 {\color{red}
+Com o intuito de utilizar o conhecimento sobre interfaces adquirido em sala de aula decidimos reimplementar a funcionalidade de login que havia sido retirada. Agora com o conhecimento sobre interfaces ficou mais fácil de implementá-la, tanto no código quanto em como faríamos.
+
+Implementamos uma interface(Logavel) que possui um método de logar, um para recuperar seu username e um para recuperar suas permissões de acesso ao sistema. Desse modo, todas as classes que podem logar no sistema deveriam implementar essa interface, pois é disso que precisamos para que ela atue no sistema.
+
+Em seguido implementamos 2 classes para implementar essa interface Logavel, a Admin e a Comum, que representam logins de usuarios comuns e usuarios administradores no sistema.
+
+Como a persistência de dados não foi implentada no nosso projeto encontramos uma barreira que seria um login inicial na aplicação, para solucionar, ao subir a aplicação criar um usuario administrador com username e senhas conhecidas, para poder logar inicialmente no sistema e utilizá-lo.
+
+Como alteramos todas as funcões para retornarem lista(no caso de buscas) ou um boolean(no caso de validações) também optamos por inserir uma parte grafica no projeto para não ter que ficar exibindo no console todos os retornos. 
+
+Começamos a modelar as telas visando as funções que haviam sido criadas no programa e que foram adaptadas para um retorno. Tivemos uma dificuldade com as telas pois não sabiamos o que usar a principio. Depois de pesquisar um pouco acabamos optando pelo Swing mesmo. Durante o desenvolvimentos das telas um problema foi um integrante do grupo estar usando uma IDE diferente dos demais, para as classes .java tudo estava ocorrendo bem, mas para os arquivos .form essa IDE não conseguia abrir, não conseguimos achar uma extensão correta. Então optamos por ele alterar apenas as classes java enquanto os outros integrantes alteravam os arquivos .form.
+
+Apesar desse pequeno emprevisto só houve um pequeno atraso no desenvolvimento. A parte trabalhosa foi criar as telas e após isso integrá-las com o código feito anteriormente. Tivemos erros em tipos de retorno e exibição de dados nas telas criadas. Por fim conseguimos resolver esses problemas e criamos as telas, que não abrangeram 100% do código criado, mas foi mais para uma demonstração extra console do que o nosso projeto faria.
 TODO: explicar o que foi feito.
 - colocamos o login que tínhamos tirado
 - mais interface gráfica
