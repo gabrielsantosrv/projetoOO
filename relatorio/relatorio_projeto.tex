@@ -310,9 +310,10 @@ As atividades podem ser buscadas por nome, preço, lista de turmas e uma só tur
 
 Essas buscas podem ser realizadas tanto por gerenciadores comuns como por administradores.
 
-{\color{red}
-TODO: explicar o polimorfismo, detalhar mais o que eu escrevi acima se achar preciso.
-}
+\subsection{Interface gráfica}
+Nesta release, começamos a implementar a interface gráfica, decidimos qual ferramenta iríamos usar e optamos pelo Swing, que já vinha como default pela IDE do IntelliJ.
+Para começar, fizemos algumas telas de cadastro e adicionamos os campos, e houve uma pequena integração com o código já existente, porém a maioria das outras integrações vieram na release subsequente.
+
 
 \section{Release final}
 {\color{red}
@@ -328,10 +329,10 @@ Como alteramos todas as funcões para retornarem lista(no caso de buscas) ou um 
 
 Começamos a modelar as telas visando as funções que haviam sido criadas no programa e que foram adaptadas para um retorno. Tivemos uma dificuldade com as telas pois não sabiamos o que usar a principio. Depois de pesquisar um pouco acabamos optando pelo Swing mesmo. Durante o desenvolvimentos das telas um problema foi um integrante do grupo estar usando uma IDE diferente dos demais, para as classes .java tudo estava ocorrendo bem, mas para os arquivos .form essa IDE não conseguia abrir, não conseguimos achar uma extensão correta. Então optamos por ele alterar apenas as classes java enquanto os outros integrantes alteravam os arquivos .form.
 
-Apesar desse pequeno emprevisto só houve um pequeno atraso no desenvolvimento. A parte trabalhosa foi criar as telas e após isso integrá-las com o código feito anteriormente. Tivemos erros em tipos de retorno e exibição de dados nas telas criadas. Por fim conseguimos resolver esses problemas e criamos as telas, que não abrangeram 100% do código criado, mas foi mais para uma demonstração extra console do que o nosso projeto faria.
-TODO: explicar o que foi feito.
-- colocamos o login que tínhamos tirado
-- mais interface gráfica
-- o que mais for feito
-}
+Apesar desse pequeno imprevisto só houve um pequeno atraso no desenvolvimento. A parte trabalhosa foi criar as telas e após isso integrá-las com o código feito anteriormente. Tivemos erros em tipos de retorno e exibição de dados nas telas criadas. Por fim conseguimos resolver esses problemas e criamos as telas, que não abrangeram 100% do código criado, mas foi mais para uma demonstração extra console do que o nosso projeto faria.
+
+Nesta release, pudemos implementar todas as telas que seriam utilizadas no sistema, e fazer boa parte das integrações com o código, como cadastros e consultas de todas as entidades mapeadas.
+Além disso, pudemos implementar telas de login, o sistema tem credenciais padrão, porém é possível criar mais usuários com dois diferentes níveis de permissões.
+Também não foi possível implementar um esquema de permissões na interface gráfica (como desabilitar botões e telas), porém o código exige que, para realizar determinadas ações, é necessário um determinado nível de permissão.
+
 \end{document}
