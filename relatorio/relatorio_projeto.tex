@@ -43,7 +43,7 @@
 % DATA DE PUBLICAÇÃO (PARA A CAPA)
 %
 \TRYear{18} % Dois dígitos
-\TRMonth{6} % Numérico, 01-12
+\TRMonth{7} % Numérico, 01-12
 
 % LISTA DE AUTORES PARA CAPA (sem afiliações).
 \TRAuthor{Ana Clara Zoppi Serpa - RA 165880
@@ -99,12 +99,11 @@ Vítor Mosso Dario
 Neste relatório abordamos o processo de desenvolvimento do projeto de MC302 ao longo deste semestre. Utilizamos a ferramenta
 GitHub para controle de versões do projeto e um grupo no WhatsApp para nos comunicar e discutir o andamento do mesmo, devido às
 diferenças de disponibilidade entre os membros. Dividimos o relatório em seções de acordo com as etapas de desenvolvimento
-designadas pelo professor (Etapa 0, Etapa 1, Etapa 2, Etapa 3, Etapa 4 e Release Final) e descrevemos o que foi implementado/decidido
+designadas pelo professor (Etapa 0, Etapa 1, Etapa 2, Etapa 3, Etapa 4 e \emph{Release} Final) e descrevemos o que foi implementado/decidido
 em cada uma delas e por quê.
 
-Primeiramente, decidimos o tema e pensamos nas classes que precisaríamos, fazendo um primeiro diagrama UML. Depois, implementamos
-as classes seguindo esse diagrama, mas percebemos que havia necessidades não consideradas ao elaborá-lo e coisas que poderiam ser
-implementadas de uma forma diferente. Realizamos essas alterações e atualizamos o diagrama.
+Pudemos aprender muito com esse projeto, vimos uma ideia simples se expandir para algo mais complexo e aplicamos os conceitos de Orientação a Objetos
+aprendidos em sala. Isso foi fundamental para melhor compreensão desses conceitos e fixação dos conhecimentos adquiridos.
 \end{abstract}
 
 \clearpage
@@ -153,29 +152,30 @@ compreensão das ideias.
 \begin{figure}[H]
 \centering
 \includegraphics[width=.75\textwidth]{uml0}
-\caption{Diagrama UML para a Release 0}
+\caption{Diagrama UML para a \emph{release} 0}
 \end{figure}
 
 Decidimos que o relacionamento entre cliente, horário, atividade e instrutor seria feito por meio de uma nova classe, a classe
 Turma, da seguinte forma:
 
 \begin{itemize}
-  \item Uma atividade possui n turmas.
-  \item Uma turma possui n clientes, n instrutores e um horário que representaremos com o tipo String.
-  \item Um cliente possui n turmas, afinal, ele pode realizar várias atividades diferentes.
-  \item Um instrutor possui n turmas porque ele pode dar aulas em várias turmas diferentes.
+  \item Uma atividade possui $n$ turmas.
+  \item Uma turma possui $n$ clientes, $n$ instrutores e um horário que representaremos com o tipo String.
+  \item Um cliente possui $n$ turmas, afinal, ele pode realizar várias atividades diferentes.
+  \item Um instrutor possui $n$ turmas porque ele pode dar aulas em várias turmas diferentes.
 \end{itemize}
 
 Percebemos que clientes e instrutores possuiriam nome, endereço, telefone, data de nascimento, lista de turmas e a indicação
-de que estão ou não ativos no sistema como atributos em comum. Portanto, decidimos criar a classe Pessoa com esses atributos, getters e
-setters
-e fazer com que clientes
-e instrutores fossem suas subclasses.
+de que estão ou não ativos no sistema como atributos em comum. Portanto, decidimos criar a classe Pessoa com esses atributos,
+\emph{getters} e
+\emph{setters}
+e fazer com que Cliente
+e Instrutor fossem suas subclasses.
 
 O cliente possui, além dos métodos e atributos da classe Pessoa, o método que calcula quanto ele precisa pagar pelas atividades
 realizadas.
 
-Como uma atividade possui n turmas, mas as turmas possuem apenas clientes, instrutores e horário, ou seja, a turma não sabe
+Como uma atividade possui $n$ turmas, mas as turmas possuem apenas clientes, instrutores e horário, ou seja, a turma não sabe
 qual é a sua atividade, decidimos, por questões de facilidade, guardar o preço da atividade na classe Turma também. Dessa forma,
 para calcular quanto o cliente precisa pagar, basta iterar por sua lista de turmas e acumular os preços.
 
@@ -185,25 +185,25 @@ O instrutor possui, além dos métodos e atributos da classe Pessoa, um atributo
 A classe Academia seria nossa base de dados, guardando em listas todos os clientes, instrutores, atividades e turmas do sistema
 e possuindo métodos para exibí-los.
 
-Decidimos também implementar uma etapa de login no sistema e separar os usuários entre usuários comuns e usuários administradores.
+Decidimos também implementar uma etapa de \emph{login} no sistema e separar os usuários entre usuários comuns e usuários administradores.
 Um usuário comum poderia incluir/alterar/remover/desativar clientes, atividades e turmas, enquanto um usuário administrador
-poderia fazê-lo também para instrutores e usuários. Portanto, administrador é uma subclasse de usuário.
+poderia fazê-lo também para instrutores e usuários. Portanto, Administrador é uma subclasse de Usuário.
 
-Usuários possuem username e senha. Nessa etapa do projeto, pensamos em fazer com que Usuário fosse subclasse de Pessoa, para
+Usuários possuem \emph{username} e senha. Nessa etapa do projeto, pensamos em fazer com que Usuário fosse subclasse de Pessoa, para
 guardarmos também seus dados (nome, endereço, telefone, data de nascimento).
 
-\section{Etapa 2: Release 0}
-Para essa Release, iniciamos a implementação seguindo o diagrama UML construído na Etapa 1. Criamos as classes em Java, seus métodos
+\section{Etapa 2: \emph{Release} 0}
+Para essa \emph{release}, iniciamos a implementação seguindo o diagrama UML construído na Etapa 1. Criamos as classes em Java, seus métodos
 e implementamos alguns deles, deixando outros vazios para serem implementados posteriormente.
 
-\section{Etapa 3: Release 1}
-Para essa Release, implementamos os métodos que, na anterior, estavam vazios. Realizamos algumas mudanças ao perceber alternativas
+\section{Etapa 3: \emph{Release} 1}
+Para essa \emph{release}, implementamos os métodos que, na anterior, estavam vazios. Realizamos algumas mudanças ao perceber alternativas
 e necessidades não previstas.
 
-Percebemos que não precisaríamos guardar nome, telefone, endereço e data de nascimento dos usuários do sistema, apenas username e
+Percebemos que não precisaríamos guardar nome, telefone, endereço e data de nascimento dos usuários do sistema, apenas \emph{username} e
 senha para controlar o acesso. Portanto, Usuário e Administrador deixaram de ser subclasses de Pessoa.
 
-Decidimos, em vez de ter as classes Usuário e Administrador, ter apenas a classe Gerenciador e um enum (Permissões) para controlar
+Decidimos, em vez de ter as classes Usuário e Administrador, ter apenas a classe Gerenciador e um \emph{enum} (Permissões) para controlar
 o que cada gerenciador pode fazer. O enum contém dois valores possíveis: COMUM e ADMIN. A classe Gerenciador possui métodos que
 refletem as operações que o gerenciador realiza ao usar o sistema, sendo elas:
 \begin{itemize}
@@ -212,7 +212,7 @@ refletem as operações que o gerenciador realiza ao usar o sistema, sendo elas:
   \item Incluir/alterar/remover um gerenciador - apenas se a permissão for ADMIN.
   \item Ver lista de gerenciadores do sistema - apenas se a permissão for ADMIN.
 
-  As operações que podem ser realizadas apenas por ADMIN foram implementadas com um if. Se a permissão é ADMIN, os comandos
+  As operações que podem ser realizadas apenas por ADMIN foram implementadas com um \emph{if}. Se a permissão é ADMIN, os comandos
   seguintes correspondentes à operação são executados. Se a permissão não é ADMIN, é exibido um aviso.
 
   \item Incluir/alterar/remover atividade.
@@ -227,13 +227,13 @@ refletem as operações que o gerenciador realiza ao usar o sistema, sendo elas:
   \item Consultar turmas de um cliente/instrutor.
 \end{itemize}
 
-A classe Principal contém uma lista (ArrayList) de gerenciadores e uma instância de  Gerenciador para guardar qual gerenciador
+A classe Principal contém uma lista (\emph{ArrayList}) de gerenciadores e uma instância de  Gerenciador para guardar qual gerenciador
 está logado.
-Na tentativa de login, procuramos um gerenciador com o login e a senha informados pelo usuário.
+Na tentativa de \emph{login}, procuramos um gerenciador com o \emph{login} e a senha informados pelo usuário.
 Se existe, o gerenciador logado passa a ser esse que encontramos e exibimos uma mensagem (menu) com as operações possíveis.
 Conforme o gerenciador digita o número correspondente à operação, chamam-se os métodos da classe Gerenciador correspondentes.
-O código possui um switch case que chama os métodos correspondentes aos números das operações. Por exemplo, seja 1 a operação de
-incluir um cliente: o código chama gerenciadorLogado.incluirCliente().
+O código possui um \emph{switch case} que chama os métodos correspondentes aos números das operações. Por exemplo, seja 1 a operação de
+incluir um cliente: o código chama \emph{gerenciadorLogado.incluirCliente()}.
 
 Os métodos da classe Gerenciador imprimem mensagens na tela solicitando os dados necessários, criando objetos a partir deles e
 então chamando métodos da classe BaseDados que alteram suas listas de clientes, instrutores e atividades conforme adequado.
@@ -243,7 +243,7 @@ Por exemplo, para uma inclusão de cliente, o fluxo seria o seguinte:
 \begin{itemize}
   \item O método da classe Gerenciador é chamado.
   \item Um objeto Cliente é criado com base nos dados fornecidos.
-  \item O método da classe BaseDados é chamado, incluindo o cliente no ArrayList de clientes que a instância de
+  \item O método da classe BaseDados é chamado, incluindo o cliente no \emph{ArrayList} de clientes que a instância de
   BaseDados possui.
 \end{itemize}
 
@@ -270,7 +270,7 @@ As respectivas validações também foram implementadas: por exemplo, não é po
 avisando sobre isso. Tentativas de desativar clientes/instrutores inexistentes também são tratadas, assim como exclusão de turmas
 e atividades, entre outros casos.
 
-Nessa etapa, as principais funcionalidades estavam prontas com suas respectivas validações, como desejado para essa release.
+Nessa etapa, as principais funcionalidades estavam prontas com suas respectivas validações, como desejado para essa \emph{release}.
 
 Atualizamos o diagrama UML para que refletisse essas mudanças, acrescentando algumas correções mencionadas
 pelo professor (cardinalidades, associações, agregações etc). Não apresentamos esse diagrama neste relatório por conta de
@@ -279,11 +279,11 @@ problemas com legibilidade do texto na imagem, mas submetemos o diagrama no Goog
 Também fizemos alguns protótipos de interface gráfica (telas) para o software, já que a interação com o usuário se dava apenas via console e
 gostaríamos de mudar isso.
 
-Durante a apresentação do código dessa release, o professor sugeriu que implementássemos métodos de busca, por exemplo, buscar clientes por nome/endereço/telefone e
+Durante a apresentação do código dessa \emph{release}, o professor sugeriu que implementássemos métodos de busca, por exemplo, buscar clientes por nome/endereço/telefone e
 aumentássemos a complexidade do sistema acrescentando mais conceitos de Programação Orientada a Objetos, como herança e
-polimorfismo. Isso foi feito nas releases seguintes.
+polimorfismo. Isso foi feito nas \emph{releases} seguintes.
 
-\section{Etapa 4: Release 2}
+\section{Etapa 4: \emph{Release} 2}
 Seguindo as orientações do professor, implementamos métodos de busca e exploramos mais conceitos de POO no projeto. Também
 fizemos mais protótipos de interface gráfica.
 
@@ -295,7 +295,7 @@ Percebemos que não haveria instanciação de objetos da classe Pessoa no sistem
 Pessoa se tornou abstrata.
 
 Decidimos especializar mais os instrutores, tendo três tipos de instrutores: instrutores que recebem por dia trabalhado, instrutores que
-recebem por hora trabalhada e instrutores que são personal trainers de clientes. Com essa mudança, clientes passaram a ter o atributo
+recebem por hora trabalhada e instrutores que são \emph{personal trainers} de clientes. Com essa mudança, clientes passaram a ter o atributo
 Personal e a classe Instrutor se tornou, também, abstrata, porque todos os instrutores do sistema seriam de um desses tipos.
 
 Decidimos que, além dos clientes comuns, teríamos clientes VIP que, além de frequentar turmas, teriam aulas a mais por semana. Mas o sistema
@@ -303,36 +303,52 @@ possui instâncias tanto de clientes como de clientes VIP, então a classe Clien
 
 \subsection{Métodos de busca}
 Implementamos, na classe Gerenciador, métodos de busca de clientes por cada um de seus atributos. O mesmo para instrutores e atividades.
-Então é possível buscar clientes/instrutores por RG, nome, endereço, telefone, data de nascimento, indicação de estar ativo no sistema. No caso
-dos instrutores, por área, lista de áreas e por salário também. Esses métodos retornam ArrayList<Cliente>/ArrayList<Instrutor>.
+Então é possível buscar clientes/instrutores por RG, nome, endereço, telefone, data de nascimento e/ou indicação de estar ativo no sistema. No caso
+dos instrutores, por área, lista de áreas e por salário também. Esses métodos retornam uma \emph{ArrayList} de objetos da classe Cliente e uma
+\emph{ArrayList} de objetos da classe Instrutor.
 
-As atividades podem ser buscadas por nome, preço, lista de turmas e uma só turma. Os métodos retornam ArrayList<Atividade>.
+As atividades podem ser buscadas por nome, preço, lista de turmas e uma só turma. Os métodos retornam \emph{ArrayList} de Atividade.
 
 Essas buscas podem ser realizadas tanto por gerenciadores comuns como por administradores.
 
 \subsection{Interface gráfica}
-Nesta release, começamos a implementar a interface gráfica, decidimos qual ferramenta iríamos usar e optamos pelo Swing, que já vinha como default pela IDE do IntelliJ.
-Para começar, fizemos algumas telas de cadastro e adicionamos os campos, e houve uma pequena integração com o código já existente, porém a maioria das outras integrações vieram na release subsequente.
+Nesta \emph{release}, começamos a implementar a interface gráfica. Optamos pelo pacote Swing, que já vinha como padrão pela IDE do IntelliJ.
+Para começar, fizemos algumas telas de cadastro e adicionamos os campos. Houve uma pequena integração com o código
+já existente, porém a maioria das outras integrações foi realizada na \emph{release} subsequente.
 
+Começamos a modelar telas considerando as funções que haviam sido criadas e retornavam objetos, por exemplo, listas.
+Tivemos dificuldade com as telas pois não sabíamos qual pacote usar, a princípio. Depois de pesquisar um pouco, optamos
+pelo pacote Swing. Durante o desenvolvimento das telas, um integrante do grupo estava usando uma IDE diferente
+dos demais que tinha problemas para abrir os arquivos .form. Não
+conseguimos achar uma extensão correta, então optamos por dividir as tarefas de outra forma: este colega
+alteraria apenas as classes (.java), enquanto os outros integrantes
+alteravam os arquivos .form.
 
-\section{Release final}
-{\color{red}
-Com o intuito de utilizar o conhecimento sobre interfaces adquirido em sala de aula decidimos reimplementar a funcionalidade de login que havia sido retirada. Agora com o conhecimento sobre interfaces ficou mais fácil de implementá-la, tanto no código quanto em como faríamos.
+Apesar desse imprevisto, o atraso no desenvolvimento foi pequeno. Criar as telas e
+integrá-las com o código feito anteriormente foi um tanto trabalhoso.
+Tivemos erros em tipos de retorno e exibição de dados nas telas criadas, mas
+conseguimos resolver esses problemas. As telas criadas não abrangeram 100\% do código criado, mas serviram de boa
+demonstração extra console do que o nosso projeto poderia fazer.
 
-Implementamos uma interface(Logavel) que possui um método de logar, um para recuperar seu username e um para recuperar suas permissões de acesso ao sistema. Desse modo, todas as classes que podem logar no sistema deveriam implementar essa interface, pois é disso que precisamos para que ela atue no sistema.
+\section{\emph{Release} final}
+Com o intuito de utilizar o conhecimento sobre interfaces adquirido em sala de aula decidimos reimplementar a funcionalidade de
+\emph{login}.
 
-Em seguido implementamos 2 classes para implementar essa interface Logavel, a Admin e a Comum, que representam logins de usuarios comuns e usuarios administradores no sistema.
+Implementamos uma interface (Logavel) que possui um método para realizar \emph{login}, um para recuperar \emph{username} e um para
+recuperar suas
+permissões de acesso ao sistema. Desse modo, todas as classes que podem logar no sistema devem implementar essa interface.
 
-Como a persistência de dados não foi implentada no nosso projeto encontramos uma barreira que seria um login inicial na aplicação, para solucionar, ao subir a aplicação criar um usuario administrador com username e senhas conhecidas, para poder logar inicialmente no sistema e utilizá-lo.
+Em seguida implementamos as classes Admin e Comum, que representam \emph{login}s de
+usuários comuns e de usuários administradores no sistema. A classe Gerenciador possui um atributo cujo tipo é Logavel e pode,
+portanto, ser um Admin ou um Comum (polimorfismo).
 
-Como alteramos todas as funcões para retornarem lista(no caso de buscas) ou um boolean(no caso de validações) também optamos por inserir uma parte grafica no projeto para não ter que ficar exibindo no console todos os retornos. 
+Como não implementamos persistência de dados, há um usuário padrão com \emph{login} e senha conhecidos para que possamos logar e
+testar o sistema.
 
-Começamos a modelar as telas visando as funções que haviam sido criadas no programa e que foram adaptadas para um retorno. Tivemos uma dificuldade com as telas pois não sabiamos o que usar a principio. Depois de pesquisar um pouco acabamos optando pelo Swing mesmo. Durante o desenvolvimentos das telas um problema foi um integrante do grupo estar usando uma IDE diferente dos demais, para as classes .java tudo estava ocorrendo bem, mas para os arquivos .form essa IDE não conseguia abrir, não conseguimos achar uma extensão correta. Então optamos por ele alterar apenas as classes java enquanto os outros integrantes alteravam os arquivos .form.
-
-Apesar desse pequeno imprevisto só houve um pequeno atraso no desenvolvimento. A parte trabalhosa foi criar as telas e após isso integrá-las com o código feito anteriormente. Tivemos erros em tipos de retorno e exibição de dados nas telas criadas. Por fim conseguimos resolver esses problemas e criamos as telas, que não abrangeram 100% do código criado, mas foi mais para uma demonstração extra console do que o nosso projeto faria.
-
-Nesta release, pudemos implementar todas as telas que seriam utilizadas no sistema, e fazer boa parte das integrações com o código, como cadastros e consultas de todas as entidades mapeadas.
-Além disso, pudemos implementar telas de login. O sistema tem credenciais padrão, porém é possível criar mais usuários com dois diferentes níveis de permissões.
-Também não foi possível implementar um esquema de permissões na interface gráfica (como desabilitar botões e telas), porém o código exige que, para realizar determinadas ações, é necessário um determinado nível de permissão.
+Nessa \emph{release}, pudemos implementar todas as telas que seriam utilizadas no sistema e fazer boa parte das integrações com o
+código, como cadastros e consultas de todas as entidades mapeadas.
+Além disso, pudemos implementar telas de \emph{login}.
+Não foi possível implementar um esquema de permissões na interface gráfica (como desabilitar botões e telas), mas a validação
+referente às permissões é efetuada nas classes e operações para as quais não há permissão não são realizadas.
 
 \end{document}

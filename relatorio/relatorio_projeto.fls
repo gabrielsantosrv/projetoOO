@@ -131,11 +131,13 @@ INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmr12
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmmi12.tfm
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmsy10.tfm
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmbx10.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmti10.tfm
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmr12.tfm
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmbx12.tfm
 INPUT relatorio_projeto.toc
 INPUT relatorio_projeto.toc
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmbx10.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmbxti10.tfm
 OUTPUT relatorio_projeto.toc
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omscmr.fd
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/tex/latex/base/omscmr.fd
@@ -144,6 +146,8 @@ INPUT ./images/uml0.png
 INPUT ./images/uml0.png
 INPUT ./images/uml0.png
 INPUT ./images/uml0.png
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmti10.tfm
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/tfm/public/cm/cmbx12.tfm
 INPUT relatorio_projeto.aux
 INPUT C:/Users/alber/AppData/Local/MiKTeX/2.9/fonts/pk/ljfour/jknappen/ec/dpi600/ecss1000.pk
@@ -162,6 +166,10 @@ INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
@@ -170,3 +178,5 @@ INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb
+INPUT C:/Users/alber/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb
